@@ -38,7 +38,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           npm i
-          npm run prepare_static
-          npm run prepare_db
-          npm start
-          
+
