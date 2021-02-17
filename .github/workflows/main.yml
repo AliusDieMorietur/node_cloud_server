@@ -37,6 +37,5 @@ jobs:
           
       - name: Run a multi-line script
         run: |
-          npm i,
           ls
 
