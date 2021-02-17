@@ -37,11 +37,6 @@ export class Client {
       .from(this.application.static.keys())
       .filter(key => param.includes(key));
 
-    // if (reservedDomains.includes(domain)) {
-    //   if (addon[0]) return addon[0];
-    //   return '/index.html';
-    // }
-
     if (reservedDomains.includes(domain)) 
       return addon[0] ? addon[0] : '/index.html';
 
