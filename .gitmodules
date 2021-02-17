@@ -1,0 +1,3 @@
+[submodule "src/react_cloud_client_web"]
+	path = src/react_cloud_client_web
+	url = https://github.com/AliusDieMorietur/react_cloud_client_web.git
