@@ -25,15 +25,15 @@ jobs:
         node: [ '12', '14' ]
     name: Node ${{ matrix.node }} sample
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Install dependecies
-      - run: npm install
-      - name: Run Build
-      - run: npm run build
-      - name: Run Tests
-      - run: npm test
+    - uses: actions/checkout@v2
+    - name: Setup node
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install dependecies
+    - run: npm install
+    - name: Run Build
+    - run: npm run build
+    - name: Run Tests
+    - run: npm test
           
