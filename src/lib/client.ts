@@ -21,33 +21,10 @@ export class Client {
     this.application = application
   }
 
-  parseUrl(url): string {
-    if (url === '/') return '/index.html';
-
-    const techDomains = ['/assets', '/css', '/js', '/favicon.ico'];
-    const reservedDomains = ['/temporary', '/calc'];
-    const index = url.indexOf('/', 1);
-    const [domain, param] = index === -1 
-      ? [url, '']
-      : [url.slice(0, index), url.slice(index)];
-
-    if (techDomains.includes(domain)) return url;
-
-    const addon: any = Array
-      .from(this.application.static.keys())
-      .filter(key => param.includes(key));
-
-    if (reservedDomains.includes(domain)) 
-      return addon[0] ? addon[0] : '/index.html';
-
-    return 'Not found';
-  }
-
   static() {
     try {
 
       const url = this.req.url === '/' ? '/index.html' : this.req.url;
-      // const url = this.parseUrl(this.req.url)
       const fileExt = path.extname(url).substring(1);
       
       if (MIME_TYPES[fileExt]) {
