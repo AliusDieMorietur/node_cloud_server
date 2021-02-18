@@ -7,7 +7,7 @@
     "test": "node ./tests/test",
     "prepare_db": "echo dp prepared",
     "prepare_static": "cd ./src/react_cloud_client_web && npm i",
-    "compile_server": "npx tsc && node build.js",
+    "compile_server": "npx tsc && node ./build.js",
     "build": "npm run build --prefix ./src/react_cloud_client_web && npx tsc && node build.js",
     "start": "npm run build && cd ./target && node ./server.js"
   },
