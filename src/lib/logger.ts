@@ -4,28 +4,45 @@ import { threadId } from 'worker_threads';
 
 type LogLevel = 'info' | 'error' | 'warning' | 'success' | 'ext'
 
-const COLORS: { [k in LogLevel]: string } = {
+const TEXTCOLORS: { [k in LogLevel]: string } = {
   info: '\u001b[37m',
   error: '\u001b[31m',
   warning: '\u001b[33m',
   success: '\u001b[32m',
-  ext: '\u001b[34m'
+  ext: '\u001b[46m'
 };
+
+const TAGCOLORS = {
+  info: '\u001b[47m',
+  error: '\u001b[31m',
+  warning: '\u001b[43m',
+  success: '\u001b[42m',
+  ext: '\u001b[34m'
+}
 
 const DATETIME_LENGTH = 19;
 
-export class Logger { 
-  private stream = fs.createWriteStream('./logs/log.txt', { flags: 'a' })
+export class Logger {
+  private stream;
+  private logPath: string; 
+  constructor(logPath: string = './logs/log.txt') {
+    this.logPath = logPath;
+    this.stream = fs.createWriteStream(this.logPath, { flags: 'a' })
+  }
 
   private write(level: LogLevel, ...args: string[]) {
     const s = format('', ...args);
     const now = new Date().toISOString();
     const date = now.substring(0, DATETIME_LENGTH);
-    const color = COLORS[level];
-    const line = `${date} W${threadId} [${level}]${s}\n`;
+    const tagColor = `${TAGCOLORS[level]}${level === 'info' ? '\u001b[30m': '\u001b[37m'}`;
+    const color = `${TEXTCOLORS[level]}\u001b[40;1m`;
+    const info = `${date} W${threadId} `;
+    const tag = ` ${level.toUpperCase()} `;
+    const line = `${s}\n`;
+    // const line = `${color} ${date} W${threadId} ${tagColor} ${level.toUpperCase()} ${color}${s}\n`;
 
-    console.log(color + line + '\x1b[0m');
-    this.stream.write(line);
+    console.log(color + info + tagColor + tag + color + line + '\x1b[0m');
+    this.stream.write(info + tag.trim() + line);
   }
 
   log(...args: string[]) {
