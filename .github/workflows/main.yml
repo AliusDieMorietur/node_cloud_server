@@ -26,6 +26,7 @@ jobs:
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v2
+<<<<<<< HEAD
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -37,3 +38,20 @@ jobs:
       - name: Run Tests
       - run: npm test
           
+=======
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+      - name: Run a multi-line script
+        run: |
+          npm i
+
+>>>>>>> d580c9d8ad6538db055cc8697ba425e25992bb35
