@@ -1,7 +1,8 @@
-module.exports = ({
-    user: 'postgres',
+export const dbConfig = {
+    user: 'admin',
     host: 'localhost',
-    database: 'simple',
-    password: 'postgres',
+    database: 'cloud_storage',
+    password: 'admin',
     port: 5432,
-});
+};
+  
