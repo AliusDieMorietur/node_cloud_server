@@ -41,7 +41,7 @@ class Tester {
     this.logger = new Logger();
   }
 
-  test = async (testName, testable) => {
+  async test(testName, testable) {
     const { 
       fn, 
       fnArgs, 
