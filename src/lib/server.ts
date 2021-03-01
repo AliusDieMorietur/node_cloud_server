@@ -7,11 +7,6 @@ import { Channel } from './channel';
 
 const createServer = (application): http.Server => {
 	const listener = (req: http.IncomingMessage, res) => {
-    if (req.url === '/Roma/kekw') {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ Roma: 1 }));
-      return;
-    }
 		const [domen, command] = req.url.substring(1).split('/');
 		if (domen === 'api') {
 			//api[command](req, res);
@@ -24,19 +19,38 @@ const createServer = (application): http.Server => {
 };
 
 export class Server {
-	application;
   instance: http.Server;
   ws: ws.Server;
 
-  constructor(application) {
-		this.application = application;
+  constructor(private application) {
 		this.instance = createServer(this.application);
 		this.ws = new ws.Server({ server: this.instance });
 		const { ports } = serverConfig;
     const port = ports[threadId - 1];
-    this.ws.on('connection', (connection) => {
-      const channel = new Channel(connection, application);
+    this.ws.on('connection', (connection, req) => {
+      const channel = new Channel(connection, req.socket.remoteAddress, application);
       connection.on('message', async data => {
+        try {
+          //console.log(data);
+          // await channel.session.createUser({ login: 'Admin', password: 'Admin' }, req.socket.remoteAddress );
+          // console.log('authUser: ', await channel.session.authUser({ login: 'Admin', password: 'Admin' }, req.socket.remoteAddress ));
+          const user = await channel.session.getUser('Admin');
+          console.log('getUser: ', user);
+          channel.permanentStorage.setCurrentUser(user);
+          channel.permanentStorage.saveBuffers(['1', '2']);
+          console.log('upload: ', await channel.permanentStorage.upload({ 
+            token: user.token, 
+            currentPath: '/home', 
+            action: 'replace',
+            changes: [
+              ['file1', 'file'],
+              ['file2', 'file'],
+              ['folder1', 'folder']
+            ]
+          }));
+        } catch (error) {
+          this.application.logger.error(error);
+        }
         channel.message(data);
       })
     });
