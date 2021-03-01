@@ -77,7 +77,8 @@ export class PermanentStorage {
   } 
 
   async upload(args): Promise<string> {
-    const { token, currentPath, changes, action } = args;
+    const { currentPath, changes, action } = args;
+    const { token } = this.user;
     const dirPath = path.join(this.storagePath, token);
     const dirs = currentPath.substring(1).split('/');
     const fileNames = changes
@@ -127,17 +128,18 @@ export class PermanentStorage {
   }
 
   async download(args): Promise<string[]> {
-    const { files, token } = args;
+    const { fileList } = args;
+    const { token } = this.user;
     const { savedNames: list } = await this.getInfo(token);
-    for (const file of files) {
+    for (const file of fileList) {
       const buffer = await fsp.readFile(path.join(this.storagePath, token, list[file]));
       this.connection.send(buffer);
     }
-    return files;
+    return fileList;
   }
 
   async availableFiles(args): Promise<Structure[]> {
-    const { token } = args;
+    const { token } = this.user;
     try {
       const info = await this.getInfo(token);
       return info.structure;
