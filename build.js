@@ -22,6 +22,7 @@ const copy = (from, to, excludeFolders = [], excludeFiles = []) => {
 copy('./src/db', './target/db/');
 copy('./src/react_cloud_client_web/build', './target/static', ['less', 'jsx_src']);
 fs.mkdirSync("./target/storage", { recursive: true });
+fs.mkdirSync("./target/tmp_storage", { recursive: true });
 fs.mkdirSync("./target/logs", { recursive: true });
 fs.appendFileSync("./target/logs/log.txt", "");
 console.log();
