@@ -2,9 +2,10 @@ import { Worker } from 'worker_threads';
 import * as path from 'path';
 import { Logger } from './logger';
 import { serverConfig } from '../config/server';
-import { TemporaryStorage } from './storage';
+import { TemporaryStorage } from './temporaryStorage';
 
-const STORAGE_PATH = path.join(process.cwd(), './storage/');
+const { tmpStoragePath } = serverConfig; 
+const TMP_STORAGE_PATH = path.join(process.cwd(), tmpStoragePath);
 
 export class Launcher {
   count = serverConfig.ports.length
@@ -30,7 +31,7 @@ export class Launcher {
   async start() {
     const logger = new Logger();
     try {
-      let expired = await TemporaryStorage.clearExpired(STORAGE_PATH);
+      let expired = await TemporaryStorage.clearExpired(TMP_STORAGE_PATH);
       for (const file of expired) { logger.log(`Expired: ${file}`); };
       logger.log(`Total expired: ${expired.length}`)
     } catch (err) {

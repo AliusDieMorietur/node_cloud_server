@@ -18,3 +18,4 @@ export const generateToken = (): string => {
   }
   return key;
 };
+

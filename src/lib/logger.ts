@@ -24,9 +24,7 @@ const DATETIME_LENGTH = 19;
 
 export class Logger {
   private stream;
-  private logPath: string; 
-  constructor(logPath: string = './logs/log.txt') {
-    this.logPath = logPath;
+  constructor(private logPath: string = './logs/log.txt') {
     this.stream = fs.createWriteStream(this.logPath, { flags: 'a' })
   }
 
@@ -39,7 +37,6 @@ export class Logger {
     const info = `${date} W${threadId} `;
     const tag = ` ${level.toUpperCase()} `;
     const line = `${s}\n`;
-    // const line = `${color} ${date} W${threadId} ${tagColor} ${level.toUpperCase()} ${color}${s}\n`;
 
     console.log(color + info + tagColor + tag + color + line + '\x1b[0m');
     this.stream.write(info + tag.trim() + line);
