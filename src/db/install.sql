@@ -1,0 +1,3 @@
+CREATE USER admin WITH PASSWORD 'admin';
+CREATE DATABASE cloud_storage OWNER admin;
+ALTER USER admin WITH SUPERUSER;
