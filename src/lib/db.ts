@@ -1,6 +1,6 @@
 import { Pool } from 'pg';
 
-class Database {
+export default class Database {
   private pool: Pool;
 
   constructor(config) {
@@ -8,10 +8,11 @@ class Database {
   }
 
   query(sql: string, values?) {
+    console.log(sql);
     return this.pool.query(sql, values);
   }
 
-  insert(table, record) {
+  async insert(table, record) {
     const keys = Object.keys(record);
     const values = Object.values(record).map(el => {
       if (el instanceof Array) return `'{${el}}'`;
@@ -20,11 +21,11 @@ class Database {
     const fields = keys.join(',');
     const params = values.join(',');
     const sql = `INSERT INTO ${table} (${fields}) VALUES (${params})`;
-    this.query(sql);
+    return await this.query(sql);
   }
 
   // refactor required
-  async select(table, fields = ['*'], condition = null, limit, offset) {
+  async select(table, fields = ['*'], condition?: string, limit?: number, offset?: number) {
     let sql = `SELECT ${fields} FROM ${table}`;
     if (condition) sql += ` WHERE ${condition}`;
     if (limit) sql += ` LIMIT ${limit}`;
@@ -32,7 +33,7 @@ class Database {
     return await this.query(sql);
   }
 
-  async exist(condition) {
+  async exists(condition) {
     return await this.query(`SELECT EXISTS(${condition})`);
   }
 
@@ -51,4 +52,3 @@ class Database {
   }
 }
 
-module.exports = Database;
