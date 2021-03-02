@@ -1,6 +1,6 @@
 const tester = require('./tester');
 
-const { TemporaryStorage } = require('../target/lib/storage');
+const { TemporaryStorage } = require('../target/lib/TemporaryStorage');
 
 (async () => {
   await tester.test('TemporaryStorage.saveBuffer', {
