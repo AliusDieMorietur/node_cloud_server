@@ -5,7 +5,6 @@ import { TemporaryStorage } from './temporaryStorage';
 import { serverConfig } from '../config/server';
 import { PermanentStorage } from './permanentStorage';
 import { Session } from './session'; 
-import { throws } from 'node:assert';
 
 const { storagePath, tmpStoragePath, tokenLifeTime } = serverConfig; 
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
@@ -45,19 +44,22 @@ export class Channel {
       this.buffers = [];
       return await storage.download(args);
     },
-    'availableFiles': async (args: Args) => {
-      const storage = this.chooseStorage(args.storageName);
-      return await this.tmpStorage.availableFiles(args);
+    'availableFiles': async (args: Args) => await this.tmpStorage.availableFiles(args),
+    'getStorageStructure': async (args: Args) => await this.permanentStorage.availableFiles(),
+    'restoreSession': async (args: Args) => { 
+      const session = await this.session.restoreSession(args.token);
+      const user = await this.session.getUser('id', session.userid);
+      this.permanentStorage.setCurrentUser(user);
+      return session;
     },
-    'restoreSession': async (args: Args) => await this.session.restoreSession(args.token),
     'authUser': async (args: Args) => { 
       const token = await this.session.authUser(args.user, this.ip);
       const { login } = args.user;
-      const user = await this.session.getUser(login);
+      const user = await this.session.getUser('login', login);
       this.permanentStorage.setCurrentUser(user);
       return token;
     },
-    'logOut': async (args: Args) => await this.session.deleteSessions(this.ip) 
+    'logOut': async (args: Args) => await this.session.deleteSession(args.token) 
   };
 
   constructor(private connection, private ip, private application) {
