@@ -1,6 +1,6 @@
 export const serverConfig = {
-  ports: [7000, 7001, 7002, 7003],
+  ports: [80],
   tokenLifeTime: 600000,
-  tmpStoragePath: './tmp_storage/'  ,
+  tmpStoragePath: './tmp_storage/',
   storagePath: './storage/'
 };
