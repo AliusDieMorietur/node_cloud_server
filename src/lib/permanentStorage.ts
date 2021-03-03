@@ -46,7 +46,7 @@ export class PermanentStorage {
     return JSON.parse(info.toString());
   }
 
-  setCurrentUser(user) { this.user = user; }
+  setCurrentUser(user){ this.user = user; }
 
   saveBuffers(buffers) {
     for (const buffer of buffers) this.buffers.push(buffer);
@@ -138,7 +138,7 @@ export class PermanentStorage {
     return fileList;
   }
 
-  async availableFiles(args): Promise<Structure[]> {
+  async availableFiles(): Promise<Structure[]> {
     const { token } = this.user;
     try {
       const info = await this.getInfo(token);
