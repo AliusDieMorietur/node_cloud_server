@@ -34,20 +34,20 @@ export class Server {
           //console.log(data);
           // await channel.session.createUser({ login: 'Admin', password: 'Admin' }, req.socket.remoteAddress );
           // console.log('authUser: ', await channel.session.authUser({ login: 'Admin', password: 'Admin' }, req.socket.remoteAddress ));
-          const user = await channel.session.getUser('Admin');
-          console.log('getUser: ', user);
-          channel.permanentStorage.setCurrentUser(user);
-          channel.permanentStorage.saveBuffers(['1', '2']);
-          console.log('upload: ', await channel.permanentStorage.upload({ 
-            token: user.token, 
-            currentPath: '/home', 
-            action: 'replace',
-            changes: [
-              ['file1', 'file'],
-              ['file2', 'file'],
-              ['folder1', 'folder']
-            ]
-          }));
+          // const user = await channel.session.getUser('Admin');
+          // console.log('getUser: ', user);
+          // channel.permanentStorage.setCurrentUser(user);
+          // channel.permanentStorage.saveBuffers(['1', '2']);
+          // console.log('upload: ', await channel.permanentStorage.upload({ 
+          //   token: user.token, 
+          //   currentPath: '/home/folder1', 
+          //   action: 'replace',
+          //   changes: [
+          //     ['file1', 'file'],
+          //     ['file2', 'file'],
+          //     ['folder1', 'folder']
+          //   ]
+          // }));
         } catch (error) {
           this.application.logger.error(error);
         }
@@ -55,7 +55,7 @@ export class Server {
       })
     });
 
-    this.instance.listen(port, () => {
+    this.instance.listen(port, '192.168.0.121', () => {
       this.application.logger.log(`Listen port ${port}`);
     });
   }
