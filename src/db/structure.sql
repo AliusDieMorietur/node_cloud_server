@@ -21,3 +21,13 @@ ALTER TABLE Session ADD CONSTRAINT pkSession PRIMARY KEY (Id);
 CREATE UNIQUE INDEX akSession ON Session (Token);
 
 ALTER TABLE Session ADD CONSTRAINT fkSessionUserId FOREIGN KEY (UserId) REFERENCES SystemUser (Id) ON DELETE CASCADE;
+
+CREATE TABLE Link (
+  Id      serial,
+  Token   varchar(64) NOT NULL,
+  Link    text
+);
+
+ALTER TABLE Link ADD CONSTRAINT pkLink PRIMARY KEY (Id);
+
+CREATE UNIQUE INDEX akLink ON Link (Token);
