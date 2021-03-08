@@ -79,9 +79,12 @@ export class PermanentStorage {
     for (const item of changes) {
       if (childsNames.includes(item[0])) {
         const fileName = parsed.savedNames[`${currentPath}/${item[0]}`];
+
         delete parsed.savedNames[`${currentPath}/${item[0]}`];
         parsed.savedNames[`${currentPath}/${item[1]}`] = fileName;
+
         const index = childsNames.indexOf(item[0]);
+
         childs[index].name = item[1]
       }
     }
@@ -138,8 +141,10 @@ export class PermanentStorage {
       if (childsNames.includes(item[0])) {
         const fileList = parsed.savedNames;
         const name = fileList[`${currentPath}/${item[0]}`];
+
         if (item[1] === 'file') 
           await fsp.unlink(path.join(this.storagePath, token, name));
+          
         const index = childsNames.indexOf(name);
         childs.splice(index, 1);
       }
