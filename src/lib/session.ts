@@ -6,6 +6,13 @@ import { promises as fsp } from 'fs';
 
 const STORAGE_PATH: string = path.join(process.cwd(), serverConfig.storagePath);
 
+type SessionColumn = {
+  id: number,
+  userid: number,
+  ip: string,
+  token: string
+}
+
 export class Session {
   constructor(private db: Database) {}
 
@@ -49,7 +56,7 @@ export class Session {
     this.db.delete('Session', `token = '${token}'`);
   }
 
-  async restoreSession(token: string): Promise<any> {
+  async restoreSession(token: string): Promise<SessionColumn> {
     const query = await this.db.select('Session', ['*'], `token = '${token}'`)
     return query.rows[0] ? query.rows[0] : null;
   }

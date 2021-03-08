@@ -50,8 +50,8 @@ export class TemporaryStorage {
     const { token } = args;
     try {
       const info = await this.getInfo(token);
-      const list = Object.keys(info);
-      return list;
+      const fileList = Object.keys(info);
+      return fileList;
     } catch (err) {
       const error = err.code === 'ENOENT' 
         ? 'No such token' 

@@ -1,6 +1,5 @@
 import * as path from 'path';
-import * as fs from 'fs';
-const fsp = fs.promises;
+import { promises as fsp } from 'fs';
 import { generateToken } from './auth';
 import { upload, download } from './storageAPI';
 
@@ -19,19 +18,6 @@ type Structure = {
 
 type Info = { savedNames: { [key: string]: string }, structure: Structure[] };
 
-const removeDir = (folderPath: string) =>  {
-  const files = fs.readdirSync(folderPath)
-  if (files.length > 0) {
-    files.forEach(function(filename) {
-      if (fs.statSync(path.join(folderPath, filename)).isDirectory()) 
-        removeDir(path.join(folderPath, filename));
-      else 
-        fs.unlinkSync(path.join(folderPath, filename));
-    })
-    fs.rmdirSync(folderPath)
-  } else fs.rmdirSync(folderPath)  
-}
-
 export class PermanentStorage { 
   private buffers: Buffer[] = [];
   user: User;
@@ -42,11 +28,13 @@ export class PermanentStorage {
   ) {}
 
   async getInfo(token: string): Promise<Info> {
-    const info = await fsp.readFile(path.join(this.storagePath, token + '_info.json'));
-    return JSON.parse(info.toString());
+    const info = await fsp.readFile(path.join(this.storagePath, token + '_info.json'), 'utf-8');
+    return JSON.parse(info);
   }
 
-  setCurrentUser(user){ this.user = user; }
+  setCurrentUser(user: User) { this.user = user; }
+
+  getCurrentUser(): User { return this.user; }
 
   saveBuffers(buffers) {
     for (const buffer of buffers) this.buffers.push(buffer);
@@ -58,49 +46,105 @@ export class PermanentStorage {
     return currentFolder.capacity;
   }
   
-  findPlace(departureFolder: Structure[], dirs: string[]): Structure[] {
-    let currentFolder = departureFolder;
+  findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
+    const dirs = currentPath.substring(1).split('/');
+    let childs = departureFolder;
 
     for (const folder of dirs) 
-      for (const item of currentFolder) 
-        if (item.name === folder) currentFolder = item.childs;
-    return currentFolder;
+      for (const item of childs) 
+        if (item.name === folder) childs = item.childs;
+    return childs;
   }  
 
-  async delete(args): Promise<void> {
-    const { fileList, currentPath, item, currentFolder } = args;
-    const name = fileList[`${currentPath}/${item[0]}`];
-    if (item[1] === 'file') 
-      await fsp.unlink(path.join(this.storagePath, this.user.token, name));
-    const index = currentFolder.indexOf(name);
-    currentFolder.splice(index, 1);
-  } 
+  // async createLink(filePath: string): Promise<string> {
+  //   const linksPath = path.join(this.storagePath, 'magnet_links.json');
+  //   const links = JSON.parse(
+  //     await fsp.readFile(linksPath, 'utf-8')
+  //   );
+  //   const { savedNames: list } = await this.getInfo(this.user.token);
+  //   const fileName = filePath.split('/').filter((e, i, a) => i === a.length - 1);
+  //   const token = generateToken();
+  //   links[token] = `${this.user.token}:${list[filePath]}:${fileName}`;
+  //   await fsp.writeFile(linksPath, JSON.stringify(links, null, 2));
+  //   return token;
+  // }
+
+  async rename(args): Promise<void> {
+    const { currentPath, changes } = args;
+    const { token } = this.user;
+    let parsed = await this.getInfo(token);
+    const childs = this.findPlace(parsed.structure, currentPath);
+    const childsNames = childs.map(el => el.name);
+
+    for (const item of changes) {
+      if (childsNames.includes(item[0])) {
+        const fileName = parsed.savedNames[`${currentPath}/${item[0]}`];
+        delete parsed.savedNames[`${currentPath}/${item[0]}`];
+        parsed.savedNames[`${currentPath}/${item[1]}`] = fileName;
+        const index = childsNames.indexOf(item[0]);
+        childs[index].name = item[1]
+      }
+    }
+
+    await fsp.writeFile(
+      path.join(this.storagePath, token + '_info.json'), 
+      JSON.stringify(parsed, null, 2)
+    );
+  }
+
+  async delete(args) {
+    const { currentPath, changes } = args;
+    const { token } = this.user;
+    let parsed = await this.getInfo(token);
+    const childs = this.findPlace(parsed.structure, currentPath);
+    const childsNames = childs.map(el => el.name);
+
+    for (const item of changes) {
+      if (childsNames.includes(item[0])) {
+        const index = childsNames.indexOf(item[0]);
+        childs.splice(index, 1);
+        const name = parsed.savedNames[`${currentPath}/${item[0]}`];
+        if (item[1] === 'file') {
+          await fsp.unlink(path.join(this.storagePath, token, name));
+          delete parsed.savedNames[`${currentPath}/${item[0]}`];
+        }
+        else 
+          for (const key in parsed.savedNames) 
+            if (key.includes(item[0])) {
+              await fsp.unlink(path.join(this.storagePath, token, parsed.savedNames[key]));
+              delete parsed.savedNames[key];
+            }
+      }
+    }
+
+    await fsp.writeFile(
+      path.join(this.storagePath, token + '_info.json'), 
+      JSON.stringify(parsed, null, 2)
+    );
+  }
 
   async upload(args): Promise<string> {
-    const { currentPath, changes, action } = args;
+    const { currentPath, changes } = args;
     const { token } = this.user;
     const dirPath = path.join(this.storagePath, token);
-    const dirs = currentPath.substring(1).split('/');
     const fileNames = changes
       .filter(item => item[1] === 'file')
       .map(item => item[0]);
-
-    const infoPath = path.join(this.storagePath, token + '_info.json');
-    let info = await fsp.readFile(infoPath, 'utf-8');
-    let parsed = JSON.parse(info);
-
-    let currentFolder = this.findPlace(parsed.structure, dirs);
+    let parsed = await this.getInfo(token);
+    const childs = this.findPlace(parsed.structure, currentPath);
+    const childsNames = childs.map(el => el.name);
 
     for (const item of changes) {
-      if (action === 'replace') 
-        await this.delete({ 
-          fileList: parsed.savedNames, 
-          currentPath, 
-          item, 
-          currentFolder 
-        });
+      if (childsNames.includes(item[0])) {
+        const fileList = parsed.savedNames;
+        const name = fileList[`${currentPath}/${item[0]}`];
+        if (item[1] === 'file') 
+          await fsp.unlink(path.join(this.storagePath, token, name));
+        const index = childsNames.indexOf(name);
+        childs.splice(index, 1);
+      }
 
-      currentFolder.push({ 
+      childs.push({ 
         name: item[0], 
         childs: item[1] === 'folder' ? [] : null,
         capacity : item[1] === 'folder' 
@@ -121,10 +165,14 @@ export class PermanentStorage {
     for (const folder of parsed.structure) 
       folder.capacity = this.recalculate(folder);
 
-    await fsp.writeFile(infoPath, JSON.stringify(parsed, null, 2));
+    await fsp.writeFile(
+      path.join(this.storagePath, token + '_info.json'), 
+      JSON.stringify(parsed, null, 2)
+    );
 
     this.buffers = [];
-    return parsed;
+
+    return token;
   }
 
   async download(args): Promise<string[]> {
@@ -138,7 +186,7 @@ export class PermanentStorage {
     return fileList;
   }
 
-  async availableFiles(): Promise<Structure[]> {
+  async getStructure(): Promise<Structure[]> {
     const { token } = this.user;
     try {
       const info = await this.getInfo(token);
