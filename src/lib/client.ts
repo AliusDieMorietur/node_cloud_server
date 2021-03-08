@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { promises as fsp } from 'fs';
 
 const MIME_TYPES = {
   html: 'text/html; charset=UTF-8',
@@ -13,9 +14,33 @@ const MIME_TYPES = {
 export class Client {
   constructor(private req, private res, private application) {}
 
+  async loadFilebyLink(link: string, storagePath: string): Promise<void> {
+    const data = this.application.links.get(link);
+    if (!data) throw new Error(`No such link: ${link}`) 
+
+    const [token, filePath, fileName] = data.split(':'); 
+    const buffer = await fsp.readFile(path.join(storagePath, token, filePath), 'utf-8')
+    this.res.setHeader('Content-disposition', `attachment; filename=${fileName}`);
+    this.res.end(buffer);
+  }
+
+  // static async loadFilebyLink(link: string, storagePath: string, req, res): Promise<void> {
+  //   const linkPath = path.join(
+  //     storagePath,
+  //     'magnet_links.json'
+  //   );
+  //   const links = JSON.parse(await fsp.readFile(linkPath, 'utf-8'));
+  //   const data = links[link] 
+  //     ? links[link]
+  //     : 'Not Found'; 
+  //   const [token, filePath, fileName] = data.split(':'); 
+  //   const buffer = await fsp.readFile(path.join(storagePath, token, filePath), 'utf-8')
+  //   res.setHeader('Content-disposition', `attachment; filename=${fileName}`);
+  //   res.end(buffer);
+  // }
+
   static() {
     try {
-
       const url = this.req.url === '/' ? '/index.html' : this.req.url;
       const fileExt = path.extname(url).substring(1);
       
