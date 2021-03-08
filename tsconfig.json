@@ -4,7 +4,10 @@
     "target": "esnext",
     "module": "commonjs",
     "removeComments": true,
-    "outDir": "target/"
+    "outDir": "target/",
+    "typeRoots": [
+      "./types/"
+    ]
   },
   "include": [
     "./src/"
