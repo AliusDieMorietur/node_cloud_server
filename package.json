@@ -5,7 +5,7 @@
   "main": "./server/server.js",
   "scripts": {
     "test": "node ./tests/test",
-    "prepare_db": "psql -U postgres -a -f ./src/db/structure.sql",
+    "prepare_db": "psql -U postgres -af ./src/db/structure.sql",
     "prepare_static": "cd ./src/react_cloud_client_web && npm i",
     "compile_server": "npx tsc",
     "lite": "npx tsc && node ./build.js && cd ./target && node ./server.js",
