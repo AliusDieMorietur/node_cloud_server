@@ -2,13 +2,13 @@
 * Here described which messages have to be send to work with storages and which result is expected
 
 # Argument types
-type Structure = {
+* <code>type Structure = {
   name: string, 
   childs?: Structure[],
   capacity: number
-} 
+} </code>
 
-type CommandArgs = {
+* <code>type CommandArgs = {
   token?: string,
   storageName? : string,
   fileList?: string[],
@@ -16,14 +16,14 @@ type CommandArgs = {
   filePath?: string,
   changes?: [ [string, string] ], 
   user?: { login: string, password: string }
-}
+} </code>
 
-type Session = {
+* <code>type Session = {
   id: number,
   userid: number,
   ip: string,
   token: string
-}
+} </code>
 
 ## Auth
 * Auth user <br/> Recieve: <code>{ callid: number, msg: 'authUser', args: { user: { login: string, password: string } } }</code> <br/>  Return: <code>token: string</code> 
