@@ -59,7 +59,10 @@ export class Channel {
       this.index = this.application.saveConnection(login, this.connection);
       return token;
     },
-    'logOut': async args => await this.session.deleteSession(args.token) 
+    'logOut': async args => {
+      const { token } = this.permanentStorage.user;
+      return await this.session.deleteSession(token);
+    }
   };
 
   constructor(private connection, private ip: string, private application) {
