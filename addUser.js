@@ -1,3 +1,4 @@
+const readline = require("readline");
 const fs = require('fs');
 const fsp = fs.promises;
 const path = require('path')
@@ -24,6 +25,11 @@ const generateToken = () => {
   return key;
 };
 
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 (async () => {
   try {
     const pool = new Pool({
@@ -33,18 +39,28 @@ const generateToken = () => {
       password: 'admin',
       port: 5432,
     });
-    
-    const [ login, password ] = ['Admin', 'Admin'];
-    const userToken = generateToken();
-    await pool.query(`INSERT INTO SystemUser(Token, Login, Password) VALUES ('${userToken}', '${login}', '${password}')`);
-    const query = await pool.query(`SELECT * FROM SystemUser WHERE login = '${login}'`);
-    await pool.query(`INSERT INTO Session(UserId, Token) VALUES (${query.rows[0].id}, '${generateToken()}')`);
-    await fsp.mkdir(path.join('./target/storage', userToken));
-    await fsp.writeFile(
-      path.join('./target/storage', userToken + '_info.json'), 
-      JSON.stringify({ savedNames: {}, structure: [] })
-    );
+
+    let login = '';
+    let password = '';
+    rl.question('Login: ', loginInput => {
+      rl.question('Password:  ', async passwordInput => {
+          if (loginInput.length < 5 && passwordInput.length < 5) 
+            throw new Error('Too short password or login');
+          login = loginInput;
+          password = passwordInput; 
+          console.log(`Login: ${login} Password: ${password}`);
+          const userToken = generateToken();
+          await pool.query(`INSERT INTO SystemUser(Token, Login, Password) VALUES ('${userToken}', '${login}', '${password}')`);
+          await fsp.mkdir(path.join('./target/storage', userToken));
+          await fsp.writeFile(
+            path.join('./target/storage', userToken + '_info.json'), 
+            JSON.stringify({ savedNames: {}, structure: [] })
+          );
+          rl.close();
+      });
+    });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
+
 })();
