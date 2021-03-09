@@ -30,7 +30,7 @@ type Session = {
 
 * Restore session <br/> Recieve: <code>{ callid: number, msg: 'restoreSession', args: { token: string } }</code> <br/> Return: <code>session: Session</code> 
 
-* Log out <br/>  <code>Recieve: { callid: number, msg: 'logOut', args: {} } }</code> <br/>  Return: <code>token: string</code> 
+* Log out <br/> Recieve: <code>{ callid: number, msg: 'logOut', args: {} } }</code> <br/>  Return: <code>token: string</code> 
 
 ## Permanent Storage (log in required)
 * On messages 'pmtUpload', 'rename', 'delete' server will automaticly send updated structure to all authed devices to one account. To recieve updated structure you have to handle socket.on('message') and check if strucure present in message 
