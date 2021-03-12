@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { promises as fsp } from 'fs';
 import { generateToken } from './auth';
-import { upload, download } from './storageAPI';
+// import { upload, download } from './storageAPI';
 
 type User = {
   id: number, 
@@ -16,7 +16,10 @@ type Structure = {
   capacity: number
 } 
 
-type Info = { savedNames: { [key: string]: string }, structure: Structure[] };
+type Info = { 
+  savedNames: { [key: string]: string }, 
+  structure: Structure[] 
+};
 
 export class PermanentStorage { 
   private buffers: Buffer[] = [];
@@ -165,7 +168,7 @@ export class PermanentStorage {
       parsed.savedNames[`${currentPath}/${fileName}`] = token;
     }
 
-    await upload(dirPath, Object.values(savedNames), this.buffers);
+    // await upload(dirPath, Object.values(savedNames), this.buffers);
 
     for (const folder of parsed.structure) 
       folder.capacity = this.recalculate(folder);
@@ -181,11 +184,11 @@ export class PermanentStorage {
   }
 
   async download(args): Promise<string[]> {
-    const { fileList } = args;
+    const { currentPath, fileList } = args;
     const { token } = this.user;
     const { savedNames: list } = await this.getInfo(token);
     for (const file of fileList) {
-      const buffer = await fsp.readFile(path.join(this.storagePath, token, list[file]));
+      const buffer = await fsp.readFile(path.join(this.storagePath, token, list[`${currentPath}/${file}`]));
       this.connection.send(buffer);
     }
     return fileList;

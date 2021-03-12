@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { promises as fsp } from 'fs';
 import { generateToken } from './auth';
-import { upload, download } from './storageAPI';
+// import { upload, download } from './storageAPI';
 
 export class TemporaryStorage { 
   private token: string = '';
@@ -30,7 +30,7 @@ export class TemporaryStorage {
     await fsp.mkdir(dirPath);
 
 
-    await upload(dirPath, fileList.map(i => savedNames[i]), this.buffers);
+    // await upload(dirPath, fileList.map(i => savedNames[i]), this.buffers);
 
     this.folderTimeout(dirPath, this.tokenLifeTime);
     this.buffers = [];
@@ -41,7 +41,7 @@ export class TemporaryStorage {
     const { fileList, token } = args;
     const list = await this.getInfo(token);
     for (const file of fileList) {
-      await download(path.join(this.storagePath, token, list[file]), this.connection);
+      // await download(path.join(this.storagePath, token, list[file]), this.connection);
     }
     return fileList;
   }
