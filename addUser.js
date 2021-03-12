@@ -51,11 +51,8 @@ const rl = readline.createInterface({
           console.log(`Login: ${login} Password: ${password}`);
           const userToken = generateToken();
           await pool.query(`INSERT INTO SystemUser(Token, Login, Password) VALUES ('${userToken}', '${login}', '${password}')`);
+          await pool.query(`INSERT INTO  StorageInfo(Token, Expire) VALUES ('${userToken}', 0)`);
           await fsp.mkdir(path.join('./target/storage', userToken));
-          await fsp.writeFile(
-            path.join('./target/storage', userToken + '_info.json'), 
-            JSON.stringify({ savedNames: {}, structure: [] })
-          );
           rl.close();
       });
     });
