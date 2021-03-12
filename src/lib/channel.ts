@@ -1,10 +1,7 @@
 import * as path from 'path';
-import Database from './db';
-import { dbConfig } from '../config/db';
-import { TemporaryStorage } from './temporaryStorage';
+import { Storage } from './storage';
+import { generateToken, Session } from './auth';
 import { serverConfig } from '../config/server';
-import { PermanentStorage } from './permanentStorage';
-import { Session } from './session'; 
 
 const { storagePath, tmpStoragePath, tokenLifeTime } = serverConfig; 
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
@@ -13,66 +10,93 @@ const TOKEN_LIFETIME: number = tokenLifeTime;
 
 export class Channel {
   private index = -1;
-  private buffers: Buffer[] = [];
-  private db = new Database(dbConfig);
+  buffers: Buffer[] = [];
+  private db;
+   user;
   session: Session;
-  permanentStorage: PermanentStorage = new PermanentStorage(STORAGE_PATH, this.connection); 
-  private tmpStorage: TemporaryStorage = new TemporaryStorage(
-    TMP_STORAGE_PATH,
-    TOKEN_LIFETIME,
-    this.connection
-  );
-  private commands = {
-    'tmpUpload': async args => {
-      this.tmpStorage.saveBuffers(this.buffers);
-      this.buffers = [];
-      return await this.tmpStorage.upload(args);
+  // private tmpStorage = new Storage(TMP_STORAGE_PATH);
+  commands = {
+    // 'tmpUpload': async args => {
+    //   this.tmpStorage.saveBuffers(this.buffers);
+    //   this.buffers = [];
+    //   return await this.tmpStorage.upload(args);
+    // },
+    // 'tmpDownload': async args => await this.tmpStorage.download(args),
+    'availableFiles': async args => {
+      const token = args.token 
+        ? args.token 
+        : this.user.token;
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      return Storage.buildStructure(fileInfo);
     },
-    'tmpDownload': async args => await this.tmpStorage.download(args),
-    'availableFiles': async args => await this.tmpStorage.availableFiles(args),
     'pmtUpload': async args => {
-      this.permanentStorage.saveBuffers(this.buffers);
+      const { token } = this.user;
+      const dirPath = path.join(STORAGE_PATH, token);
+      const { changes, currentPath } = args;
+      const fakeNames = changes.map(() => generateToken()); 
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+
+      for (let i = 0; i < changes.length; i++) {
+        const delta = currentPath === '/' ? '' : currentPath;
+        const name = `${delta}/${changes[i]}`;
+
+        if (!existingNames.includes(name)) 
+          await this.db.insert('FileInfo', { token, name, fakeName: fakeNames[i] });
+        else fakeNames[i] = fileInfo[existingNames.indexOf(name)].fakename;
+      }
+      
+      const result = await Storage.upload(dirPath, fakeNames, this.buffers);
       this.buffers = [];
-      return await this.permanentStorage.upload(args);
+      return result;
     },
-    'pmtDownload': async args => await this.permanentStorage.download(args),
-    'rename': async args => await this.permanentStorage.rename(args),
-    'delete': async args => await this.permanentStorage.delete(args),
-    'getStorageStructure': async () => await this.permanentStorage.getStructure(),
+    'pmtDownload': async args => {
+      const delta = args.currentPath === '/' ? '' : args.currentPath;
+      const fileList = args.fileList.map(item => `${delta}/${item}`);
+      const { token } = this.user;
+      const dirPath = path.join(STORAGE_PATH, token);
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+      const fakeNames = fileList
+        .map(item => fileInfo[existingNames.indexOf(item)].fakename);
+
+      await Storage.download(dirPath, fakeNames, this.connection);
+      return args.fileList;
+    },
+    // 'rename': async args => await this.permanentStorage.rename(args),
+    // 'delete': async args => await this.permanentStorage.delete(args),
+    // 'getStorageStructure': async () => await this.permanentStorage.getStructure(),
     'restoreSession': async args => { 
       const session = await this.session.restoreSession(args.token);
       const user = await this.session.getUser('id', `${session.userid}`);
-      this.permanentStorage.setCurrentUser(user);
+      this.user = user;
       this.index = this.application.saveConnection(user.login, this.connection);
       return session.token;
     },
     // 'createLink': async (args: Args) => await this.permanentStorage.createLink(args.filePath),
-    'createLink': async args => 
-      await this.application.createLink(
-        args.filePath, 
-        this.permanentStorage.getCurrentUser().token),
+    // 'createLink': async args => 
+    //   await this.application.createLink(
+    //     args.filePath, 
+        // this.permanentStorage.getCurrentUser().token),
     'authUser': async args => { 
       const token = await this.session.authUser(args.user, this.ip);
       const { login } = args.user;
       const user = await this.session.getUser('login', login);
-      this.permanentStorage.setCurrentUser(user);
+      this.user = user;
       this.index = this.application.saveConnection(login, this.connection);
       return token;
     },
-    'logOut': async args => {
-      const { token } = this.permanentStorage.user;
-      return await this.session.deleteSession(token);
-    }
+    'logOut': async args => await this.session.deleteSession(this.user.token)
   };
 
   constructor(private connection, private ip: string, private application) {
-    const { db } = this.application;
-    this.session = new Session(db);
+    this.db = this.application.db;
+    this.session = new Session(this.db);
     this.application.logger.log('IP: ', ip);
   }
 
   sendAllDevices(data) {
-    const { login } = this.permanentStorage.user;
+    const { login } = this.user;
     const connections = this.application.connections.get(login);
     for (const connection of connections.filter(el => el !== null)) {
       connection.send(data);
@@ -82,9 +106,9 @@ export class Channel {
   deleteConnection() {
     const authed = 
       this.index !== -1 &&
-      this.permanentStorage.user
+      this.user
     if (authed) {
-      const { login } = this.permanentStorage.user;
+      const { login } = this.user;
       this.application.deleteConnection(login, this.index);
     }
   }
@@ -100,7 +124,11 @@ export class Channel {
             this.send(JSON.stringify({ callId, result }));
             const liveReload = ['pmtUpload', 'rename', 'delete'];
             if (liveReload.includes(msg)) {
-              const structure = await this.permanentStorage.getStructure();
+              const token = args.token 
+                ? args.token 
+                : this.user.token;
+              const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+              const structure = Storage.buildStructure(fileInfo);
               this.sendAllDevices(JSON.stringify({ structure }));
             }
           } catch (error) {
