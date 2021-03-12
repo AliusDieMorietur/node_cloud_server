@@ -23,59 +23,16 @@ export class Server {
       connection.on('message', async data => {
         channel.message(data);
         try {
-          //console.log(data);
-          // await channel.session.createUser({ login: 'Admin', password: 'Admin' }, req.socket.remoteAddress );
-          // console.log('authUser: ', await channel.session.authUser({ login: 'Admin', password: 'Admin' }, req.socket.remoteAddress ));
-          // const user = await channel.session.getUser('login', 'Admin');
-          // console.log('getUser: ', user);
-          // channel.permanentStorage.setCurrentUser(user);
-
-          // DELETE
-          // await channel.permanentStorage.delete({ 
-          //   currentPath: '/home', 
-          //   changes: [ 
-          //     ['file1', 'file'],
-          //     ['folder1', 'folder'],
-          //   ]
-          // });
-
-          // RENAME
-          // channel.permanentStorage.setCurrentUser(user);
-          // await channel.permanentStorage.rename({ 
-          //     currentPath: '/home/folder1', 
-          //     changes: [ 
-          //       ['file3', 'file105']
-          //     ]
-          //   });
-
-          // UPLOAD
-          // channel.permanentStorage.saveBuffers(['1', '2']);
-          // console.log('upload: ', await channel.permanentStorage.upload({ 
-          //   currentPath: '/home', 
-          //   changes: [ 
-          //     ['folder1', 'folder'],
-          //     ['file1', 'file'],
-          //     ['file2', 'file']
-          //   ]
-          // }));
-          // channel.permanentStorage.saveBuffers(['1', '2', '3', '4']);
-          // console.log('upload: ', await channel.permanentStorage.upload({ 
-          //   currentPath: '/home/folder1', 
-          //   changes: [ 
-          //     ['folder2', 'folder'],
-          //     ['file1', 'file'],
-          //     ['file2', 'file'],
-          //     ['file3', 'file'],
-          //     ['file4', 'file']
-          //   ]
-          // }));
+          // channel.user = { id: 4, token: 'uLAyXdVENAlXEWp8kWII9QGQJ2V2cblD', login: 'Admin', password: 'Admin' }; 
+          // channel.buffers = [Buffer.from('3'), Buffer.from('4')];
+          // channel.commands['pmtUpload']({ changes: ['1', '2'], currentPath: '/kekw' });
         } catch (error) {
           this.application.logger.error(error);
         }
       })
     });
 
-    this.instance.listen(port, '192.168.0.121', () => {
+    this.instance.listen(port, '192.168.0.136', () => {
       this.application.logger.log(`Listen port ${port}`);
     });
   }
