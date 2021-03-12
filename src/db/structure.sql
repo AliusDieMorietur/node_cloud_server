@@ -7,6 +7,8 @@ CREATE TABLE SystemUser (
 
 ALTER TABLE SystemUser ADD CONSTRAINT pkSystemUser PRIMARY KEY (Id);
 
+CREATE UNIQUE INDEX akSystemUserToken ON SystemUser (Token);
+
 CREATE UNIQUE INDEX akSystemUserLogin ON SystemUser (Login);
 
 CREATE TABLE Session (
@@ -25,9 +27,36 @@ ALTER TABLE Session ADD CONSTRAINT fkSessionUserId FOREIGN KEY (UserId) REFERENC
 CREATE TABLE Link (
   Id      serial,
   Token   varchar(64) NOT NULL,
-  Link    text
+  Link    text NOT NULL
 );
 
 ALTER TABLE Link ADD CONSTRAINT pkLink PRIMARY KEY (Id);
 
 CREATE UNIQUE INDEX akLink ON Link (Token);
+
+CREATE TABLE StorageInfo (
+  Id         serial,
+  Token      varchar(64) NOT NULL,
+  Expire     bigint NOT NULL
+);
+
+CREATE UNIQUE INDEX akStorageInfo ON StorageInfo (Token);
+
+CREATE TABLE FileInfo (
+  Id        serial,
+  Token     varchar(64) NOT NULL,
+  Name      text NOT NULL,
+  FakeName  text NOT NULL,
+  size      integer NOT NULL
+);
+
+ALTER TABLE FileInfo ADD CONSTRAINT fkFileInfoToken FOREIGN KEY (Token) REFERENCES StorageInfo (Token) ON DELETE CASCADE;
+
+-- CREATE TYPE FileInfo AS (
+--   Name     text,
+--   FakeName text,
+--   size     integer
+-- );
+
+-- INSERT INTO StorageInfo(Token, Names, Expire) VALUES 
+-- ('12345678123456781234567812345678', ARRAY[('kekw', 'foo', 0)::FileInfo, ('kekw1', 'foo1', 0)::FileInfo], 0);
