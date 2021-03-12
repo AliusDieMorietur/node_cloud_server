@@ -10,7 +10,7 @@ type CommandArgs = {
   fileList?: string[],
   currentPath?: string, 
   filePath?: string,
-  changes?: [ [string, string] ], 
+  changes?: [string, string][], 
   user?: { login: string, password: string }
 }
 
