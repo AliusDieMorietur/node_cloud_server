@@ -55,11 +55,12 @@ export class Channel {
       return result;
     },
     'pmtDownload': async args => {
-      const fileList = args.fileList.map(item => `${args.currentPath}/${item}`);
+      const fileList = args.fileList.map(item => `${args.currentPath}${item}`);
       const { token } = this.user;
       const dirPath = path.join(STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
+
       const fakeNames = fileList
         .map(item => fileInfo[existingNames.indexOf(item)].fakename);
 

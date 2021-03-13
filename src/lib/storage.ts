@@ -54,7 +54,9 @@ export class Storage {
   }
 
   static findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
+    if (currentPath.indexOf('/') === -1) return departureFolder;
     const dirs = currentPath.split('/');
+    console.log(dirs);
     let childs = departureFolder;
 
     for (const folder of dirs) 
@@ -89,7 +91,6 @@ export class Storage {
     for (const row of rows) {
       if (row.name[row.name.length - 1] === '/') continue;
       const currentFolder = this.findPlace(structure, row.name);
-      console.log(currentFolder,  row.name);
       const splitted = row.name.split('/');
       const name = splitted[splitted.length - 1];
       const file = {
@@ -101,7 +102,6 @@ export class Storage {
     }
     for (const item of structure) this.recalculate(item);
     structure.sort(comparator);
-    console.log(JSON.stringify(structure), null, 2);
     return structure
   }
 
