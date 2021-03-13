@@ -28,11 +28,81 @@ type FileInfo = {
   size: number;
 }
 
+const comparator = (a, b) => {
+  const is_a_folder = a.childs !== null;
+  const is_b_folder = b.childs !== null;
+
+  if(is_a_folder) a.childs.sort(comparator);
+  if(is_b_folder) b.childs.sort(comparator);
+
+  if (is_a_folder === is_b_folder) {
+    if (a.name < b.name) return -1;
+    else if (a.name === b.name) return 0;
+    else return 1;
+  } else {
+    if (is_a_folder) return -1;
+    else return 1;
+  }
+};
+
 export class Storage {
 
+  static recalculate(currentFolder: Structure): number {
+    if (currentFolder.childs) 
+      currentFolder.capacity = currentFolder.childs.reduce((acc, cur) => acc + this.recalculate(cur), 0);
+    return currentFolder.capacity;
+  }
+
+  static findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
+    const dirs = currentPath.split('/');
+    let childs = departureFolder;
+
+    for (const folder of dirs) 
+      for (const item of childs) 
+        if (item.name === folder) childs = item.childs;
+    return childs;
+  } 
+
   static buildStructure(rows: FileInfo[]): Structure[] {
-    console.log(rows);
-    return rows.map(row => { return { name: row.name.substring(1), childs: null, capacity: row.size } });
+    const structure = [];
+    const folders = [];
+    for (const row of rows) {
+      if (row.name[row.name.length - 1] === '/') {
+        folders.push(row.name.substring(row.name.length - 1, 0));
+      }
+    }
+    const dirs = folders.map(item => item.split('/'));
+    for (const item of dirs) {
+      let currentFolder = structure;
+      for (const folder of item) {
+        const newFolder = {
+          name: folder, 
+          childs: [],
+          capacity: 0 
+        };
+        const names = currentFolder.map(item => item.name);
+        let index = names.indexOf(folder);
+        if (!names.includes(folder)) index = currentFolder.push(newFolder) - 1;
+        currentFolder = currentFolder[index].childs;
+      }
+    } 
+    for (const row of rows) {
+      if (row.name[row.name.length - 1] === '/') continue;
+      const currentFolder = this.findPlace(structure, row.name);
+      console.log(currentFolder,  row.name);
+      const splitted = row.name.split('/');
+      const name = splitted[splitted.length - 1];
+      const file = {
+        name,
+        childs: null,
+        capacity: row.size
+      };
+      currentFolder.push(file);
+    }
+    for (const item of structure) this.recalculate(item);
+    structure.sort(comparator);
+    console.log(JSON.stringify(structure), null, 2);
+    return structure
   }
 
   static async upload(dirPath: string, changes: string[], buffers: Buffer[]): Promise<string> {
@@ -58,6 +128,10 @@ export class Storage {
       console.log(buffer);
       connection.send(buffer);
     }
+  }
+
+  static async delete(filePath: string): Promise<void> {
+    await fsp.unlink(filePath);
   }
 }
 
