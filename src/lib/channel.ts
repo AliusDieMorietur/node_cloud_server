@@ -38,11 +38,15 @@ export class Channel {
       const existingNames = fileInfo.map(item => item.name); 
 
       for (let i = 0; i < changes.length; i++) {
-        const delta = currentPath === '/' ? '' : currentPath;
-        const name = `${delta}/${changes[i]}`;
+        const name = `${currentPath}${changes[i]}`;
 
         if (!existingNames.includes(name)) 
-          await this.db.insert('FileInfo', { token, name, fakeName: fakeNames[i] });
+          await this.db.insert('FileInfo', { 
+            token, 
+            name, 
+            fakeName: fakeNames[i], 
+            size: Buffer.byteLength(this.buffers[i], 'utf-8') 
+          });
         else fakeNames[i] = fileInfo[existingNames.indexOf(name)].fakename;
       }
       
@@ -51,8 +55,7 @@ export class Channel {
       return result;
     },
     'pmtDownload': async args => {
-      const delta = args.currentPath === '/' ? '' : args.currentPath;
-      const fileList = args.fileList.map(item => `${delta}/${item}`);
+      const fileList = args.fileList.map(item => `${args.currentPath}/${item}`);
       const { token } = this.user;
       const dirPath = path.join(STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -63,8 +66,26 @@ export class Channel {
       await Storage.download(dirPath, fakeNames, this.connection);
       return args.fileList;
     },
+    'newFolder': async args => {
+      const { token } = this.user;
+      const { currentPath, folderName } = args;
+      const name = `${currentPath}${folderName}/`;
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+      if (!existingNames.includes(name)) 
+        await this.db.insert('FileInfo', { 
+          token, 
+          name, 
+          fakeName: 'folder', 
+          size: 0
+        });
+    },
     // 'rename': async args => await this.permanentStorage.rename(args),
-    // 'delete': async args => await this.permanentStorage.delete(args),
+    'delete': async args => {
+      const { currentPath, changes } = args;
+      const { token } = this.user;
+
+    },
     // 'getStorageStructure': async () => await this.permanentStorage.getStructure(),
     'restoreSession': async args => { 
       const session = await this.session.restoreSession(args.token);
@@ -122,7 +143,7 @@ export class Channel {
           try {
             const result = await this.commands[msg](args);
             this.send(JSON.stringify({ callId, result }));
-            const liveReload = ['pmtUpload', 'rename', 'delete'];
+            const liveReload = ['newFolder', 'pmtUpload', 'rename', 'delete'];
             if (liveReload.includes(msg)) {
               const token = args.token 
                 ? args.token 
