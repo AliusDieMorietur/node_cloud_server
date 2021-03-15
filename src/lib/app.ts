@@ -38,25 +38,25 @@ export class App {
     return this.static.get(filePath);
   }
   
-  // async getInfo(token: string): Promise<{ [key: string]: string }> {
-  //   const info = await fsp.readFile(path.join(STORAGE_PATH, token + '_info.json'));
-  //   return JSON.parse(info.toString()).savedNames;
-  // }
+  async createLink(name: string, userToken: string): Promise<string> {
+    const fileInfo = await this.db.select(
+      'FileInfo', ['*'], `token = '${userToken}' AND name = '${name}'`
+    );
+    const file = fileInfo[0];
+  
+    if (!userToken || !file) throw new Error('No such file')
 
-  // async createLink(filePath: string, userToken: string): Promise<string> {
-  //   // const fileName = filePath.split('/').filter((e, i, a) => i === a.length - 1);
-  //   // const list = await this.getInfo(userToken);
-  //   const token = generateToken();
-  //   if (!userToken || !list[filePath] || !fileName) throw new Error('No such file')
-  //   const link = `${userToken}:${list[filePath]}:${fileName}`;
-  //   this.links.set(token, link);
-  //   await this.db.insert('Link', { token, link });
-  //   return token;
-  // }
+    const token = generateToken();
+    const link = `${userToken}:${file.fakename}:${name}`;
 
-  // getLink(token: string): string {
-  //   return this.links.get(token);
-  // } 
+    this.links.set(token, link);
+    await this.db.insert('Link', { token, link });
+    return token;
+  }
+
+  getLink(token: string): string {
+    return this.links.get(token);
+  }
 
   async loadLinks(): Promise<void> { 
     const links = await this.db.select('Link');
@@ -94,8 +94,8 @@ export class App {
     try {
       this.db = new Database(dbConfig);
       this.logger.success('Db connected');
-      // await this.loadLinks();
-      // this.logger.success('Links loaded');
+      await this.loadLinks();
+      this.logger.success('Links loaded');
       await this.loadDirectory(STATIC_PATH, this.static);
       this.logger.success('Static loaded');
     } catch (error) {
