@@ -2,6 +2,7 @@ import * as path from 'path';
 import { Storage } from './storage';
 import { generateToken, Session } from './auth';
 import { serverConfig } from '../config/server';
+import { promises as fsp } from 'fs';
 
 const { storagePath, tmpStoragePath, tokenLifeTime } = serverConfig; 
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
@@ -10,36 +11,70 @@ const TOKEN_LIFETIME: number = tokenLifeTime;
 
 export class Channel {
   private index = -1;
-  buffers: Buffer[] = [];
+  private buffers: Buffer[] = [];
   private db;
-   user;
-  session: Session;
-  // private tmpStorage = new Storage(TMP_STORAGE_PATH);
-  commands = {
-    // 'tmpUpload': async args => {
-    //   this.tmpStorage.saveBuffers(this.buffers);
-    //   this.buffers = [];
-    //   return await this.tmpStorage.upload(args);
-    // },
-    // 'tmpDownload': async args => await this.tmpStorage.download(args),
+  private user;
+  private session: Session;
+  private commands = {
+    'tmpUpload': async args => {
+      const { fileList } = args;
+      const fakeNames = fileList.map(() => generateToken()); 
+      const token = generateToken();
+      const dirPath = path.join(TMP_STORAGE_PATH, token);
+
+      await fsp.mkdir(dirPath);
+      await this.db.insert('StorageInfo', {
+        token,
+        expire: Date.now() + TOKEN_LIFETIME
+      });
+
+      for (let i = 0; i < fileList.length; i++) {
+        const name = fileList[i];
+        
+        await this.db.insert('FileInfo', { 
+          token, 
+          name, 
+          fakeName: fakeNames[i], 
+          size: Buffer.byteLength(this.buffers[i], 'utf-8') 
+        });
+      }
+
+      await Storage.upload(dirPath, fakeNames, this.buffers);
+      this.buffers = [];
+      return token;
+    },
+    'tmpDownload': async args => {
+      const { token, fileList } = args;
+      const dirPath = path.join(TMP_STORAGE_PATH, token);
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+      const fakeNames = fileList
+        .map(item => fileInfo[existingNames.indexOf(item)].fakename);
+
+      await Storage.download(dirPath, fakeNames, this.connection);
+      return fileList.map(item => item.split('/')[item.split('/').length - 1]);
+    },
     'availableFiles': async args => {
       const token = args.token 
         ? args.token 
         : this.user.token;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
-      return Storage.buildStructure(fileInfo);
+
+      return args.token
+        ? fileInfo.map(item => item.name)
+        : Storage.buildStructure(fileInfo);
     },
     'pmtUpload': async args => {
       const { token } = this.user;
+      const { fileList } = args;
       const dirPath = path.join(STORAGE_PATH, token);
-      const { changes, currentPath } = args;
-      const fakeNames = changes.map(() => generateToken()); 
+      const fakeNames = fileList.map(() => generateToken()); 
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
 
-      for (let i = 0; i < changes.length; i++) {
-        const name = `${currentPath}${changes[i]}`;
-
+      for (let i = 0; i < fileList.length; i++) {
+        const name = fileList[i];
+        
         if (!existingNames.includes(name)) 
           await this.db.insert('FileInfo', { 
             token, 
@@ -55,8 +90,8 @@ export class Channel {
       return result;
     },
     'pmtDownload': async args => {
-      const fileList = args.fileList.map(item => `${args.currentPath}${item}`);
       const { token } = this.user;
+      const { fileList } = args;
       const dirPath = path.join(STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
@@ -65,29 +100,59 @@ export class Channel {
         .map(item => fileInfo[existingNames.indexOf(item)].fakename);
 
       await Storage.download(dirPath, fakeNames, this.connection);
-      return args.fileList;
+      return fileList.map(item => item.split('/')[item.split('/').length - 1]);
     },
     'newFolder': async args => {
       const { token } = this.user;
-      const { currentPath, folderName } = args;
-      const name = `${currentPath}${folderName}/`;
+      const { folderName } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
-      if (!existingNames.includes(name)) 
+      if (!existingNames.includes(folderName)) 
         await this.db.insert('FileInfo', { 
           token, 
-          name, 
+          name: folderName, 
           fakeName: 'folder', 
           size: 0
         });
     },
-    // 'rename': async args => await this.permanentStorage.rename(args),
-    'delete': async args => {
-      const { currentPath, changes } = args;
+    'rename': async args => {
       const { token } = this.user;
+      const { name, newName } = args;
+      if (name[name.length - 1] === '/') {
+        const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+        for (const item of fileInfo) {
+          if (item.name.includes(name) && item.name !== name) {
+            const dirs = item.name[item.name.length - 1] === '/'
+              ? item.name.substring(item.name.length - 1, 0).split('/')
+              : item.name.split('/');
+            dirs[dirs.indexOf(name.substring(name.length - 1, 0))] = 
+              newName.substring(newName.length - 1, 0);
+            const newItemName = dirs.join('/');
+            await this.db.update('FileInfo', `name = '${newItemName}'`, `name = '${item.name}' AND token = '${token}'`);
+          }
+        }
+      }
+      await this.db.update('FileInfo', `name = '${newName}'`, `name = '${name}' AND token = '${token}'`);
+    },
+    'delete': async args => {
+      const { token } = this.user;
+      const { fileList } = args;
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+      for (const item of fileList) {
+        await this.db.delete('FileInfo', `name = '${item}'`);
+        console.log(item);
+        if (item[item.length - 1] !== '/') {
+          const filePath = path.join(
+            STORAGE_PATH, 
+            token, 
+            fileInfo[existingNames.indexOf(item)].fakename
+          );
+          await Storage.delete(filePath);
+        }
+      }
 
     },
-    // 'getStorageStructure': async () => await this.permanentStorage.getStructure(),
     'restoreSession': async args => { 
       const session = await this.session.restoreSession(args.token);
       const user = await this.session.getUser('id', `${session.userid}`);
@@ -95,11 +160,11 @@ export class Channel {
       this.index = this.application.saveConnection(user.login, this.connection);
       return session.token;
     },
-    // 'createLink': async (args: Args) => await this.permanentStorage.createLink(args.filePath),
-    // 'createLink': async args => 
-    //   await this.application.createLink(
-    //     args.filePath, 
-        // this.permanentStorage.getCurrentUser().token),
+    'createLink': async args => 
+      await this.application.createLink(
+        args.filePath, 
+        this.user.token
+      ),
     'authUser': async args => { 
       const token = await this.session.authUser(args.user, this.ip);
       const { login } = args.user;
