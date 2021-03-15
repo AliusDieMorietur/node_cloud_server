@@ -13,26 +13,19 @@ export class Server {
   ws: ws.Server;
 
   constructor(private application) {
+		const { ports, host, maxPayload } = serverConfig;
 		this.instance = http.createServer(this.listener.bind(this));
-		this.ws = new ws.Server({ server: this.instance });
-		const { ports } = serverConfig;
+		this.ws = new ws.Server({ server: this.instance, maxPayload });
     const port = ports[threadId - 1];
     this.ws.on('connection', (connection, req) => {
       const channel = new Channel(connection, req.socket.remoteAddress, application);
       connection.on('close', async () => channel.deleteConnection());
       connection.on('message', async data => {
         channel.message(data);
-        try {
-          // channel.user = { id: 4, token: 'uLAyXdVENAlXEWp8kWII9QGQJ2V2cblD', login: 'Admin', password: 'Admin' }; 
-          // channel.buffers = [Buffer.from('3'), Buffer.from('4')];
-          // channel.commands['pmtUpload']({ changes: ['1', '2'], currentPath: '/kekw' });
-        } catch (error) {
-          this.application.logger.error(error);
-        }
       })
     });
 
-    this.instance.listen(port, '192.168.0.136', () => {
+    this.instance.listen(port, host || '0.0.0.0', () => {
       this.application.logger.log(`Listen port ${port}`);
     });
   }
