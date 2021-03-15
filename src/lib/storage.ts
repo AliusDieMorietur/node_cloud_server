@@ -56,7 +56,6 @@ export class Storage {
   static findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
     if (currentPath.indexOf('/') === -1) return departureFolder;
     const dirs = currentPath.split('/');
-    console.log(dirs);
     let childs = departureFolder;
 
     for (const folder of dirs) 
