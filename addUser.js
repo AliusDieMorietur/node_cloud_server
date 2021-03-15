@@ -48,11 +48,12 @@ const rl = readline.createInterface({
             throw new Error('Too short password or login');
           login = loginInput;
           password = passwordInput; 
-          console.log(`Login: ${login} Password: ${password}`);
           const userToken = generateToken();
           await pool.query(`INSERT INTO SystemUser(Token, Login, Password) VALUES ('${userToken}', '${login}', '${password}')`);
+          console.log(`User <${login}> created`);
           await pool.query(`INSERT INTO  StorageInfo(Token, Expire) VALUES ('${userToken}', 0)`);
           await fsp.mkdir(path.join('./target/storage', userToken));
+          console.log(`Storage <${userToken}> for <${login}> created`);
           rl.close();
       });
     });
