@@ -2,6 +2,8 @@ import * as fs from 'fs';
 import { format } from 'util';
 import { threadId } from 'worker_threads';
 
+const CLEAR = '\x1b[0m';
+
 type LogLevel = 'info' | 'error' | 'warning' | 'success' | 'ext'
 
 const TEXTCOLORS: { [k in LogLevel]: string } = {
@@ -9,7 +11,7 @@ const TEXTCOLORS: { [k in LogLevel]: string } = {
   error: '\u001b[31m',
   warning: '\u001b[33m',
   success: '\u001b[32m',
-  ext: '\u001b[46m'
+  ext: '\u001b[46m',
 };
 
 const TAGCOLORS = {
@@ -33,12 +35,12 @@ export class Logger {
     const now = new Date().toISOString();
     const date = now.substring(0, DATETIME_LENGTH);
     const tagColor = `${TAGCOLORS[level]}${level === 'info' ? '\u001b[30m': '\u001b[37m'}`;
-    const color = `${TEXTCOLORS[level]}\u001b[40;1m`;
+    const color = `${TEXTCOLORS[level]}`;
     const info = `${date} W${threadId} `;
     const tag = ` ${level.toUpperCase()} `;
     const line = `${s}\n`;
 
-    console.log(color + info + tagColor + tag + color + line + '\x1b[0m');
+    console.log(color + info + tagColor + tag + CLEAR + color + line + CLEAR);
     this.stream.write(info + tag.trim() + line);
   }
 
