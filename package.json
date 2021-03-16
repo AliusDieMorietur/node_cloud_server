@@ -10,6 +10,7 @@
     "prepare_static": "cd ./src/react_cloud_client_web && npm i",
     "first_step": "npm i && npm run prepare_static && npm run prepare_db && npm run build",
     "add_user": "node addUser",
+    "first_start": "npm run first_step && npm run add_user && npm start",
     "compile_server": "npx tsc",
     "lite": "npx tsc && node ./build.js && cd ./target && node ./server.js",
     "build": "npx tsc && npm run build --prefix ./src/react_cloud_client_web && node ./build.js",
