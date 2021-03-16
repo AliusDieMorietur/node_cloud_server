@@ -50,12 +50,16 @@ export class App {
     const link = `${userToken}:${file.fakename}:${name}`;
 
     this.links.set(token, link);
-    await this.db.insert('Link', { token, link });
+    await this.db.insert('Link', { fileid: file.id, token, link });
     return token;
   }
 
   getLink(token: string): string {
     return this.links.get(token);
+  }
+
+  deleteLink(token: string) {
+    this.links.delete(token);
   }
 
   async loadLinks(): Promise<void> { 
