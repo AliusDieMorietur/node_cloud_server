@@ -15,7 +15,7 @@ export class Client {
   constructor(private req, private res, private application) {}
 
   async loadFilebyLink(link: string, storagePath: string): Promise<void> {
-    const data = this.application.links.get(link);
+    const data = this.application.getLink(link);
     if (!data) throw new Error(`No such link: ${link}`) 
 
     const [token, filePath, fileName] = data.split(':'); 
