@@ -2,9 +2,13 @@ import { Worker } from 'worker_threads';
 import * as path from 'path';
 import { Logger } from './logger';
 import { serverConfig } from '../config/server';
-import { TemporaryStorage } from './storage';
+import Database from './db';
+import { dbConfig } from '../config/db';
+import { Storage } from './storage';
+import { promises as fsp } from 'fs';
 
-const STORAGE_PATH = path.join(process.cwd(), './storage/');
+const { tmpStoragePath } = serverConfig; 
+const TMP_STORAGE_PATH = path.join(process.cwd(), tmpStoragePath);
 
 export class Launcher {
   count = serverConfig.ports.length
@@ -28,11 +32,28 @@ export class Launcher {
   };
 
   async start() {
+    let tokenCounter = 0;
+    let fileCounter = 0;
     const logger = new Logger();
     try {
-      let expired = await TemporaryStorage.clearExpired(STORAGE_PATH);
-      for (const file of expired) { logger.log(`Expired: ${file}`); };
-      logger.log(`Total expired: ${expired.length}`)
+      const db = new Database(dbConfig);
+      const storageInfo = await db.select('StorageInfo', ['*']);
+      
+      for (const item of storageInfo) {
+        if (Number(item.expire) !== 0 && Date.now() > Number(item.expire)) {
+          const { token } = item;
+          const fileInfo = await db.select('FileInfo', ['*'], `token = '${token}'`);
+          const fakeNames = fileInfo.map(item => item.fakename);
+          const dirPath = path.join(TMP_STORAGE_PATH, token);
+
+          await Storage.delete(dirPath, fakeNames);
+          fileCounter += fakeNames.length;
+          await db.delete('StorageInfo', `token = '${token}'`);
+          tokenCounter++;
+        }
+      }
+
+      logger.log(`Files expired: ${fileCounter} Tokens expired: ${tokenCounter}`);
     } catch (err) {
       logger.error(err);
     }

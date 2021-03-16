@@ -2,108 +2,136 @@ import * as path from 'path';
 import { promises as fsp } from 'fs';
 import { generateToken } from './auth';
 
-export class TemporaryStorage { 
-  private storagePath: string;
-  private tokenLifeTime: number;
-  private connection;
-  private token: string = '';
-  private buffers: Buffer[] = [];
+// type User = {
+//   id: number, 
+//   token: string,
+//   login: string, 
+//   password: string 
+// }
 
-  constructor(
-    storagePath: string, 
-    tokenLifeTime: number, 
-    connection
-  ) {
-    this.storagePath = storagePath;
-    this.tokenLifeTime = tokenLifeTime;
-    this.connection = connection;
+type Structure = {
+  name: string, 
+  childs?: Structure[],
+  capacity: number
+} 
+
+// type Info = { 
+//   savedNames: { [key: string]: string }, 
+//   structure: Structure[] 
+// };
+
+type FileInfo = {
+  id: number,
+  token: string,
+  name: string,
+  fakename: string,
+  size: number;
+}
+
+const comparator = (a, b) => {
+  const is_a_folder = a.childs !== null;
+  const is_b_folder = b.childs !== null;
+
+  if(is_a_folder) a.childs.sort(comparator);
+  if(is_b_folder) b.childs.sort(comparator);
+
+  if (is_a_folder === is_b_folder) {
+    if (a.name < b.name) return -1;
+    else if (a.name === b.name) return 0;
+    else return 1;
+  } else {
+    if (is_a_folder) return -1;
+    else return 1;
+  }
+};
+
+export class Storage {
+
+  static recalculate(currentFolder: Structure): number {
+    if (currentFolder.childs) 
+      currentFolder.capacity = currentFolder.childs.reduce((acc, cur) => acc + this.recalculate(cur), 0);
+    return currentFolder.capacity;
   }
 
-  saveBuffer(buffer) {
-    this.buffers.push(buffer);
+  static findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
+    if (currentPath.indexOf('/') === -1) return departureFolder;
+    const dirs = currentPath.split('/');
+    let childs = departureFolder;
+
+    for (const folder of dirs) 
+      for (const item of childs) 
+        if (item.name === folder) childs = item.childs;
+    return childs;
+  } 
+
+  static buildStructure(rows: FileInfo[]): Structure[] {
+    const structure = [];
+    const folders = [];
+    for (const row of rows) {
+      if (row.name[row.name.length - 1] === '/') {
+        folders.push(row.name.substring(row.name.length - 1, 0));
+      }
+    }
+    const dirs = folders.map(item => item.split('/'));
+    for (const item of dirs) {
+      let currentFolder = structure;
+      for (const folder of item) {
+        const newFolder = {
+          name: folder, 
+          childs: [],
+          capacity: 0 
+        };
+        const names = currentFolder.map(item => item.name);
+        let index = names.indexOf(folder);
+        if (!names.includes(folder)) index = currentFolder.push(newFolder) - 1;
+        currentFolder = currentFolder[index].childs;
+      }
+    } 
+    for (const row of rows) {
+      if (row.name[row.name.length - 1] === '/') continue;
+      const currentFolder = this.findPlace(structure, row.name);
+      const splitted = row.name.split('/');
+      const name = splitted[splitted.length - 1];
+      const file = {
+        name,
+        childs: null,
+        capacity: row.size
+      };
+      currentFolder.push(file);
+    }
+    for (const item of structure) this.recalculate(item);
+    structure.sort(comparator);
+    return structure
   }
 
-  async upload(args): Promise<string> {
-    const { list } = args;
-    this.token = generateToken();
-    const dirPath = path.join(this.storagePath, this.token);
-    await fsp.mkdir(dirPath);
-    
-    const savedNames = {};
-    const expire = Date.now() + this.tokenLifeTime;
-    for (const fileName of list) savedNames[fileName] = generateToken();
-    const infoPath = path.join(this.storagePath, this.token + '_info.json');
-    await fsp.writeFile(infoPath, JSON.stringify({ expire, savedNames }));
-    
-    if (this.buffers.length !== list.length) {
+  static async upload(dirPath: string, fileList: string[], buffers: Buffer[]): Promise<string> {
+    if (buffers.length !== fileList.length) {
       let error = 'Buffers or it`s names corrupted';
       throw new Error(error);
     }
 
-    for (let i = 0; i < list.length; i++) {
-      const generatedNames: string[] = Object.values(savedNames);
-      const fileName = path.join(this.storagePath, this.token, generatedNames[i]);
-      const buffer = this.buffers[i];
+    for (let i = 0; i < fileList.length; i++) {
+      const name = fileList[i];
+      const fileName = path.join(dirPath, name);
+      const buffer = buffers[i];
+
       await fsp.writeFile(fileName, buffer);
     }
-    
-    this.folderTimeout(path.join(this.storagePath, this.token), this.tokenLifeTime);
-    this.buffers = [];
-    return this.token;
+    return 'ok';
   }
 
-  async download(args): Promise<any> {
-    const { files, token } = args;
-    const list = await this.getInfo(token);
-    for (const file of files) {
-      const buffer = await fsp.readFile(path.join(this.storagePath, token, list[file]));
-      this.connection.send(buffer);
-    }
-    return files;
-  }
-
-  async availableFiles(args): Promise<string[]> {
-    const { token } = args;
-    try {
-      const info = await this.getInfo(token);
-      const list = Object.keys(info);
-      return list;
-    } catch (err) {
-      const error = err.code === 'ENOENT' 
-        ? 'No such token' 
-        : err;
-      throw new Error(error);
+  static async download(dirPath: string, fileNames: string[], connection): Promise<void>  {
+    for (const name of fileNames) {
+      const filePath = path.join(dirPath, name);
+      const buffer = await fsp.readFile(filePath);
+      console.log(buffer);
+      connection.send(buffer);
     }
   }
 
-  async getInfo(token: string): Promise<object> {
-    const info = await fsp.readFile(path.join(this.storagePath, token + '_info.json'));
-    return JSON.parse(info.toString()).savedNames;
-  }
-
-  async folderTimeout(folderPath: string, time: number) {
-    setTimeout(async () => {
-      await fsp.unlink(folderPath + '_info.json');
-      await fsp.rmdir(folderPath, { recursive: true });
-    }, time);
-  }
-
-  static async clearExpired(storagePath: string): Promise<string[]> {
-    const list = await fsp.readdir(storagePath, { withFileTypes: true });
-    const expiredList = [];
-    for (const item of list) {
-      if (item.isFile()) {
-        const filePath = path.join(storagePath, item.name);
-        const dirPath = filePath.replace('_info.json','');
-        const buffer = await fsp.readFile(filePath);
-        const expired = JSON.parse(buffer.toString()).expire < Date.now();
-        if (expired) {
-          await fsp.unlink(filePath);
-          await fsp.rmdir(dirPath, { recursive: true });
-          expiredList.push(filePath)
-        }
-      }
-    }
-    return expiredList;
+  static async delete(dirPath: string, fileNames: string[]): Promise<void> {
+    for (const name of fileNames) 
+      await fsp.unlink(path.join(dirPath, name));
   }
 }
+

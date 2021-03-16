@@ -4,46 +4,44 @@ import { threadId } from 'worker_threads';
 import { serverConfig } from '../config/server';
 import { Client } from './client';
 import { Channel } from './channel';
+import * as path from 'path';
 
-const createServer = (application): http.Server => {
-	const listener = (req: http.IncomingMessage, res) => {
-    if (req.url === '/Roma/kekw') {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ Roma: 1 }));
-      return;
-    }
-		const [domen, command] = req.url.substring(1).split('/');
-		if (domen === 'api') {
-			//api[command](req, res);
-		} else {
-			const client = new Client(req, res, application);
-			client.static();
-		}
-	};
-	return http.createServer(listener);
-};
+const STORAGE_PATH: string = path.join(process.cwd(), serverConfig.storagePath);
 
 export class Server {
-	application;
   instance: http.Server;
   ws: ws.Server;
 
-  constructor(application) {
-		this.application = application;
-		this.instance = createServer(this.application);
-		this.ws = new ws.Server({ server: this.instance });
-		const { ports } = serverConfig;
+  constructor(private application) {
+		const { ports, host, maxPayload } = serverConfig;
+		this.instance = http.createServer(this.listener.bind(this));
+		this.ws = new ws.Server({ server: this.instance, maxPayload });
     const port = ports[threadId - 1];
-    this.ws.on('connection', (connection) => {
-      const channel = new Channel(connection, application);
+    this.ws.on('connection', (connection, req) => {
+      const channel = new Channel(connection, req.socket.remoteAddress, application);
+      connection.on('close', async () => channel.deleteConnection());
       connection.on('message', async data => {
         channel.message(data);
       })
     });
 
-    this.instance.listen(port, () => {
+    this.instance.listen(port, host || '0.0.0.0', () => {
       this.application.logger.log(`Listen port ${port}`);
     });
+  }
+
+  listener(req, res) {
+    const client = new Client(req, res, this.application);
+		const [domen, link] = req.url.substring(1).split('/');
+		if (domen === 'link') {
+      try {
+        client.loadFilebyLink(link, STORAGE_PATH);
+      } catch (error) {
+        this.application.logger.error(error);
+      }
+		} else {
+			client.static();
+		}
   }
 
   async close() {
