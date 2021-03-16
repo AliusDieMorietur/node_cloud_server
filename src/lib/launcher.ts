@@ -43,10 +43,11 @@ export class Launcher {
         if (Number(item.expire) !== 0 && Date.now() > Number(item.expire)) {
           const { token } = item;
           const fileInfo = await db.select('FileInfo', ['*'], `token = '${token}'`);
-          for (const info of fileInfo) {
-            await Storage.delete(path.join(TMP_STORAGE_PATH, token, info.fakename));
-            fileCounter++;
-          }
+          const fakeNames = fileInfo.map(item => item.fakename);
+          const dirPath = path.join(TMP_STORAGE_PATH, token);
+
+          await Storage.delete(dirPath, fakeNames);
+          fileCounter += fakeNames.length;
           await db.delete('StorageInfo', `token = '${token}'`);
           tokenCounter++;
         }
