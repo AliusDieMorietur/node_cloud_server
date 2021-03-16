@@ -111,13 +111,13 @@ export class Channel {
     },
     'newFolder': async args => {
       const { token } = this.user;
-      const { folderName } = args;
+      const { name } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
-      if (!existingNames.includes(folderName)) 
+      if (!existingNames.includes(name)) 
         await this.db.insert('FileInfo', { 
           token, 
-          name: folderName, 
+          name: name, 
           fakeName: 'folder', 
           size: 0
         });
@@ -170,7 +170,7 @@ export class Channel {
     },
     'createLink': async args => 
       await this.application.createLink(
-        args.filePath, 
+        args.name, 
         this.user.token
       ),
     'authUser': async args => { 

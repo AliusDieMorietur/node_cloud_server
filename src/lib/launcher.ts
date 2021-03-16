@@ -48,6 +48,7 @@ export class Launcher {
 
           await Storage.delete(dirPath, fakeNames);
           fileCounter += fakeNames.length;
+          await fsp.rmdir(dirPath);
           await db.delete('StorageInfo', `token = '${token}'`);
           tokenCounter++;
         }
