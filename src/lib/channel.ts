@@ -41,6 +41,13 @@ export class Channel {
 
       await Storage.upload(dirPath, fakeNames, this.buffers);
       this.buffers = [];
+
+      setTimeout(() => {
+        this.db.delete('StorageInfo', `token = '${token}'`);
+        Storage.delete(dirPath, fakeNames);
+        fsp.rmdir(dirPath);
+      }, TOKEN_LIFETIME);
+
       return token;
     },
     'tmpDownload': async args => {
@@ -140,15 +147,16 @@ export class Channel {
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
       for (const item of fileList) {
+        const { id } = fileInfo[existingNames.indexOf(item)];
+        const links = await this.db.select('Link', ['*'], `FileId = '${id}'`);
+        for (const item of links) 
+          this.application.deleteLink(item.token);
         await this.db.delete('FileInfo', `name = '${item}'`);
-        console.log(item);
+        
         if (item[item.length - 1] !== '/') {
-          const filePath = path.join(
-            STORAGE_PATH, 
-            token, 
-            fileInfo[existingNames.indexOf(item)].fakename
-          );
-          await Storage.delete(filePath);
+          const dirPath = path.join(STORAGE_PATH, token);
+          const { fakename } = fileInfo[existingNames.indexOf(item)];
+          await Storage.delete(dirPath, [fakename]);
         }
       }
 
