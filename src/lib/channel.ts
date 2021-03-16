@@ -42,10 +42,10 @@ export class Channel {
       await Storage.upload(dirPath, fakeNames, this.buffers);
       this.buffers = [];
 
-      setTimeout(() => {
-        this.db.delete('StorageInfo', `token = '${token}'`);
-        Storage.delete(dirPath, fakeNames);
-        fsp.rmdir(dirPath);
+      setTimeout(async () => {
+        await this.db.delete('StorageInfo', `token = '${token}'`);
+        await Storage.delete(dirPath, fakeNames);
+        await fsp.rmdir(dirPath);
       }, TOKEN_LIFETIME);
 
       return token;
