@@ -45,6 +45,8 @@ ALTER TABLE FileInfo ADD CONSTRAINT pkFileInfo PRIMARY KEY (Id);
 
 ALTER TABLE FileInfo ADD CONSTRAINT fkFileInfoToken FOREIGN KEY (Token) REFERENCES StorageInfo (Token) ON DELETE CASCADE;
 
+ALTER TABLE FileInfo ADD UNIQUE (Token, Name);
+
 CREATE TABLE Link (
   Id      serial,
   FileId  integer NOT NULL,
