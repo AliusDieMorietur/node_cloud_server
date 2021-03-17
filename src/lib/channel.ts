@@ -17,7 +17,7 @@ export class Channel extends EventEmitter {
   private user;
   private session: Session;
   private commands = {
-    'upload': async (args) => {
+    upload: async (args) => {
       const { fileList, storage } = args;
       const token = storage === 'tmp' ? generateToken() : this.user.token;
       const dirPath = path.join(storage === 'tmp' ? TMP_STORAGE_PATH : STORAGE_PATH, token);
@@ -56,7 +56,7 @@ export class Channel extends EventEmitter {
 
       if (args.storage === 'tmp') return token;
     },
-    'tmpDownload': async args => {
+    tmpDownload: async args => {
       const { token, fileList } = args;
       const dirPath = path.join(TMP_STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -67,7 +67,7 @@ export class Channel extends EventEmitter {
       await Storage.download(dirPath, fakeNames, this.connection);
       return fileList.map(item => item.split('/')[item.split('/').length - 1]);
     },
-    'availableFiles': async args => {
+    availableFiles: async args => {
       const token = args.token 
         ? args.token 
         : this.user.token;
@@ -77,23 +77,7 @@ export class Channel extends EventEmitter {
         ? fileInfo.map(item => item.name)
         : Storage.buildStructure(fileInfo);
     },
-    // 'pmtUpload': async args => {
-    //   const { fileList } = args;
-    //   this.token = this.user.token;
-    //   this.dirPath = path.join(STORAGE_PATH, this.token);
-    //   const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${this.token}'`);
-    //   const existingNames = fileInfo.map(item => item.name); 
-    //   const fakeNames = fileList
-    //     .map(item => 
-    //       existingNames.indexOf(item) === -1 
-    //         ? generateToken()
-    //         : fileInfo[existingNames.indexOf(item)].fakename
-    //   );
-
-    //   if (fileList.length !== fakeNames.length) 
-    //     throw new Error('Buffers or it`s names corrupted');
-    // },
-    'pmtDownload': async args => {
+    pmtDownload: async args => {
       const token = args.token || this.user.token;
       const { fileList } = args;
       const dirPath = path.join(STORAGE_PATH, token);
@@ -106,7 +90,7 @@ export class Channel extends EventEmitter {
       await Storage.download(dirPath, fakeNames, this.connection);
       return fileList.map(item => item.split('/')[item.split('/').length - 1]);
     },
-    'newFolder': async args => {
+    newFolder: async args => {
       const { token } = this.user;
       const { folderName } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -119,7 +103,7 @@ export class Channel extends EventEmitter {
           size: 0
         });
     },
-    'rename': async args => {
+    rename: async args => {
       const { token } = this.user;
       const { name, newName } = args;
       if (name[name.length - 1] === '/') {
@@ -138,7 +122,7 @@ export class Channel extends EventEmitter {
       }
       await this.db.update('FileInfo', `name = '${newName}'`, `name = '${name}' AND token = '${token}'`);
     },
-    'delete': async args => {
+    delete: async args => {
       const { token } = this.user;
       const { fileList } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -158,19 +142,19 @@ export class Channel extends EventEmitter {
       }
 
     },
-    'restoreSession': async args => { 
+    restoreSession: async args => { 
       const session = await this.session.restoreSession(args.token);
       const user = await this.session.getUser('id', `${session.userid}`);
       this.user = user;
       this.index = this.application.saveConnection(user.login, this.connection);
       return session.token;
     },
-    'createLink': async args => 
+    createLink: async args => 
       await this.application.createLink(
         args.filePath, 
         this.user.token
       ),
-    'authUser': async args => { 
+    authUser: async args => { 
       const token = await this.session.authUser(args.user, this.ip);
       const { login } = args.user;
       const user = await this.session.getUser('login', login);
@@ -178,7 +162,7 @@ export class Channel extends EventEmitter {
       this.index = this.application.saveConnection(login, this.connection);
       return token;
     },
-    'logOut': async args => await this.session.deleteSession(this.user.token)
+    logOut: async args => await this.session.deleteSession(this.user.token)
   };
 
   constructor(private connection, private ip: string, private application) {
