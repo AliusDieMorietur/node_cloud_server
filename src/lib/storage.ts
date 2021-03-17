@@ -105,10 +105,8 @@ export class Storage {
   }
 
   static async upload(dirPath: string, fileList: string[], buffers: Buffer[]): Promise<string> {
-    if (buffers.length !== fileList.length) {
-      let error = 'Buffers or it`s names corrupted';
-      throw new Error(error);
-    }
+    if (buffers.length !== fileList.length) 
+      throw new Error('Buffers or it`s names corrupted');
 
     for (let i = 0; i < fileList.length; i++) {
       const name = fileList[i];
@@ -120,7 +118,7 @@ export class Storage {
     return 'ok';
   }
 
-  static async download(dirPath: string, fileNames: string[], connection): Promise<void>  {
+  static async download(dirPath: string, fileNames: string[], connection) {
     for (const name of fileNames) {
       const filePath = path.join(dirPath, name);
       const buffer = await fsp.readFile(filePath);
@@ -129,7 +127,11 @@ export class Storage {
     }
   }
 
-  static async delete(dirPath: string, fileNames: string[]): Promise<void> {
+  static async deleteFolder(dirPath: string) {
+    await fsp.rmdir(dirPath);
+  }
+
+  static async delete(dirPath: string, fileNames: string[]) {
     for (const name of fileNames) 
       await fsp.unlink(path.join(dirPath, name));
   }
