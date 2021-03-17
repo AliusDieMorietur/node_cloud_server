@@ -6,6 +6,10 @@ When cloning this repo dont forget to use
 `git clone --recurse-submodules https://github.com/AliusDieMorietur/node_cloud_server.git` 
 if you want to clone the whole project.
 
+# Usage
+* <code>git clone --recurse-submodules https://github.com/AliusDieMorietur/node_cloud_server.git</code>
+* <code>npm run first_step (all other times npm start)</code>
+
 # Requirements
 * NodeJS 12^
 * PostgreSQL 11^
