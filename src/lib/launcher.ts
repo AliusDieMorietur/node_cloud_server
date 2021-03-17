@@ -5,7 +5,6 @@ import { serverConfig } from '../config/server';
 import Database from './db';
 import { dbConfig } from '../config/db';
 import { Storage } from './storage';
-import { promises as fsp } from 'fs';
 
 const { tmpStoragePath } = serverConfig; 
 const TMP_STORAGE_PATH = path.join(process.cwd(), tmpStoragePath);
@@ -40,21 +39,22 @@ export class Launcher {
       const storageInfo = await db.select('StorageInfo', ['*']);
       
       for (const item of storageInfo) {
-        if (Number(item.expire) !== 0 && Date.now() > Number(item.expire)) {
+        const expire = Number(item.expire);
+        if (expire !== 0 && Date.now() > expire) {
           const { token } = item;
           const fileInfo = await db.select('FileInfo', ['*'], `token = '${token}'`);
           const fakeNames = fileInfo.map(item => item.fakename);
           const dirPath = path.join(TMP_STORAGE_PATH, token);
 
-          await Storage.delete(dirPath, fakeNames);
-          fileCounter += fakeNames.length;
-          await fsp.rmdir(dirPath);
           await db.delete('StorageInfo', `token = '${token}'`);
+          await Storage.delete(dirPath, fakeNames);
+          await Storage.deleteFolder(dirPath);
+          fileCounter += fakeNames.length;
           tokenCounter++;
         }
       }
 
-      logger.log(`Files expired: ${fileCounter} Tokens expired: ${tokenCounter}`);
+      logger.log(`Files deleted: ${fileCounter} Tokens expired: ${tokenCounter}`);
     } catch (err) {
       logger.error(err);
     }
