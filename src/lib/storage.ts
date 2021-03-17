@@ -104,17 +104,23 @@ export class Storage {
     return structure
   }
 
-  static async upload(dirPath: string, fileList: string[], buffers: Buffer[]): Promise<string> {
-    if (buffers.length !== fileList.length) 
-      throw new Error('Buffers or it`s names corrupted');
+  // static async upload(dirPath: string, fileList: string[], buffers: Buffer[]): Promise<string> {
+  //   if (buffers.length !== fileList.length) 
+  //     throw new Error('Buffers or it`s names corrupted');
 
-    for (let i = 0; i < fileList.length; i++) {
-      const name = fileList[i];
-      const fileName = path.join(dirPath, name);
-      const buffer = buffers[i];
+  //   for (let i = 0; i < fileList.length; i++) {
+  //     const name = fileList[i];
+  //     const fileName = path.join(dirPath, name);
+  //     const buffer = buffers[i];
 
-      await fsp.writeFile(fileName, buffer);
-    }
+  //     await fsp.writeFile(fileName, buffer);
+  //   }
+  //   return 'ok';
+  // }
+  static async upload(dirPath: string, filename: string, buffer: Buffer): Promise<string> {
+
+    await fsp.writeFile(path.join(dirPath, filename), buffer);
+
     return 'ok';
   }
 

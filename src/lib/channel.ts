@@ -3,48 +3,58 @@ import { Storage } from './storage';
 import { generateToken, Session } from './auth';
 import { serverConfig } from '../config/server';
 import { promises as fsp } from 'fs';
+// import EventEmitter = require('node:events');
+import * as EventEmitter from 'events';
 
 const { storagePath, tmpStoragePath, tokenLifeTime } = serverConfig; 
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
 const TMP_STORAGE_PATH: string = path.join(process.cwd(), tmpStoragePath);
 const TOKEN_LIFETIME: number = tokenLifeTime;
 
-export class Channel {
+export class Channel extends EventEmitter {
   private index = -1;
-  private dirPath: string;
-  private info: any;
-  private counter: number = 0;
-  private token: string;
   private db;
   private user;
   private session: Session;
   private commands = {
-    'tmpUpload': async args => {
-      const { fileList } = args;
-      const fakeNames = fileList.map(() => generateToken()); 
-      this.token = generateToken();
-      this.dirPath = path.join(TMP_STORAGE_PATH, this.token);
-      this.info = {
-        fileList,
-        fakeNames
-      }; 
+    'upload': async (args) => {
+      const { fileList, storage } = args;
+      const token = storage === 'tmp' ? generateToken() : this.user.token;
+      const dirPath = path.join(storage === 'tmp' ? TMP_STORAGE_PATH : STORAGE_PATH, token);
+      const iter = fileList[Symbol.iterator]();
 
-      if (fileList.length !== fakeNames.length) 
-        throw new Error('Buffers or it`s names corrupted');
+      if (storage === 'tmp') {
+        await this.db.insert('StorageInfo', {
+          token,
+          expire: Date.now() + TOKEN_LIFETIME
+        });
+        await fsp.mkdir(dirPath);
+      }
 
-      await fsp.mkdir(this.dirPath);
-      await this.db.insert('StorageInfo', {
-        token: this.token,
-        expire: Date.now() + TOKEN_LIFETIME
-      });
-      
-      setTimeout(async () => {
-        await this.db.delete('StorageInfo', `token = '${this.token}'`);
-        await Storage.delete(this.dirPath, fakeNames);
-        await fsp.rmdir(this.dirPath);
-      }, TOKEN_LIFETIME);
-      
-      return this.token;
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+
+      this.on('bufferUpload', async buf => {
+        const filename = iter.next().value;
+        const fakeName = existingNames.indexOf(filename) === -1 
+          ? generateToken()
+          : fileInfo[existingNames.indexOf(filename)].fakename;
+        
+        try {
+          await this.db.insert('FileInfo', { 
+            token, name: filename, fakeName, 
+            size: Buffer.byteLength(buf) 
+          });
+
+          Storage.upload(dirPath, fakeName, buf);
+
+          if (storage === 'pmt') this.sendStructure();
+        } catch (e) {
+          this.application.logger.error(e);
+        }
+      })
+
+      if (args.storage === 'tmp') return token;
     },
     'tmpDownload': async args => {
       const { token, fileList } = args;
@@ -67,30 +77,24 @@ export class Channel {
         ? fileInfo.map(item => item.name)
         : Storage.buildStructure(fileInfo);
     },
-    'pmtUpload': async args => {
-      const { fileList } = args;
-      this.token = this.user.token;
-      this.dirPath = path.join(STORAGE_PATH, this.token);
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${this.token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
-      const fakeNames = fileList
-        .map(item => 
-          existingNames.indexOf(item) === -1 
-            ? generateToken()
-            : fileInfo[existingNames.indexOf(item)].fakename
-      );
-      this.info = {
-        fileList,
-        fakeNames
-      };
+    // 'pmtUpload': async args => {
+    //   const { fileList } = args;
+    //   this.token = this.user.token;
+    //   this.dirPath = path.join(STORAGE_PATH, this.token);
+    //   const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${this.token}'`);
+    //   const existingNames = fileInfo.map(item => item.name); 
+    //   const fakeNames = fileList
+    //     .map(item => 
+    //       existingNames.indexOf(item) === -1 
+    //         ? generateToken()
+    //         : fileInfo[existingNames.indexOf(item)].fakename
+    //   );
 
-      if (fileList.length !== fakeNames.length) 
-        throw new Error('Buffers or it`s names corrupted');
-
- 
-    },
+    //   if (fileList.length !== fakeNames.length) 
+    //     throw new Error('Buffers or it`s names corrupted');
+    // },
     'pmtDownload': async args => {
-      const { token } = this.user;
+      const token = args.token || this.user.token;
       const { fileList } = args;
       const dirPath = path.join(STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -178,6 +182,7 @@ export class Channel {
   };
 
   constructor(private connection, private ip: string, private application) {
+    super();
     this.db = this.application.db;
     this.session = new Session(this.db);
     this.application.logger.log('IP: ', ip);
@@ -228,28 +233,8 @@ export class Channel {
           }
         }
       } else {
-        console.log(data);
-        const { fileList, fakeNames } = this.info;
-        const [name, fakeName] = [fileList[this.counter], fakeNames[this.counter]];
-
-        this.db.insert('FileInfo', { 
-          token: this.token, 
-          name, 
-          fakeName, 
-          size: Buffer.byteLength(data, 'utf-8') 
-        });
-
-        Storage.upload(
-          this.dirPath, 
-          [fakeName], 
-          [data]
-        );
-
-        this.counter = (this.counter + 1) % fileList.length;
-          
-        if (this.token === this.user.token)
-          this.sendStructure();
-      };
+        this.emit('bufferUpload', data);
+      }
     } catch (err) {
       this.application.logger.error(err);
     }
