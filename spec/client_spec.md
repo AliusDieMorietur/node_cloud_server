@@ -43,7 +43,7 @@
 
 * Delete files/folders <br/> Recieve: <code>{ callid: number, msg: 'delete', args: { currentPath: string, changes: [original: string, renamed: string] } }</code> <br/> Return: <code>token: string (maybe removed in future to void)</code> If names are correct server will delete appropriate files. One or multiple files/folders can be deleted by one command
 
-* Get current structure <br/> Recieve: <code>{ callid: number, msg: 'getStorageStructure', args: {} }</code> <br/> Return: <code>structure: Structure[]</code> 
+* Get current structure <br/> Recieve: <code>{ callid: number, msg: 'availableFiles', args: {} }</code> <br/> Return: <code>structure: Structure[]</code> 
 
 * Create link <br/> Recieve: <code>{ callid: number, msg: 'createLink', args: { name: string } }</code> <br/> Return: <code>token: string</code> Returns token. Link have to be constructed in way http://localhost/links/{token}
 
