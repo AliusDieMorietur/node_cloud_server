@@ -3,11 +3,9 @@ import * as path from 'path';
 import { Logger } from './logger';
 import Database from './db';
 import { dbConfig } from '../config/db';
-import { serverConfig } from '../config/server'; 
 import { generateToken } from './auth';
 
 const STATIC_PATH = path.join(process.cwd(), './static');
-const STORAGE_PATH: string = path.join(process.cwd(), serverConfig .storagePath);
 
 const toUnix = (filePath: string): string => 
   process.platform === 'win32' 
