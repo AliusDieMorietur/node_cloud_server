@@ -2,23 +2,11 @@ import * as path from 'path';
 import { promises as fsp } from 'fs';
 import { generateToken } from './auth';
 
-// type User = {
-//   id: number, 
-//   token: string,
-//   login: string, 
-//   password: string 
-// }
-
 type Structure = {
   name: string, 
   childs?: Structure[],
   capacity: number
 } 
-
-// type Info = { 
-//   savedNames: { [key: string]: string }, 
-//   structure: Structure[] 
-// };
 
 type FileInfo = {
   id: number,
@@ -117,11 +105,8 @@ export class Storage {
   //   }
   //   return 'ok';
   // }
-  static async upload(dirPath: string, filename: string, buffer: Buffer): Promise<string> {
-
+  static async upload(dirPath: string, filename: string, buffer: Buffer) {
     await fsp.writeFile(path.join(dirPath, filename), buffer);
-
-    return 'ok';
   }
 
   static async download(dirPath: string, fileNames: string[], connection) {
