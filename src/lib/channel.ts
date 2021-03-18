@@ -33,39 +33,57 @@ export class Channel extends EventEmitter {
 
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
-
-      this.on('bufferUpload', async buf => {
-        const filename = iter.next().value;
-        const fakeName = existingNames.indexOf(filename) === -1 
+      const fakeNames = fileList.map(item => 
+        existingNames.indexOf(item) === -1 
           ? generateToken()
-          : fileInfo[existingNames.indexOf(filename)].fakename;
-        
+          : fileInfo[existingNames.indexOf(item)].fakename
+        );
+
+      const upload = async buf => {
+        const name = iter.next().value;
+        const fakename = fakeNames[fileList.indexOf(name)];
+
         try {
           await this.db.insert('FileInfo', { 
-            token, name: filename, fakeName, 
+            token, name, fakename, 
             size: Buffer.byteLength(buf) 
           });
 
-          Storage.upload(dirPath, fakeName, buf);
+          Storage.upload(dirPath, fakename, buf);
+
+          const last = fileList.indexOf(name) === fileList.length - 1;
 
           if (storage === 'pmt') this.sendStructure();
-        } catch (e) {
-          this.application.logger.error(e);
+          else {
+            if (last) 
+              setTimeout(async () => {
+                await this.db.delete('StorageInfo', `token = '${token}'`);
+                await Storage.delete(dirPath, fakeNames);
+                await Storage.deleteFolder(dirPath);
+              }, TOKEN_LIFETIME);
+          }
+          if (last) this.removeListener('bufferUpload', upload);
+        } catch (error) {
+          this.application.logger.error(error);
         }
-      })
+      };
+
+      this.on('bufferUpload', upload)
 
       if (args.storage === 'tmp') return token;
     },
-    tmpDownload: async args => {
-      const { token, fileList } = args;
-      const dirPath = path.join(TMP_STORAGE_PATH, token);
+    download: async args => {
+      const token = args.token || this.user.token;
+      const { fileList } = args;
+      const storagePath = args.token ? TMP_STORAGE_PATH : STORAGE_PATH;
+      const dirPath = path.join(storagePath, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
+
       const fakeNames = fileList
         .map(item => fileInfo[existingNames.indexOf(item)].fakename);
 
       await Storage.download(dirPath, fakeNames, this.connection);
-      return fileList.map(item => item.split('/')[item.split('/').length - 1]);
     },
     availableFiles: async args => {
       const token = args.token 
@@ -77,28 +95,15 @@ export class Channel extends EventEmitter {
         ? fileInfo.map(item => item.name)
         : Storage.buildStructure(fileInfo);
     },
-    pmtDownload: async args => {
-      const token = args.token || this.user.token;
-      const { fileList } = args;
-      const dirPath = path.join(STORAGE_PATH, token);
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
-
-      const fakeNames = fileList
-        .map(item => fileInfo[existingNames.indexOf(item)].fakename);
-
-      await Storage.download(dirPath, fakeNames, this.connection);
-      return fileList.map(item => item.split('/')[item.split('/').length - 1]);
-    },
     newFolder: async args => {
       const { token } = this.user;
-      const { folderName } = args;
+      const { name } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
-      if (!existingNames.includes(folderName)) 
+      if (!existingNames.includes(name)) 
         await this.db.insert('FileInfo', { 
           token, 
-          name: folderName, 
+          name, 
           fakeName: 'folder', 
           size: 0
         });
@@ -151,7 +156,7 @@ export class Channel extends EventEmitter {
     },
     createLink: async args => 
       await this.application.createLink(
-        args.filePath, 
+        args.name, 
         this.user.token
       ),
     authUser: async args => { 
@@ -217,6 +222,7 @@ export class Channel extends EventEmitter {
           }
         }
       } else {
+        console.log(data);
         this.emit('bufferUpload', data);
       }
     } catch (err) {
