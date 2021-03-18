@@ -19,8 +19,9 @@ export class Client {
     if (!data) throw new Error(`No such link: ${link}`) 
 
     const [token, filePath, fileName] = data.split(':'); 
+    const name = fileName.slice(fileName.lastIndexOf('/') + 1);
     const buffer = await fsp.readFile(path.join(storagePath, token, filePath), 'utf-8')
-    this.res.setHeader('Content-disposition', `attachment; filename=${fileName}`);
+    this.res.setHeader('Content-disposition', `attachment; filename=${name}`);
     this.res.end(buffer);
   }
 
