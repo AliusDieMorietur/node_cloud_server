@@ -24,7 +24,6 @@ CREATE UNIQUE INDEX akSession ON Session (Token);
 
 ALTER TABLE Session ADD CONSTRAINT fkSessionUserId FOREIGN KEY (UserId) REFERENCES SystemUser (Id) ON DELETE CASCADE;
 
-
 CREATE TABLE StorageInfo (
   Id         serial,
   Token      varchar(64) NOT NULL,
