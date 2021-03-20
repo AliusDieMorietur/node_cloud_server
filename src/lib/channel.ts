@@ -3,7 +3,6 @@ import { Storage } from './storage';
 import { generateToken, Session } from './auth';
 import { serverConfig } from '../config/server';
 import { promises as fsp } from 'fs';
-// import EventEmitter = require('node:events');
 import * as EventEmitter from 'events';
 
 const { storagePath, tmpStoragePath, tokenLifeTime } = serverConfig; 

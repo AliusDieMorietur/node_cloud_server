@@ -25,8 +25,8 @@ export class Server {
       })
     });
 
-    this.instance.listen(port, host || '0.0.0.0', () => {
-      this.application.logger.log(`Listen port ${port}`);
+    this.instance.listen(port, host || '127.0.0.1', () => {
+      this.application.logger.log(`Listen on http://${host || '127.0.0.1'}:${port}`);
     });
   }
 
