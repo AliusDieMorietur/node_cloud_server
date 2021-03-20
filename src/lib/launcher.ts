@@ -6,8 +6,8 @@ import Database from './db';
 import { dbConfig } from '../config/db';
 import { Storage } from './storage';
 
-const { tmpStoragePath } = serverConfig; 
-const TMP_STORAGE_PATH = path.join(process.cwd(), tmpStoragePath);
+const { storagePath } = serverConfig; 
+const STORAGE_PATH = path.join(process.cwd(), storagePath);
 
 export class Launcher {
   count = serverConfig.ports.length
@@ -44,7 +44,7 @@ export class Launcher {
           const { token } = item;
           const fileInfo = await db.select('FileInfo', ['*'], `token = '${token}'`);
           const fakeNames = fileInfo.map(item => item.fakename);
-          const dirPath = path.join(TMP_STORAGE_PATH, token);
+          const dirPath = path.join(STORAGE_PATH, token);
 
           await db.delete('StorageInfo', `token = '${token}'`);
           await Storage.delete(dirPath, fakeNames);
