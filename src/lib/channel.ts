@@ -5,9 +5,8 @@ import { serverConfig } from '../config/server';
 import { promises as fsp } from 'fs';
 import * as EventEmitter from 'events';
 
-const { storagePath, tmpStoragePath, tokenLifeTime } = serverConfig; 
+const { storagePath, tokenLifeTime } = serverConfig; 
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
-const TMP_STORAGE_PATH: string = path.join(process.cwd(), tmpStoragePath);
 const TOKEN_LIFETIME: number = tokenLifeTime;
 
 export class Channel extends EventEmitter {
@@ -16,11 +15,10 @@ export class Channel extends EventEmitter {
   private user;
   private session: Session;
   private commands = {
-    upload: async (args) => {
-      const { fileList, storage } = args;
+    upload: async ({ fileList, storage }) => {
       const token = storage === 'tmp' ? generateToken() : this.user.token;
-      const dirPath = path.join(storage === 'tmp' ? TMP_STORAGE_PATH : STORAGE_PATH, token);
-      const iter = fileList[Symbol.iterator]();
+      const dirPath = path.join(STORAGE_PATH, token);
+      let names = fileList.map(name => [name, generateToken()]);
 
       if (storage === 'tmp') {
         await this.db.insert('StorageInfo', {
@@ -28,75 +26,62 @@ export class Channel extends EventEmitter {
           expire: Date.now() + TOKEN_LIFETIME
         });
         await fsp.mkdir(dirPath);
+      } else {
+        const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+
+        names = names.map(name => {
+          const alreadyExists = fileInfo.find(item => item.name == name[0]); 
+
+          return alreadyExists ? [name[0], alreadyExists.fakeName] : name;
+        });
       }
 
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
-      const fakeNames = fileList.map(item => 
-        existingNames.indexOf(item) === -1 
-          ? generateToken()
-          : fileInfo[existingNames.indexOf(item)].fakename
-        );
-
-      const upload = async buf => {
-        const name = iter.next().value;
-        const fakename = fakeNames[fileList.indexOf(name)];
+      const gen = (async function*() {
+        const nextBuffer = buf => gen.next(buf);
+        this.on('bufferUpload', nextBuffer);
 
         try {
-          await this.db.insert('FileInfo', { 
-            token, name, fakename, 
-            size: Buffer.byteLength(buf) 
-          });
-
-          Storage.upload(dirPath, fakename, buf);
-
-          const last = fileList.indexOf(name) === fileList.length - 1;
-
-          if (storage === 'pmt') this.sendStructure();
-          else {
-            if (last) 
-              setTimeout(async () => {
-                await this.db.delete('StorageInfo', `token = '${token}'`);
-                await Storage.delete(dirPath, fakeNames);
-                await Storage.deleteFolder(dirPath);
-              }, TOKEN_LIFETIME);
+          for (const [name, fakeName] of names) {
+            const buf = yield;
+            const size = Buffer.byteLength(buf);
+            
+            await this.db.insert('FileInfo', { token, name, fakeName, size });
+            Storage.upload(dirPath, fakeName, buf);
           }
-          if (last) this.removeListener('bufferUpload', upload);
-        } catch (error) {
-          this.application.logger.error(error);
-        }
-      };
+          
+          if (storage === 'pmt') this.sendStructure();
+          else setTimeout(async () => {
+              await this.db.delete('StorageInfo', `token = '${token}'`);
+              await Storage.delete(dirPath, names.map(name => name[1]));
+              await Storage.deleteFolder(dirPath);
+            }, TOKEN_LIFETIME);
+        } catch (e) { this.application.logger.error(e); }
+          
+        this.removeListener('bufferUpload', nextBuffer);
+      }).bind(this)(); gen.next();
 
-      this.on('bufferUpload', upload)
-
-      if (args.storage === 'tmp') return token;
+      if (storage === 'tmp') return token;
     },
     download: async args => {
       const token = args.token || this.user.token;
       const { fileList } = args;
-      const storagePath = args.token ? TMP_STORAGE_PATH : STORAGE_PATH;
-      const dirPath = path.join(storagePath, token);
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
-
-      const fakeNames = fileList
-        .map(item => fileInfo[existingNames.indexOf(item)].fakename);
+      const dirPath = path.join(STORAGE_PATH, token);
+      const fakeNames = await this.db.select('FileInfo', ['*'], `token = '${token}'`)
+        .filter(file => fileList.includes(file.name))
+        .map(file => file.fakeName);
 
       await Storage.download(dirPath, fakeNames, this.connection);
     },
     availableFiles: async args => {
-      const token = args.token 
-        ? args.token 
-        : this.user.token;
+      const token = args.token || this.user.token;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
 
       return args.token
         ? fileInfo.map(item => item.name)
         : Storage.buildStructure(fileInfo);
     },
-    newFolder: async args => {
+    newFolder: async ({ name }) => {
       const { token } = this.user;
-      const { name } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
       if (!existingNames.includes(name)) 
@@ -107,18 +92,21 @@ export class Channel extends EventEmitter {
           size: 0
         });
     },
-    rename: async args => {
+    rename: async ({ name, newName }) => {
       const { token } = this.user;
-      const { name, newName } = args;
+
       if (name[name.length - 1] === '/') {
         const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+
         for (const item of fileInfo) {
           if (item.name.includes(name) && item.name !== name) {
             const dirs = item.name[item.name.length - 1] === '/'
               ? item.name.substring(item.name.length - 1, 0).split('/')
               : item.name.split('/');
+
             dirs[dirs.indexOf(name.substring(name.length - 1, 0))] = 
               newName.substring(newName.length - 1, 0);
+
             const newItemName = dirs.join('/');
             await this.db.update('FileInfo', `name = '${newItemName}'`, `name = '${item.name}' AND token = '${token}'`);
           }
@@ -126,14 +114,15 @@ export class Channel extends EventEmitter {
       }
       await this.db.update('FileInfo', `name = '${newName}'`, `name = '${name}' AND token = '${token}'`);
     },
-    delete: async args => {
+    delete: async ({ fileList }) => {
       const { token } = this.user;
-      const { fileList } = args;
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
+
       for (const item of fileList) {
         const { id } = fileInfo[existingNames.indexOf(item)];
         const links = await this.db.select('Link', ['*'], `FileId = '${id}'`);
+
         for (const item of links) 
           this.application.deleteLink(item.token);
         await this.db.delete('FileInfo', `name = '${item}'`);
@@ -141,6 +130,7 @@ export class Channel extends EventEmitter {
         if (item[item.length - 1] !== '/') {
           const dirPath = path.join(STORAGE_PATH, token);
           const { fakename } = fileInfo[existingNames.indexOf(item)];
+
           await Storage.delete(dirPath, [fakename]);
         }
       }
@@ -149,6 +139,7 @@ export class Channel extends EventEmitter {
     restoreSession: async args => { 
       const session = await this.session.restoreSession(args.token);
       const user = await this.session.getUser('id', `${session.userid}`);
+
       this.user = user;
       this.index = this.application.saveConnection(user.login, this.connection);
       return session.token;

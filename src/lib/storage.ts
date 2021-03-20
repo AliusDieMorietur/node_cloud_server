@@ -55,14 +55,16 @@ export class Storage {
   static buildStructure(rows: FileInfo[]): Structure[] {
     const structure = [];
     const folders = [];
-    for (const row of rows) {
-      if (row.name[row.name.length - 1] === '/') {
-        folders.push(row.name.substring(row.name.length - 1, 0));
-      }
-    }
+
+    for (const { name } of rows) 
+      if (name[name.length - 1] === '/') 
+        folders.push(name.substring(name.length - 1, 0));
+
     const dirs = folders.map(item => item.split('/'));
+
     for (const item of dirs) {
       let currentFolder = structure;
+
       for (const folder of item) {
         const newFolder = {
           name: folder, 
@@ -71,12 +73,16 @@ export class Storage {
         };
         const names = currentFolder.map(item => item.name);
         let index = names.indexOf(folder);
+
         if (!names.includes(folder)) index = currentFolder.push(newFolder) - 1;
+
         currentFolder = currentFolder[index].childs;
       }
     } 
+
     for (const row of rows) {
       if (row.name[row.name.length - 1] === '/') continue;
+
       const currentFolder = this.findPlace(structure, row.name);
       const splitted = row.name.split('/');
       const name = splitted[splitted.length - 1];
@@ -85,26 +91,17 @@ export class Storage {
         childs: null,
         capacity: row.size
       };
+
       currentFolder.push(file);
     }
+
     for (const item of structure) this.recalculate(item);
+
     structure.sort(comparator);
-    return structure
+
+    return structure;
   }
 
-  // static async upload(dirPath: string, fileList: string[], buffers: Buffer[]): Promise<string> {
-  //   if (buffers.length !== fileList.length) 
-  //     throw new Error('Buffers or it`s names corrupted');
-
-  //   for (let i = 0; i < fileList.length; i++) {
-  //     const name = fileList[i];
-  //     const fileName = path.join(dirPath, name);
-  //     const buffer = buffers[i];
-
-  //     await fsp.writeFile(fileName, buffer);
-  //   }
-  //   return 'ok';
-  // }
   static async upload(dirPath: string, filename: string, buffer: Buffer) {
     await fsp.writeFile(path.join(dirPath, filename), buffer);
   }
