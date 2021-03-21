@@ -66,7 +66,7 @@ export class Channel extends EventEmitter {
       const token = args.token || this.user.token;
       const { fileList } = args;
       const dirPath = path.join(STORAGE_PATH, token);
-      const fakeNames = await this.db.select('FileInfo', ['*'], `token = '${token}'`)
+      const fakeNames = (await this.db.select('FileInfo', ['*'], `token = '${token}'`))
         .filter(file => fileList.includes(file.name))
         .map(file => file.fakeName);
 
@@ -138,6 +138,9 @@ export class Channel extends EventEmitter {
     },
     restoreSession: async args => { 
       const session = await this.session.restoreSession(args.token);
+
+      if (!session) throw new Error(`Session not found on: ${args.token}`);
+
       const user = await this.session.getUser('id', `${session.userid}`);
 
       this.user = user;
@@ -151,7 +154,7 @@ export class Channel extends EventEmitter {
       ),
     authUser: async args => { 
       const token = await this.session.authUser(args.user, this.ip);
-      const { login } = args.user;
+      const { login, password } = args.user;
       const user = await this.session.getUser('login', login);
       this.user = user;
       this.index = this.application.saveConnection(login, this.connection);
