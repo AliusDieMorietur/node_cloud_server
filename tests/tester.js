@@ -1,6 +1,17 @@
 const fs = require('fs');
 const { format } = require('util');
 
+const zip = (arr1, arr2) => {
+  const [longest, shortest] = arr1.length < arr2.length
+  ? [arr2, arr1]
+  : [arr1, arr2];
+  
+  return longest.map((item, index) => [
+    item, 
+    shortest[index] ? shortest[index] : null  
+  ]);
+}
+
 const TEXTCOLORS = {
   info: '\u001b[37m',
   error: '\u001b[31m',
@@ -20,7 +31,6 @@ class Logger {
     this.stream.write(`${s}` + '\n');
   }
 
-  
   log(...args) {
     this.write('info', ...args);
   }
@@ -41,30 +51,60 @@ class Tester {
     this.logger = new Logger();
   }
 
+  async start(lambda) {
+    const tests = await lambda(this.test.bind(this));
+    Promise.all(tests)
+      .then(this.analysis.bind(this));
+  }
+
   async test(testName, testable) {
     const { 
+      context,
       fn, 
       fnArgs, 
-      context,
-      entityInspector 
+      expectedResults,
+      specialRules
     } = testable;   
 
-    try {
-      const fnWithContext = fn.bind(context);
-      const asyncified = fn instanceof (async () => {}).constructor
-        ? fnWithContext
-        : async (...args) => fnWithContext(...args)
-      const result = await asyncified(...fnArgs);
-      const error = entityInspector(context, result);
-      if (error) {
+    const zipped = expectedResults
+      ? zip(fnArgs, expectedResults)
+      : zip(fnArgs, []);
+
+    for (const [arg, expectedResult] of zipped) {
+      try {
+        const fnWithContext = context ? fn.bind(context) : fn;
+        const asyncified = fn instanceof (async () => {}).constructor
+          ? fnWithContext
+          : async (...args) => fnWithContext(...args)
+        const result = await asyncified(...arg);
+
+        // const result = fn instanceof (async () => {}).constructor 
+        //   ? await fnWithContext(...arg)
+        //   : fnWithContext(...arg);
+
+        if (
+          expectedResult && 
+          JSON.stringify(expectedResult) !== JSON.stringify(result)
+        ) {
+          console.log('Result from failed test:\n', JSON.stringify(result, null, 2));
+          throw new Error(`Execution result and expected result didn't match`)
+        };
+
+        const error = specialRules 
+          ? specialRules(context, result) 
+          : null;
+
+        if (error) {
+          this.failedTestscounter++;
+          this.logger.error(`✗ Test failed on: ${testName} Error: ${error}\n   With args: [${JSON.stringify(arg, null, 2)}] `)
+        } else {
+          this.passedTestscounter++;
+          this.logger.success(`✓ Test passed on: ${testName}`);
+        };
+      } catch (error) {
         this.failedTestscounter++;
-        this.logger.error(`✘ Test failed on: ${testName} Error: ${error}`)
-      } else {
-        this.passedTestscounter++;
-        this.logger.success(`✔ Test passed on: ${testName} `);
-      };
-    } catch (error) {
-      this.logger.error(`✘ Test failed on: ${testName} Error: ${error}`);
+        this.logger.error(`✗ Test failed on: ${testName} Error: ${error}\n   With args: [${JSON.stringify(arg, null, 2)}]`);
+      }
     }
   }
 
@@ -73,7 +113,7 @@ class Tester {
       `\n` + 
       ` Tests passed: ${this.passedTestscounter}\n` + 
       ` Tests failed: ${this.failedTestscounter}\n` +
-      ` Generally: ${this.failedTestscounter + this.passedTestscounter}`
+      ` Tests total: ${this.failedTestscounter + this.passedTestscounter}`
     ) 
   }
 }
