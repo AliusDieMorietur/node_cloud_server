@@ -66,9 +66,10 @@ export class Channel extends EventEmitter {
       const token = args.token || this.user.token;
       const { fileList } = args;
       const dirPath = path.join(STORAGE_PATH, token);
-      const fakeNames = (await this.db.select('FileInfo', ['*'], `token = '${token}'`))
-        .filter(file => fileList.includes(file.name))
-        .map(file => file.fakeName);
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const existingNames = fileInfo.map(item => item.name); 
+      const fakeNames = fileList
+        .map(item => fileInfo[existingNames.indexOf(item)].fakename);
 
       await Storage.download(dirPath, fakeNames, this.connection);
     },
