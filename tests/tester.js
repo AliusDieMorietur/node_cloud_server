@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { format } = require('util');
+const assert = require('assert').strict;
 
 const zip = (arr1, arr2) => {
   const [longest, shortest] = arr1.length < arr2.length
@@ -82,13 +83,7 @@ class Tester {
         //   ? await fnWithContext(...arg)
         //   : fnWithContext(...arg);
 
-        if (
-          expectedResult && 
-          JSON.stringify(expectedResult) !== JSON.stringify(result)
-        ) {
-          console.log('Result from failed test:\n', JSON.stringify(result, null, 2));
-          throw new Error(`Execution result and expected result didn't match`)
-        };
+        if (expectedResult) assert.deepEqual(result, expectedResult);
 
         const error = specialRules 
           ? specialRules(context, result) 
