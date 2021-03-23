@@ -123,6 +123,7 @@ tester.start(async test => [
       ]
     ]
   }),
+  
   test('zip', {
     context: null,
     fn: zip,
@@ -155,19 +156,19 @@ tester.start(async test => [
         [3, 6]
       ]
     ]
-  }),
-
-  test('validate', {
-    context: null,
-    fn: validate,
-    fnArgs: [
-      [
-        'login',
-        'AZaz09'
-      ]
-    ],
-    specialRules: (context, result) => {
-      console.log(result);
-    }
   })
+
+  // test('validate', {
+  //   context: null,
+  //   fn: validate,
+  //   fnArgs: [
+  //     [
+  //       'login',
+  //       'AZaz09'
+  //     ]
+  //   ],
+  //   specialRules: (context, result) => {
+  //     // console.log(result);
+  //   }
+  // })
 ]);

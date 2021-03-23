@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { format } = require('util');
+const util = require('util');
 const assert = require('assert').strict;
 
 const zip = (arr1, arr2) => {
@@ -25,11 +25,11 @@ class Logger {
   }
 
   write(level, ...args) {
-    const s = format('', ...args);
+    const s = util.format(...args);
     const color = TEXTCOLORS[level];
     const line = `${color}${s}`;
     console.log(line + '\x1b[0m');
-    this.stream.write(`${s}` + '\n');
+    this.stream.write(`${s}\n`);
   }
 
   log(...args) {
@@ -91,14 +91,20 @@ class Tester {
 
         if (error) {
           this.failedTestscounter++;
-          this.logger.error(`✗ Test failed on: ${testName} Error: ${error}\n   With args: [${JSON.stringify(arg, null, 2)}] `)
+          const line = `✗ Test failed on: ${testName}\n` +
+                       `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
+                       `\n${error}\n`;
+          this.logger.error(line);
         } else {
           this.passedTestscounter++;
           this.logger.success(`✓ Test passed on: ${testName}`);
         };
       } catch (error) {
         this.failedTestscounter++;
-        this.logger.error(`✗ Test failed on: ${testName} Error: ${error}\n   With args: [${JSON.stringify(arg, null, 2)}]`);
+        const line = `✗ Test failed on: ${testName}\n` +
+                     `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
+                     `\n${error}\n`;
+        this.logger.error(line);
       }
     }
   }
@@ -106,9 +112,9 @@ class Tester {
   analysis() { 
     this.logger.log(
       `\n` + 
-      ` Tests passed: ${this.passedTestscounter}\n` + 
-      ` Tests failed: ${this.failedTestscounter}\n` +
-      ` Tests total: ${this.failedTestscounter + this.passedTestscounter}`
+      `  Tests passed: ${this.passedTestscounter}\n` + 
+      `  Tests failed: ${this.failedTestscounter}\n` +
+      `  Tests total: ${this.failedTestscounter + this.passedTestscounter}`
     ) 
   }
 }
