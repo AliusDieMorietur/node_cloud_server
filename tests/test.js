@@ -268,6 +268,10 @@ tester.start(async test => [
     context: null,
     fn: validate.name,
     fnArgs: [
+      ['[DnB] - Tristam - Moonlight.mp3'],
+      ['[Glitch Hop ⁄ 110BPM] - Pegboard Nerds & Tristam - Razor Sharp [Monstercat Release]'],
+      ['[Hardcore] - Stonebank - Stronger (feat. EMEL) [Monstercat Release]'],
+      ['«Король и Шут» - «Кукла Колдуна» HD'],
       ['6ELwoCSq9UPvo246Rp2b8JO7KSNCrAmx'],
       ['Folder or File name'],
       ['File (1).js'],
@@ -287,6 +291,10 @@ tester.start(async test => [
       [':/wq#@$']
     ],
     expectedResults: [
+      true,
+      true,
+      true,
+      true,
       true,
       true,
       true,
