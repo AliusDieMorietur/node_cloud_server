@@ -10,21 +10,7 @@ const { storagePath, tokenLifeTime } = serverConfig;
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
 const TOKEN_LIFETIME: number = tokenLifeTime;
 
-const tokenCheck = token => {
-  if (!token) 
-    throw new Error(`No such token: ${token}`);
 
-  if (!validate.token(token)) 
-    throw new Error(`Bad token: ${token}`);
-};
-
-const namesCheck = fileList => {
-  if (fileList.length === 0) throw new Error('Empty fileList')
-
-  for (const name of fileList) 
-    if (!validate.name(name)) 
-      throw new Error(`Bad name: ${name}`)
-};
 
 export class Channel extends EventEmitter {
   private index = -1;
@@ -33,15 +19,13 @@ export class Channel extends EventEmitter {
   private session: Session;
   private commands = {
     upload: async ({ fileList, storage }) => {
-      namesCheck(fileList);
+      this.namesCheck(fileList);
 
       const token = storage === 'tmp' ? generateToken() : this.user.token;
 
-      tokenCheck(token);
+      await this.tokenCheck(token, false);
 
       const dirPath = path.join(STORAGE_PATH, token);
-      let names;
-      const existingNames = [];
 
       if (storage === 'tmp') {
         await this.db.insert('StorageInfo', {
@@ -49,20 +33,20 @@ export class Channel extends EventEmitter {
           expire: Date.now() + TOKEN_LIFETIME
         });
         await fsp.mkdir(dirPath);
-      } else {
-        const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      } 
+      const existingNames = [];
+      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
 
-        names = fileList.map(name => {
-          const alreadyExists = fileInfo.find(item => item.name === name);
-          const fakeName = alreadyExists 
-            ? alreadyExists.fakename
-            : generateToken();
+      const names = fileList.map(name => {
+        const alreadyExists = fileInfo.find(item => item.name === name);
+        const fakeName = alreadyExists 
+          ? alreadyExists.fakename
+          : generateToken();
 
-          if (alreadyExists) existingNames.push(name);
+        if (alreadyExists) existingNames.push(name);
 
-          return [name, fakeName];
-        });
-      }
+        return [name, fakeName];
+      });
 
       const gen = (async function*() {
         const nextBuffer = buf => gen.next(buf);
@@ -95,8 +79,8 @@ export class Channel extends EventEmitter {
       const token = args.token || this.user.token;
       const { fileList } = args;
 
-      tokenCheck(token);
-      namesCheck(fileList);
+      await this.tokenCheck(token, true);
+      this.namesCheck(fileList);
 
       const dirPath = path.join(STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -109,7 +93,7 @@ export class Channel extends EventEmitter {
     availableFiles: async args => {
       const token = args.token || this.user.token;
 
-      tokenCheck(token);
+      await this.tokenCheck(token, true);
 
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
 
@@ -120,7 +104,7 @@ export class Channel extends EventEmitter {
     newFolder: async ({ name }) => {
       const { token } = this.user;
 
-      tokenCheck(token);
+      await this.tokenCheck(token, true);
 
       if (!validate.name(name)) 
       throw new Error(`Bad name: ${name}`)
@@ -138,7 +122,7 @@ export class Channel extends EventEmitter {
     rename: async ({ name, newName }) => {
       const { token } = this.user;
 
-      tokenCheck(token);
+      await this.tokenCheck(token, true);
 
       if (!validate.name(newName)) 
         throw new Error(`Bad name: ${newName}`)
@@ -165,8 +149,8 @@ export class Channel extends EventEmitter {
     delete: async ({ fileList }) => {
       const { token } = this.user;
 
-      tokenCheck(token);
-      namesCheck(fileList);
+      await this.tokenCheck(token, true);
+      this.namesCheck(fileList);
 
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
@@ -189,7 +173,7 @@ export class Channel extends EventEmitter {
 
     },
     restoreSession: async ({ token }) => { 
-      tokenCheck(token);
+      await this.tokenCheck(token, true);
 
       const session = await this.session.restoreSession(token);
 
@@ -205,7 +189,7 @@ export class Channel extends EventEmitter {
       if (!validate.name(name)) 
         throw new Error(`Bad name: ${name}`)
 
-      tokenCheck(this.user.token);
+      await this.tokenCheck(this.user.token, true);
 
       return await this.application.createLink(
         name, 
@@ -239,6 +223,25 @@ export class Channel extends EventEmitter {
     this.db = this.application.db;
     this.session = new Session(this.db);
     this.application.logger.log('IP: ', ip);
+  }
+
+  async tokenCheck (token, checkExistanse) {
+    if (!validate.token(token)) 
+      throw new Error(`Bad token: ${token}`);
+      
+    if (checkExistanse) {
+      const storages = await this.db.select('StorageInfo', ['*'], `token = '${token}'`);
+      if (storages.length === 0) throw new Error(`No such token: ${token}`);
+    }
+  
+  }
+  
+  namesCheck (fileList) {
+    if (fileList.length === 0) throw new Error('Empty fileList')
+  
+    // for (const name of fileList) 
+    //   if (!validate.name(name)) 
+    //     throw new Error(`Bad name: ${name}`)
   }
 
   sendAllDevices(data) {
