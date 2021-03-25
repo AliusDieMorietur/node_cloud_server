@@ -12,7 +12,7 @@
     "add_user": "node addUser",
     "first_start": "npm run first_step && npm run add_user && npm start",
     "compile_server": "npm run tsc",
-    "lite": "npx tsc && node ./build.js && cd ./target && node ./server.js",
+    "lite": "npm run tsc && node ./build.js && cd ./target && node ./server.js",
     "build": "npm run tsc && npm run build --prefix ./src/react_cloud_client_web && node ./build.js",
     "start": "npm run build && cd ./target && node ./server.js",
     "tsc": "tsc"
