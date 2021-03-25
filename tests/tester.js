@@ -2,21 +2,30 @@ const fs = require('fs');
 const util = require('util');
 const assert = require('assert').strict;
 
-const zip = (arr1, arr2) => {
-  const [longest, shortest] = arr1.length < arr2.length
-  ? [arr2, arr1]
-  : [arr1, arr2];
+// const zip = (arr1, arr2) => {
+//   const [longest, shortest] = arr1.length < arr2.length
+//     ? [arr2, arr1]
+//     : [arr1, arr2];
   
-  return longest.map((item, index) => [
-    item, 
-    shortest[index] ? shortest[index] : null  
-  ]);
-}
+//   return longest.map((item, index) => [
+//     item, 
+//     shortest[index] ? shortest[index] : null  
+//   ]);
+// }
+
+const zip = (arr1, arr2) => 
+  (arr1.length < arr2.length ? arr2 : arr1)
+    .map((item, index) => [
+      arr1[index] !== undefined ? arr1[index] : null, 
+      arr2[index] !== undefined ? arr2[index] : null  
+    ]);
 
 const TEXTCOLORS = {
   info: '\u001b[37m',
   error: '\u001b[31m',
-  success: '\u001b[32m',
+  // success: '\u001b[32m',
+  success: '\x1b[38;2;26;188;156m',
+  ext: '\x1b[38;2;94;136;255m'
 };
 
 class Logger {
@@ -77,33 +86,49 @@ class Tester {
         const asyncified = fn instanceof (async () => {}).constructor
           ? fnWithContext
           : async (...args) => fnWithContext(...args)
+        const start = new Date().getTime();
         const result = await asyncified(...arg);
+        const end = new Date().getTime();
 
         // const result = fn instanceof (async () => {}).constructor 
         //   ? await fnWithContext(...arg)
         //   : fnWithContext(...arg);
 
-        if (expectedResult) assert.deepEqual(result, expectedResult);
-
         const error = specialRules 
-          ? specialRules(context, result) 
+          ? specialRules(context, result, arg) 
           : null;
-
+          
+        if (
+          expectedResult !== undefined && 
+          expectedResult !== null 
+        ) assert.deepEqual(result, expectedResult);
+        
         if (error) {
           this.failedTestscounter++;
-          const line = `✗ Test failed on: ${testName}\n` +
-                       `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
-                       `\n${error}\n`;
+          const line = `\n✗ Test failed on: ` +
+                        TEXTCOLORS['ext'] +
+                      `${testName}\n` +
+                        TEXTCOLORS['error'] + 
+                      `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
+                      `\n${error}`;
           this.logger.error(line);
         } else {
           this.passedTestscounter++;
-          this.logger.success(`✓ Test passed on: ${testName}`);
+          const line = `✓ Test passed on: ` +
+                        TEXTCOLORS['ext'] +
+                        testName + 
+                        TEXTCOLORS['info'] + 
+                        ` [${end - start} ms]`;
+          this.logger.success(line);
         };
       } catch (error) {
         this.failedTestscounter++;
-        const line = `✗ Test failed on: ${testName}\n` +
-                     `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
-                     `\n${error}\n`;
+        const line = `\n✗ Test failed on: ` +
+                      TEXTCOLORS['ext'] +
+                    `${testName}\n` +
+                      TEXTCOLORS['error'] + 
+                    `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
+                    `\n${error}`;
         this.logger.error(line);
       }
     }
@@ -114,7 +139,7 @@ class Tester {
       `\n` + 
       `  Tests passed: ${this.passedTestscounter}\n` + 
       `  Tests failed: ${this.failedTestscounter}\n` +
-      `  Tests total: ${this.failedTestscounter + this.passedTestscounter}`
+      `  Tests total: ${this.failedTestscounter + this.passedTestscounter}\n`
     ) 
   }
 }
