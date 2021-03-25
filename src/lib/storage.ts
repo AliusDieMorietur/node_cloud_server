@@ -54,7 +54,7 @@ export class Storage {
 
 
   static buildStructure(rows: FileInfo[]): Structure[] {
-    const structure = [];
+    const structure: Structure[] = [];
     for (const row of rows) {
       let currentFolder = structure;
       const { name } = row;
@@ -64,22 +64,24 @@ export class Storage {
         childs: null,
         capacity: row.size
       };  
+      const dirs = name.split('/');
 
-        const dirs = name.split('/');
-        for (const currentPath of dirs) {
-          if (dirs.indexOf(currentPath) === dirs.length - 1) continue
-          const names = currentFolder.map(item => item.name);
-          if (!names.includes(currentPath)) currentFolder.push({
-            name: currentPath,
-            childs: [],
-            capacity: 0
-          })
-          for (const item of currentFolder) {
-            if (item.name === currentPath) {
-              currentFolder = item.childs;
-            }
+      for (const currentPath of dirs) {
+        if (dirs.indexOf(currentPath) === dirs.length - 1) continue;
+        const names = currentFolder.map(item => item.name);
+
+        if (!names.includes(currentPath)) currentFolder.push({
+          name: currentPath,
+          childs: [],
+          capacity: 0
+        })
+
+        for (const item of currentFolder) {
+          if (item.name === currentPath) {
+            currentFolder = item.childs;
           }
         }
+      }
 
       if (isFile) currentFolder.push(file);  
     }
