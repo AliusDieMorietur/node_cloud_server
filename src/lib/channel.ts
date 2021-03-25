@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { Storage } from './storage';
 import { generateToken, Session } from './auth';
+import { validate } from './utils';
 import { serverConfig } from '../config/server';
 import { promises as fsp } from 'fs';
 import * as EventEmitter from 'events';
@@ -9,16 +10,38 @@ const { storagePath, tokenLifeTime } = serverConfig;
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
 const TOKEN_LIFETIME: number = tokenLifeTime;
 
+const tokenCheck = token => {
+  if (!token) 
+    throw new Error(`No such token: ${token}`);
+
+  if (!validate.token(token)) 
+    throw new Error(`Bad token: ${token}`);
+};
+
+const namesCheck = fileList => {
+  if (fileList.length === 0) throw new Error('Empty fileList')
+
+  for (const name of fileList) 
+    if (!validate.name(name)) 
+      throw new Error(`Bad name: ${name}`)
+};
+
 export class Channel extends EventEmitter {
   private index = -1;
   private db;
-  private user;
+  private user = null;
   private session: Session;
   private commands = {
     upload: async ({ fileList, storage }) => {
+      namesCheck(fileList);
+
       const token = storage === 'tmp' ? generateToken() : this.user.token;
+
+      tokenCheck(token);
+
       const dirPath = path.join(STORAGE_PATH, token);
-      let names = fileList.map(name => [name, generateToken()]);
+      let names;
+      const existingNames = [];
 
       if (storage === 'tmp') {
         await this.db.insert('StorageInfo', {
@@ -29,10 +52,15 @@ export class Channel extends EventEmitter {
       } else {
         const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
 
-        names = names.map(name => {
-          const alreadyExists = fileInfo.find(item => item.name == name[0]); 
+        names = fileList.map(name => {
+          const alreadyExists = fileInfo.find(item => item.name === name);
+          const fakeName = alreadyExists 
+            ? alreadyExists.fakename
+            : generateToken();
 
-          return alreadyExists ? [name[0], alreadyExists.fakeName] : name;
+          if (alreadyExists) existingNames.push(name);
+
+          return [name, fakeName];
         });
       }
 
@@ -45,7 +73,8 @@ export class Channel extends EventEmitter {
             const buf = yield;
             const size = Buffer.byteLength(buf);
             
-            await this.db.insert('FileInfo', { token, name, fakeName, size });
+            if (!existingNames.includes(name))
+              await this.db.insert('FileInfo', { token, name, fakeName, size });
             Storage.upload(dirPath, fakeName, buf);
           }
           
@@ -65,6 +94,10 @@ export class Channel extends EventEmitter {
     download: async args => {
       const token = args.token || this.user.token;
       const { fileList } = args;
+
+      tokenCheck(token);
+      namesCheck(fileList);
+
       const dirPath = path.join(STORAGE_PATH, token);
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
@@ -75,6 +108,9 @@ export class Channel extends EventEmitter {
     },
     availableFiles: async args => {
       const token = args.token || this.user.token;
+
+      tokenCheck(token);
+
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
 
       return args.token
@@ -83,6 +119,12 @@ export class Channel extends EventEmitter {
     },
     newFolder: async ({ name }) => {
       const { token } = this.user;
+
+      tokenCheck(token);
+
+      if (!validate.name(name)) 
+      throw new Error(`Bad name: ${name}`)
+
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
       if (!existingNames.includes(name)) 
@@ -95,6 +137,11 @@ export class Channel extends EventEmitter {
     },
     rename: async ({ name, newName }) => {
       const { token } = this.user;
+
+      tokenCheck(token);
+
+      if (!validate.name(newName)) 
+        throw new Error(`Bad name: ${newName}`)
 
       if (name[name.length - 1] === '/') {
         const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -117,6 +164,10 @@ export class Channel extends EventEmitter {
     },
     delete: async ({ fileList }) => {
       const { token } = this.user;
+
+      tokenCheck(token);
+      namesCheck(fileList);
+
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
 
@@ -137,10 +188,12 @@ export class Channel extends EventEmitter {
       }
 
     },
-    restoreSession: async args => { 
-      const session = await this.session.restoreSession(args.token);
+    restoreSession: async ({ token }) => { 
+      tokenCheck(token);
 
-      if (!session) throw new Error(`Session not found on: ${args.token}`);
+      const session = await this.session.restoreSession(token);
+
+      if (!session) throw new Error(`Session not found on: ${token}`);
 
       const user = await this.session.getUser('id', `${session.userid}`);
 
@@ -148,15 +201,32 @@ export class Channel extends EventEmitter {
       this.index = this.application.saveConnection(user.login, this.connection);
       return session.token;
     },
-    createLink: async args => 
-      await this.application.createLink(
-        args.name, 
+    createLink: async ({ name }) => {
+      if (!validate.name(name)) 
+        throw new Error(`Bad name: ${name}`)
+
+      tokenCheck(this.user.token);
+
+      return await this.application.createLink(
+        name, 
         this.user.token
-      ),
+      );
+    },
     authUser: async args => { 
-      const token = await this.session.authUser(args.user, this.ip);
       const { login, password } = args.user;
+
+      if (!validate.login(login)) 
+        throw new Error(`Wrong login: ${login}`);
+
+      if (!validate.password(password)) 
+        throw new Error(`Bad password: ${password}`);
+
       const user = await this.session.getUser('login', login);
+
+      if (user.password !== password) 
+        throw new Error(`Wrong password: ${password}`);
+
+      const token = await this.session.authUser(args.user, this.ip);
       this.user = user;
       this.index = this.application.saveConnection(login, this.connection);
       return token;
