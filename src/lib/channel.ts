@@ -239,9 +239,9 @@ export class Channel extends EventEmitter {
   namesCheck (fileList) {
     if (fileList.length === 0) throw new Error('Empty fileList')
   
-    // for (const name of fileList) 
-    //   if (!validate.name(name)) 
-    //     throw new Error(`Bad name: ${name}`)
+    for (const name of fileList) 
+      if (!validate.name(name)) 
+        throw new Error(`Bad name: ${name}`)
   }
 
   sendAllDevices(data) {
