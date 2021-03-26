@@ -247,6 +247,7 @@ tester.start(async test => [
     context: null,
     fn: validate.token,
     fnArgs: [
+      ['6p7wQaZxNXfPYncUXrM0QshaIwkBdswz'],
       ['6ELwoCSq9UPvo246Rp2b8JO7KSNCrAmx'],
       ['mFtnBJIIba8H1HEmGfucVshUIjKBZD2c'],
       ['6ELwoCSq9UPv$246Rp/b8J:7KSNCrAmx'],
@@ -255,6 +256,7 @@ tester.start(async test => [
 
     ],
     expectedResults: [
+      true,
       true,
       true,
       false,
