@@ -61,4 +61,15 @@ export const validate = {
     str.length >= NAME_MIN_LENGTH,
 };
 
+export class CustomError extends Error {
+  static InvalidName = new CustomError(501, "Invallid name");
+  static IncorrectLoginPassword = new CustomError(502, "Username and/or password is incorrect");
+  static InvalidToken = new CustomError(503, "Invalid token");
+  static NoSuchToken = new CustomError(504, "No such token");
+  static SessionNotRestored = new CustomError(505, "Session was not restored");
+  static EmptyFileList = new CustomError(506, "File list is empty");
 
+  constructor(readonly code, readonly message) {
+    super();       
+  }
+}
