@@ -10,8 +10,6 @@ const { storagePath, tokenLifeTime } = serverConfig;
 const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
 const TOKEN_LIFETIME: number = tokenLifeTime;
 
-
-
 export class Channel extends EventEmitter {
   private index = -1;
   private db;
@@ -173,7 +171,7 @@ export class Channel extends EventEmitter {
 
     },
     restoreSession: async ({ token }) => { 
-      await this.tokenCheck(token, true);
+      await this.tokenCheck(token, false);
 
       const session = await this.session.restoreSession(token);
 
@@ -210,7 +208,9 @@ export class Channel extends EventEmitter {
       if (user.password !== password) 
         throw CustomError.IncorrectLoginPassword;
 
-      const token = await this.session.authUser(args.user, this.ip);
+      const token =  generateToken()
+      await this.session.createSession({ userId: user.id, token, ip: this.ip });
+
       this.user = user;
       this.index = this.application.saveConnection(login, this.connection);
       return token;
