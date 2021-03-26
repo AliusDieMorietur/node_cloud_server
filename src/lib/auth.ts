@@ -39,17 +39,6 @@ export class Session {
     await this.db.insert('StorageInfo', { token: userToken, expire: 0 });
   }
 
-  async authUser({ login, password }, ip: string): Promise<string> {
-    const user = await this.getUser('login', login);
-    const token = password === password
-      ? generateToken()
-      : '';
-    if (token.length === 0) throw new Error(`Wrong password`);
-    const userId = user.id;
-    await this.createSession({ userId, token, ip });
-    return token;
-  }
-
   async getUser(field: string, data: string): Promise<any> {
     const res = await this.db.select('SystemUser', ['*'], `${field} = '${data}'`);
     const userExists = !!res[0];
