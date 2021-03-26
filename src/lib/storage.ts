@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { promises as fsp } from 'fs';
 import { dir } from 'node:console';
+import { App } from './app';
 
 type Structure = {
   name: string, 
@@ -89,7 +90,7 @@ export class Storage {
     for (const item of structure) this.recalculate(item);
 
     structure.sort(comparator);
-
+    
     return structure;
   }
 

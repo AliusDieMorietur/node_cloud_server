@@ -1,5 +1,6 @@
 import Database from './db';
 import * as crypto from 'crypto';
+import { App } from './app';
 
 const BYTE = 256;
 const TOKEN_LENGTH = 32;
@@ -28,15 +29,13 @@ type SessionColumn = {
 }
 
 export class Session {
-  constructor(private db: Database) {}
-
   async createUser({ login, password }, ip: string): Promise<void> {
     const userToken = generateToken();
-    await this.db.insert('SystemUser', { token: userToken, login, password });
+    await App.db.insert('SystemUser', { token: userToken, login, password });
     const user = await this.getUser('login', login);
     console.log(user);
-    await this.db.insert('Session', { userid: user.id, ip, token: generateToken() });
-    await this.db.insert('StorageInfo', { token: userToken, expire: 0 });
+    await App.db.insert('Session', { userid: user.id, ip, token: generateToken() });
+    await App.db.insert('StorageInfo', { token: userToken, expire: 0 });
   }
 
   async authUser({ login, password }, ip: string): Promise<string> {
@@ -51,7 +50,7 @@ export class Session {
   }
 
   async getUser(field: string, data: string): Promise<any> {
-    const res = await this.db.select('SystemUser', ['*'], `${field} = '${data}'`);
+    const res = await App.db.select('SystemUser', ['*'], `${field} = '${data}'`);
     const userExists = !!res[0];
     console.log('userExists: ', userExists);
     if (!userExists) throw new Error(`User with ${field} <${data}> doesn't exist`);
@@ -59,15 +58,15 @@ export class Session {
   }
 
   async createSession(args): Promise<void> {
-    await this.db.insert('Session', args);
+    await App.db.insert('Session', args);
   }
 
   async deleteSession(token: string): Promise<void> {
-    this.db.delete('Session', `token = '${token}'`);
+    App.db.delete('Session', `token = '${token}'`);
   }
 
   async restoreSession(token: string): Promise<SessionColumn> {
-    const res = await this.db.select('Session', ['*'], `token = '${token}'`)
+    const res = await App.db.select('Session', ['*'], `token = '${token}'`)
     return res[0] ? res[0] : null;
   }
 }

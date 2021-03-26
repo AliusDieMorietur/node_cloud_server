@@ -5,6 +5,7 @@ import { serverConfig } from '../config/server';
 import { Client } from './client';
 import { Channel } from './channel';
 import * as path from 'path';
+import { App } from './app';
 
 const STORAGE_PATH: string = path.join(process.cwd(), serverConfig.storagePath);
 
@@ -26,7 +27,7 @@ export class Server {
     });
 
     this.instance.listen(port, host || '127.0.0.1', () => {
-      this.application.logger.log(`Listen on http://${host || '127.0.0.1'}:${port}`);
+      App.logger.log(`Listen on http://${host || '127.0.0.1'}:${port}`);
     });
   }
 
@@ -37,7 +38,7 @@ export class Server {
       try {
         client.loadFilebyLink(link, STORAGE_PATH);
       } catch (error) {
-        this.application.logger.error(error);
+        App.logger.error(error);
       }
 		} else {
 			client.static();
@@ -46,6 +47,6 @@ export class Server {
 
   async close() {
     //TODO graceful shutdown
-    this.application.logger.log('close');
+    App.logger.log('close');
   }
 }
