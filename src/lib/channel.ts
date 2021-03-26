@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { Storage } from './storage';
 import { generateToken, Session } from './auth';
-import { validate } from './utils';
+import { validate, CustomError } from './utils';
 import { serverConfig } from '../config/server';
 import { promises as fsp } from 'fs';
 import * as EventEmitter from 'events';
@@ -107,7 +107,7 @@ export class Channel extends EventEmitter {
       await this.tokenCheck(token, true);
 
       if (!validate.name(name)) 
-      throw new Error(`Bad name: ${name}`)
+      throw CustomError.InvalidName;
 
       const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
@@ -125,7 +125,7 @@ export class Channel extends EventEmitter {
       await this.tokenCheck(token, true);
 
       if (!validate.name(newName)) 
-        throw new Error(`Bad name: ${newName}`)
+        throw CustomError.InvalidName;
 
       if (name[name.length - 1] === '/') {
         const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -177,7 +177,7 @@ export class Channel extends EventEmitter {
 
       const session = await this.session.restoreSession(token);
 
-      if (!session) throw new Error(`Session not found on: ${token}`);
+      if (!session) throw CustomError.SessionNotRestored;
 
       const user = await this.session.getUser('id', `${session.userid}`);
 
@@ -187,7 +187,7 @@ export class Channel extends EventEmitter {
     },
     createLink: async ({ name }) => {
       if (!validate.name(name)) 
-        throw new Error(`Bad name: ${name}`)
+        throw CustomError.InvalidName;
 
       await this.tokenCheck(this.user.token, true);
 
@@ -200,15 +200,15 @@ export class Channel extends EventEmitter {
       const { login, password } = args.user;
 
       if (!validate.login(login)) 
-        throw new Error(`Wrong login: ${login}`);
+        throw CustomError.IncorrectLoginPassword;
 
       if (!validate.password(password)) 
-        throw new Error(`Bad password: ${password}`);
+        throw CustomError.IncorrectLoginPassword;
 
       const user = await this.session.getUser('login', login);
 
       if (user.password !== password) 
-        throw new Error(`Wrong password: ${password}`);
+        throw CustomError.IncorrectLoginPassword;
 
       const token = await this.session.authUser(args.user, this.ip);
       this.user = user;
@@ -227,21 +227,21 @@ export class Channel extends EventEmitter {
 
   async tokenCheck (token, checkExistanse) {
     if (!validate.token(token)) 
-      throw new Error(`Bad token: ${token}`);
+      throw CustomError.InvalidToken;
       
     if (checkExistanse) {
       const storages = await this.db.select('StorageInfo', ['*'], `token = '${token}'`);
-      if (storages.length === 0) throw new Error(`No such token: ${token}`);
+      if (storages.length === 0) throw CustomError.NoSuchToken;
     }
   
   }
   
   namesCheck (fileList) {
-    if (fileList.length === 0) throw new Error('Empty fileList')
+    if (fileList.length === 0) CustomError.EmptyFileList;
   
     for (const name of fileList) 
       if (!validate.name(name)) 
-        throw new Error(`Bad name: ${name}`)
+        throw CustomError.InvalidName;
   }
 
   sendAllDevices(data) {
