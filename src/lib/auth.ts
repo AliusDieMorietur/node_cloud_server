@@ -20,42 +20,31 @@ export const generateToken = (): string => {
   return key;
 };
 
-type SessionColumn = {
-  id: number,
-  userid: number,
-  ip: string,
-  token: string
-}
-
 export class Session {
-  constructor() {}
-
-  async createUser({ login, password }, ip: string): Promise<void> {
+  static async createUser({ login, password }, ip: string) {
     const userToken = generateToken();
     await App.db.insert('SystemUser', { token: userToken, login, password });
     const user = await this.getUser('login', login);
-    console.log(user);
     await App.db.insert('Session', { userid: user.id, ip, token: generateToken() });
     await App.db.insert('StorageInfo', { token: userToken, expire: 0 });
   }
 
-  async getUser(field: string, data: string): Promise<any> {
+  static async getUser(field: string, data: string) {
     const res = await App.db.select('SystemUser', ['*'], `${field} = '${data}'`);
     const userExists = !!res[0];
-    console.log('userExists: ', userExists);
     if (!userExists) throw new Error(`User with ${field} <${data}> doesn't exist`);
     return res[0];
   }
 
-  async createSession(args): Promise<void> {
+  static async createSession(args) {
     await App.db.insert('Session', args);
   }
 
-  async deleteSession(token: string): Promise<void> {
+  static async deleteSession(token: string){
     App.db.delete('Session', `token = '${token}'`);
   }
 
-  async restoreSession(token: string): Promise<SessionColumn> {
+  static async restoreSession(token: string) {
     const res = await App.db.select('Session', ['*'], `token = '${token}'`)
     return res[0] ? res[0] : null;
   }

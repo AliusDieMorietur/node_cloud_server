@@ -13,7 +13,6 @@ const TOKEN_LIFETIME: number = tokenLifeTime;
 export class Channel extends EventEmitter {
   private index = -1;
   private user = null;
-  private session: Session;
   private commands = {
     upload: async ({ fileList, storage }) => {
       this.namesCheck(fileList);
@@ -172,11 +171,11 @@ export class Channel extends EventEmitter {
     restoreSession: async ({ token }) => { 
       await this.tokenCheck(token, false);
 
-      const session = await this.session.restoreSession(token);
+      const session = await Session.restoreSession(token);
 
       if (!session) throw CustomError.SessionNotRestored;
 
-      const user = await this.session.getUser('id', `${session.userid}`);
+      const user = await Session.getUser('id', `${session.userid}`);
 
       this.user = user;
       this.index = this.application.saveConnection(user.login, this.connection);
@@ -202,25 +201,24 @@ export class Channel extends EventEmitter {
       if (!validate.password(password)) 
         throw CustomError.IncorrectLoginPassword;
 
-      const user = await this.session.getUser('login', login);
+      const user = await Session.getUser('login', login);
 
       if (user.password !== password) 
         throw CustomError.IncorrectLoginPassword;
 
       const token =  generateToken()
-      await this.session.createSession({ userId: user.id, token, ip: this.ip });
+      await Session.createSession({ userId: user.id, token, ip: this.ip });
 
       this.user = user;
       this.index = this.application.saveConnection(login, this.connection);
       return token;
     },
-    logOut: async args => await this.session.deleteSession(this.user.token)
+    logOut: async args => await Session.deleteSession(this.user.token)
   };
 
   constructor(private connection, private ip: string, private application) {
     super();
-    this.session = new Session();
-    App.logger.log('IP: ', ip);
+    App.logger.log('Connected: ', ip);
   }
 
   async tokenCheck (token, checkExistanse) {
