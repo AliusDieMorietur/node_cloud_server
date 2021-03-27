@@ -71,63 +71,46 @@ class Tester {
     const { 
       context,
       fn, 
-      fnArgs, 
-      expectedResults,
+      assertions,
       specialRules
     } = testable;   
 
-    const zipped = expectedResults
-      ? zip(fnArgs, expectedResults)
-      : zip(fnArgs, []);
-
-    for (const [arg, expectedResult] of zipped) {
+    for (const { args = [], expectedResult = null } of assertions) {
       try {
         const fnWithContext = context ? fn.bind(context) : fn;
         const asyncified = fn instanceof (async () => {}).constructor
           ? fnWithContext
           : async (...args) => fnWithContext(...args)
-        const start = new Date().getTime();
-        const result = await asyncified(...arg);
-        const end = new Date().getTime();
-
+          
         // const result = fn instanceof (async () => {}).constructor 
         //   ? await fnWithContext(...arg)
         //   : fnWithContext(...arg);
 
-        const error = specialRules 
-          ? specialRules(context, result, arg) 
-          : null;
-          
+        const start = new Date().getTime();
+        const result = await asyncified(...args);
+        const end = new Date().getTime();
+
+        if (specialRules) specialRules(context, result, args);
+
         if (
           expectedResult !== undefined && 
           expectedResult !== null 
         ) assert.deepEqual(result, expectedResult);
-        
-        if (error) {
-          this.failedTestscounter++;
-          const line = `\n✗ Test failed on: ` +
-                        TEXTCOLORS['ext'] +
-                      `${testName}\n` +
-                        TEXTCOLORS['error'] + 
-                      `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
-                      `\n${error}`;
-          this.logger.error(line);
-        } else {
-          this.passedTestscounter++;
-          const line = `✓ Test passed on: ` +
-                        TEXTCOLORS['ext'] +
-                        testName + 
-                        TEXTCOLORS['info'] + 
-                        ` [${end - start} ms]`;
-          this.logger.success(line);
-        };
+
+        this.passedTestscounter++;
+        const line = `✓ Test passed on: ` +
+                      TEXTCOLORS['ext'] +
+                      testName + 
+                      TEXTCOLORS['info'] + 
+                      ` [${end - start} ms]`;
+        this.logger.success(line);
       } catch (error) {
         this.failedTestscounter++;
         const line = `\n✗ Test failed on: ` +
                       TEXTCOLORS['ext'] +
                     `${testName}\n` +
                       TEXTCOLORS['error'] + 
-                    `\nWith args: ${util.inspect(arg, { depth: null })}\n` +
+                    `\nWith args: ${util.inspect(args, { depth: null })}\n` +
                     `\n${error}`;
         this.logger.error(line);
       }
