@@ -12,7 +12,7 @@ export default class Database {
     return this.pool.query(sql, values);
   }
 
-  async insert(table, record): Promise<any> {
+  async insert(table, record) {
     const keys = Object.keys(record);
     const values = Object.values(record).map(el => {
       if (el instanceof Array) return `'{${el}}'`;
@@ -25,7 +25,7 @@ export default class Database {
   }
 
   // refactor required
-  async select(table, fields = ['*'], condition?: string, limit?: number, offset?: number): Promise<any> {
+  async select(table, fields = ['*'], condition?: string, limit?: number, offset?: number) {
     let sql = `SELECT ${fields} FROM ${table}`;
     if (condition) sql += ` WHERE ${condition}`;
     if (limit) sql += ` LIMIT ${limit}`;
@@ -34,11 +34,11 @@ export default class Database {
     return res.rows;
   }
 
-  async exists(condition): Promise<any> {
+  async exists(condition) {
     return this.query(`SELECT EXISTS(${condition})`);
   }
 
-  delete(table, condition = null): Promise<any> {
+  delete(table, condition = null) {
     const sql = `DELETE FROM ${table} WHERE ${condition}`;
     return this.query(sql);
   }
