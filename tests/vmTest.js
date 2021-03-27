@@ -27,7 +27,7 @@ tester.start(async test => [
     specialRules: (context, fnConext, result, args) => {}
   }),
 
-  test('der`mo', {
+  test('test', {
     contexts: [
       {
         fnContext: {},
