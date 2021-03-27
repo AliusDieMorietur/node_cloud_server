@@ -94,9 +94,9 @@ export class App {
 
   async start() {
     try {
-      App.logger.success('Db connected');
       await this.loadLinks();
       App.logger.success('Links loaded');
+      
       await this.loadDirectory(STATIC_PATH, this.static);
       App.logger.success('Static loaded');
     } catch (error) {
