@@ -55,6 +55,9 @@ export class Channel extends EventEmitter {
             
             if (!existingNames.includes(name))
               await App.db.insert('FileInfo', { token, name, fakeName, size });
+            else 
+              await App.db.update('FileInfo', `size = '${size}'`, `name = '${name}' AND token = '${token}'`);
+
             Storage.upload(dirPath, fakeName, buf);
           }
           
@@ -103,7 +106,7 @@ export class Channel extends EventEmitter {
       await this.tokenCheck(token, true);
 
       if (!validate.name(name)) 
-      throw CustomError.InvalidName;
+        throw CustomError.InvalidName;
 
       const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
