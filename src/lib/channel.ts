@@ -65,7 +65,7 @@ export class Channel extends EventEmitter {
               await Storage.delete(dirPath, names.map(name => name[1]));
               await Storage.deleteFolder(dirPath);
             }, TOKEN_LIFETIME);
-        } catch (e) { App.logger.error(e); }
+        } catch (error) { App.logger.error(error); }
           
         this.removeListener('bufferUpload', nextBuffer);
       }).bind(this)(); gen.next();
