@@ -18,9 +18,9 @@ export class App {
   private static = new Map<string, Buffer>();
   private links = new Map<string, string>();
   private connections = new Map<string, any>();
-  logger = new Logger();
-  db: Database;
-
+  static logger = new Logger();
+  static db = new Database(dbConfig);
+  
   saveConnection(login: string, connection): number {
     const connections = this.connections.has(login)
       ? this.connections.get(login)
@@ -37,7 +37,7 @@ export class App {
   }
   
   async createLink(name: string, userToken: string): Promise<string> {
-    const fileInfo = await this.db.select(
+    const fileInfo = await App.db.select(
       'FileInfo', ['*'], `token = '${userToken}' AND name = '${name}'`
     );
     const file = fileInfo[0];
@@ -48,7 +48,7 @@ export class App {
     const link = `${userToken}:${file.fakename}:${name}`;
 
     this.links.set(token, link);
-    await this.db.insert('Link', { fileid: file.id, token, link });
+    await App.db.insert('Link', { fileid: file.id, token, link });
     return token;
   }
 
@@ -61,7 +61,7 @@ export class App {
   }
 
   async loadLinks(): Promise<void> { 
-    const links = await this.db.select('Link');
+    const links = await App.db.select('Link');
     for (const row of links) 
       this.links.set(row.token, row.link);
   }
@@ -74,7 +74,7 @@ export class App {
         file
       );
     } catch (err) {
-      this.logger.error(err);
+      App.logger.error(err);
     }
   }
 
@@ -88,20 +88,19 @@ export class App {
         else await this.loadFile(filePath, place);
       }
     } catch (err) {
-      this.logger.error(err);
+      App.logger.error(err);
     }
   }
 
   async start() {
     try {
-      this.db = new Database(dbConfig);
-      this.logger.success('Db connected');
+      App.logger.success('Db connected');
       await this.loadLinks();
-      this.logger.success('Links loaded');
+      App.logger.success('Links loaded');
       await this.loadDirectory(STATIC_PATH, this.static);
-      this.logger.success('Static loaded');
+      App.logger.success('Static loaded');
     } catch (error) {
-      this.logger.error(error);
+      App.logger.error(error);
     }
   }
 }

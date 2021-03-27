@@ -1,6 +1,9 @@
 import * as path from 'path';
 import { promises as fsp } from 'fs';
-import { dir } from 'node:console';
+import { App } from './app';
+import { serverConfig } from '../config/server';
+
+const { storagePath } = serverConfig; 
 
 type Structure = {
   name: string, 
@@ -34,6 +37,35 @@ const comparator = (a, b) => {
 };
 
 export class Storage {
+  static storagePath = path.join(process.cwd(), storagePath);
+
+  static async clearExpired() {
+    try {
+      let tokenCounter = 0;
+      let fileCounter = 0;
+      const storageInfo = await App.db.select('StorageInfo', ['*']);
+      
+      for (const item of storageInfo) {
+        const expire = Number(item.expire);
+        if (expire !== 0 && Date.now() > expire) {
+          const { token } = item;
+          const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
+          const fakeNames = fileInfo.map(item => item.fakename);
+          const dirPath = path.join(this.storagePath, token);
+
+          await App.db.delete('StorageInfo', `token = '${token}'`);
+          await Storage.delete(dirPath, fakeNames);
+          await Storage.deleteFolder(dirPath);
+          fileCounter += fakeNames.length;
+          tokenCounter++;
+        }
+      }
+
+      App.logger.log(`Files deleted: ${fileCounter} Tokens expired: ${tokenCounter}`);
+    } catch (err) {
+      App.logger.error(err);
+    }
+  }
 
   static recalculate(currentFolder: Structure): number {
     if (currentFolder.childs) 

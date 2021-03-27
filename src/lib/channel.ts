@@ -5,14 +5,13 @@ import { validate, CustomError } from './utils';
 import { serverConfig } from '../config/server';
 import { promises as fsp } from 'fs';
 import * as EventEmitter from 'events';
+import { App } from './app';
 
-const { storagePath, tokenLifeTime } = serverConfig; 
-const STORAGE_PATH: string = path.join(process.cwd(), storagePath);
+const { tokenLifeTime } = serverConfig; 
 const TOKEN_LIFETIME: number = tokenLifeTime;
 
 export class Channel extends EventEmitter {
   private index = -1;
-  private db;
   private user = null;
   private session: Session;
   private commands = {
@@ -23,17 +22,17 @@ export class Channel extends EventEmitter {
 
       await this.tokenCheck(token, false);
 
-      const dirPath = path.join(STORAGE_PATH, token);
+      const dirPath = path.join(Storage.storagePath, token);
 
       if (storage === 'tmp') {
-        await this.db.insert('StorageInfo', {
+        await App.db.insert('StorageInfo', {
           token,
           expire: Date.now() + TOKEN_LIFETIME
         });
         await fsp.mkdir(dirPath);
       } 
       const existingNames = [];
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
 
       const names = fileList.map(name => {
         const alreadyExists = fileInfo.find(item => item.name === name);
@@ -56,17 +55,17 @@ export class Channel extends EventEmitter {
             const size = Buffer.byteLength(buf);
             
             if (!existingNames.includes(name))
-              await this.db.insert('FileInfo', { token, name, fakeName, size });
+              await App.db.insert('FileInfo', { token, name, fakeName, size });
             Storage.upload(dirPath, fakeName, buf);
           }
           
           if (storage === 'pmt') this.sendStructure();
           else setTimeout(async () => {
-              await this.db.delete('StorageInfo', `token = '${token}'`);
+              await App.db.delete('StorageInfo', `token = '${token}'`);
               await Storage.delete(dirPath, names.map(name => name[1]));
               await Storage.deleteFolder(dirPath);
             }, TOKEN_LIFETIME);
-        } catch (e) { this.application.logger.error(e); }
+        } catch (e) { App.logger.error(e); }
           
         this.removeListener('bufferUpload', nextBuffer);
       }).bind(this)(); gen.next();
@@ -80,8 +79,8 @@ export class Channel extends EventEmitter {
       await this.tokenCheck(token, true);
       this.namesCheck(fileList);
 
-      const dirPath = path.join(STORAGE_PATH, token);
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const dirPath = path.join(Storage.storagePath, token);
+      const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
       const fakeNames = fileList
         .map(item => fileInfo[existingNames.indexOf(item)].fakename);
@@ -93,7 +92,7 @@ export class Channel extends EventEmitter {
 
       await this.tokenCheck(token, true);
 
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
 
       return args.token
         ? fileInfo.map(item => item.name)
@@ -107,10 +106,10 @@ export class Channel extends EventEmitter {
       if (!validate.name(name)) 
       throw CustomError.InvalidName;
 
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
       if (!existingNames.includes(name)) 
-        await this.db.insert('FileInfo', { 
+        await App.db.insert('FileInfo', { 
           token, 
           name, 
           fakeName: 'folder', 
@@ -126,7 +125,7 @@ export class Channel extends EventEmitter {
         throw CustomError.InvalidName;
 
       if (name[name.length - 1] === '/') {
-        const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+        const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
 
         for (const item of fileInfo) {
           if (item.name.includes(name) && item.name !== name) {
@@ -138,11 +137,11 @@ export class Channel extends EventEmitter {
               newName.substring(newName.length - 1, 0);
 
             const newItemName = dirs.join('/');
-            await this.db.update('FileInfo', `name = '${newItemName}'`, `name = '${item.name}' AND token = '${token}'`);
+            await App.db.update('FileInfo', `name = '${newItemName}'`, `name = '${item.name}' AND token = '${token}'`);
           }
         }
       }
-      await this.db.update('FileInfo', `name = '${newName}'`, `name = '${name}' AND token = '${token}'`);
+      await App.db.update('FileInfo', `name = '${newName}'`, `name = '${name}' AND token = '${token}'`);
     },
     delete: async ({ fileList }) => {
       const { token } = this.user;
@@ -150,19 +149,19 @@ export class Channel extends EventEmitter {
       await this.tokenCheck(token, true);
       this.namesCheck(fileList);
 
-      const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+      const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
 
       for (const item of fileList) {
         const { id } = fileInfo[existingNames.indexOf(item)];
-        const links = await this.db.select('Link', ['*'], `FileId = '${id}'`);
+        const links = await App.db.select('Link', ['*'], `FileId = '${id}'`);
 
         for (const item of links) 
           this.application.deleteLink(item.token);
-        await this.db.delete('FileInfo', `name = '${item}'`);
+        await App.db.delete('FileInfo', `name = '${item}'`);
         
         if (item[item.length - 1] !== '/') {
-          const dirPath = path.join(STORAGE_PATH, token);
+          const dirPath = path.join(Storage.storagePath, token);
           const { fakename } = fileInfo[existingNames.indexOf(item)];
 
           await Storage.delete(dirPath, [fakename]);
@@ -220,9 +219,8 @@ export class Channel extends EventEmitter {
 
   constructor(private connection, private ip: string, private application) {
     super();
-    this.db = this.application.db;
-    this.session = new Session(this.db);
-    this.application.logger.log('IP: ', ip);
+    this.session = new Session();
+    App.logger.log('IP: ', ip);
   }
 
   async tokenCheck (token, checkExistanse) {
@@ -230,7 +228,7 @@ export class Channel extends EventEmitter {
       throw CustomError.InvalidToken;
       
     if (checkExistanse) {
-      const storages = await this.db.select('StorageInfo', ['*'], `token = '${token}'`);
+      const storages = await App.db.select('StorageInfo', ['*'], `token = '${token}'`);
       if (storages.length === 0) throw CustomError.NoSuchToken;
     }
   
@@ -263,7 +261,7 @@ export class Channel extends EventEmitter {
   }
 
   async sendStructure() {
-    const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${this.user.token}'`);
+    const fileInfo = await App.db.select('FileInfo', ['*'], `token = '${this.user.token}'`);
     const structure = Storage.buildStructure(fileInfo);
     this.sendAllDevices(JSON.stringify({ structure }));
   }
@@ -281,7 +279,7 @@ export class Channel extends EventEmitter {
             if (liveReload.includes(msg)) 
               this.sendStructure();
           } catch (error) {
-            this.application.logger.error(error);
+            App.logger.error(error);
             this.send(JSON.stringify({ 
               callId, 
               error: { message: error.message, code: error.code } 
@@ -293,7 +291,7 @@ export class Channel extends EventEmitter {
         this.emit('bufferUpload', data);
       }
     } catch (err) {
-      this.application.logger.error(err);
+      App.logger.error(err);
     }
   }
 
@@ -301,7 +299,7 @@ export class Channel extends EventEmitter {
     try {
       this.connection.send(data);
     } catch (err) {
-      this.application.logger.error(err);
+      App.logger.error(err);
     }
   }
 }
