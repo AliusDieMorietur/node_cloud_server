@@ -1,6 +1,5 @@
 import * as path from 'path';
 import { promises as fsp } from 'fs';
-import { dir } from 'node:console';
 
 type Structure = {
   name: string, 
@@ -35,13 +34,15 @@ const comparator = (a, b) => {
 
 export class Storage {
 
-  static recalculate(currentFolder: Structure): number {
+  constructor(public storagePath: string) {}
+
+  recalculate(currentFolder: Structure): number {
     if (currentFolder.childs) 
       currentFolder.capacity = currentFolder.childs.reduce((acc, cur) => acc + this.recalculate(cur), 0);
     return currentFolder.capacity;
   }
 
-  static findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
+  findPlace(departureFolder: Structure[], currentPath: string): Structure[] {
     if (currentPath.indexOf('/') === -1) return departureFolder;
     const dirs = currentPath.split('/');
     let childs = departureFolder;
@@ -53,7 +54,7 @@ export class Storage {
   } 
 
 
-  static buildStructure(rows: FileInfo[]): Structure[] {
+  buildStructure(rows: FileInfo[]): Structure[] {
     const structure: Structure[] = [];
     for (const row of rows) {
       let currentFolder = structure;
@@ -143,11 +144,11 @@ export class Storage {
   //   return structure;
   // } 
 
-  static async upload(dirPath: string, filename: string, buffer: Buffer) {
+  async upload(dirPath: string, filename: string, buffer: Buffer) {
     await fsp.writeFile(path.join(dirPath, filename), buffer);
   }
 
-  static async download(dirPath: string, fileNames: string[], connection) {
+  async download(dirPath: string, fileNames: string[], connection) {
     for (const name of fileNames) {
       const filePath = path.join(dirPath, name);
       const buffer = await fsp.readFile(filePath);
@@ -156,11 +157,15 @@ export class Storage {
     }
   }
 
-  static async deleteFolder(dirPath: string) {
+  async createFolder(dirPath: string) {
+    await fsp.mkdir(dirPath);
+  }
+
+  async deleteFolder(dirPath: string) {
     await fsp.rmdir(dirPath);
   }
 
-  static async delete(dirPath: string, fileNames: string[]) {
+  async delete(dirPath: string, fileNames: string[]) {
     for (const name of fileNames) 
       await fsp.unlink(path.join(dirPath, name));
   }
