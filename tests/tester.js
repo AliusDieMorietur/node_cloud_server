@@ -1,29 +1,11 @@
 const fs = require('fs');
 const util = require('util');
-const assert = require('assert').strict;
-
-// const zip = (arr1, arr2) => {
-//   const [longest, shortest] = arr1.length < arr2.length
-//     ? [arr2, arr1]
-//     : [arr1, arr2];
-  
-//   return longest.map((item, index) => [
-//     item, 
-//     shortest[index] ? shortest[index] : null  
-//   ]);
-// }
-
-const zip = (arr1, arr2) => 
-  (arr1.length < arr2.length ? arr2 : arr1)
-    .map((item, index) => [
-      arr1[index] !== undefined ? arr1[index] : null, 
-      arr2[index] !== undefined ? arr2[index] : null  
-    ]);
+const assert = require('assert');
+const vm = require('vm');
 
 const TEXTCOLORS = {
   info: '\u001b[37m',
   error: '\u001b[31m',
-  // success: '\u001b[32m',
   success: '\x1b[38;2;26;188;156m',
   ext: '\x1b[38;2;94;136;255m'
 };
@@ -62,40 +44,45 @@ class Tester {
   }
 
   async start(lambda) {
-    const tests = await lambda(this.test.bind(this));
-    Promise.all(tests)
-      .then(this.analysis.bind(this));
+    const tests = lambda(this.test.bind(this));
+    await Promise.all(tests);
+    this.analysis();
   }
 
   async test(testName, testable) {
     const { 
       context,
-      fn, 
-      assertions,
+			assertions,
       specialRules
     } = testable;   
 
-    for (const { args = [], expectedResult = null } of assertions) {
-      try {
-        const fnWithContext = context ? fn.bind(context) : fn;
-        const asyncified = fn instanceof (async () => {}).constructor
-          ? fnWithContext
-          : async (...args) => fnWithContext(...args)
-          
-        // const result = fn instanceof (async () => {}).constructor 
-        //   ? await fnWithContext(...arg)
-        //   : fnWithContext(...arg);
+    const createContext = (context, args, expectedResult) => ({
+      result: null,
+      assert,
+      args,
+      log: console.log,
+      expectedResult,
+      specialRules,
+      ...context
+    })
 
+    for (const { args, expectedResult } of assertions) { 
+      const newContext = createContext(context, args, expectedResult);
+      const { fnContext } = newContext;
+      Object.assign(global, newContext);
+      try {         
+        const script = new vm.Script(`fn.bind(fnContext)(...args);`);
         const start = new Date().getTime();
-        const result = await asyncified(...args);
+        const result = await script.runInThisContext();
         const end = new Date().getTime();
 
-        if (specialRules) specialRules(context, result, args);
+        if (specialRules) 
+          specialRules(context, fnContext, result, args); 
 
         if (
           expectedResult !== undefined && 
           expectedResult !== null 
-        ) assert.deepEqual(result, expectedResult);
+        ) assert.deepStrictEqual(result, expectedResult);
 
         this.passedTestscounter++;
         const line = `✓ Test passed on: ` +
@@ -106,12 +93,13 @@ class Tester {
         this.logger.success(line);
       } catch (error) {
         this.failedTestscounter++;
-        const line = `\n✗ Test failed on: ` +
+        const line = `✗ Test failed on: ` +
                       TEXTCOLORS['ext'] +
                     `${testName}\n` +
                       TEXTCOLORS['error'] + 
+                      `\n${error}\n` + 
                     `\nWith args: ${util.inspect(args, { depth: null })}\n` +
-                    `\n${error}`;
+                    `${error.stack}`;
         this.logger.error(line);
       }
     }
