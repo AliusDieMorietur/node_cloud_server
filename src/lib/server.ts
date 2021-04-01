@@ -4,10 +4,6 @@ import { threadId } from 'worker_threads';
 import { serverConfig } from '../config/server';
 import { Client } from './client';
 import { Channel } from './channel';
-import * as path from 'path';
-
-const STORAGE_PATH: string = path.join(process.cwd(), serverConfig.storagePath);
-
 export class Server {
   instance: http.Server;
   ws: ws.Server;
@@ -35,7 +31,7 @@ export class Server {
 		const [domen, link] = req.url.substring(1).split('/');
 		if (domen === 'link') {
       try {
-        client.loadFilebyLink(link, STORAGE_PATH);
+        client.loadFilebyLink(link, this.application.storage.storagePath);
       } catch (error) {
         this.application.logger.error(error);
       }
