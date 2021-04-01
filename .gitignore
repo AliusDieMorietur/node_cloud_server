@@ -2,4 +2,6 @@ target
 node_modules
 package-lock.json
 static_save
-list.js
+exp.js
+old_test.js
+old_tester.js
