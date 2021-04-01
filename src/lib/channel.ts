@@ -1,10 +1,6 @@
 import * as path from 'path';
 import { generateToken, Session } from './auth';
-import { validate, CustomError } from './utils';
-import { serverConfig } from '../config/server';
 import * as EventEmitter from 'events';
-
-const TOKEN_LIFETIME: number = serverConfig.tokenLifeTime;
 
 export class Channel extends EventEmitter {
   private index = -1;
@@ -12,35 +8,30 @@ export class Channel extends EventEmitter {
   private session: Session;
   private commands = {
     upload: async ({ fileList, storage }) => {
-      this.namesCheck(fileList);
+      this.application.validator.names(fileList);
 
       const token = storage === 'tmp' ? generateToken() : this.user.token;
-
-      await this.tokenCheck(token, false);
       const dirPath = path.join(this.application.storage.storagePath, token);
       
       if (storage === 'tmp') {
         await this.application.db.insert('StorageInfo', {
           token,
-          expire: Date.now() + TOKEN_LIFETIME
+          expire: Date.now() + this.application.storage.tokenLifeTime
         });
         await this.application.storage.createFolder(dirPath);
       } 
       
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
-
       const names = fileList.map(name => {
         const alreadyExists = fileInfo.find(item => item.name === name);
         return alreadyExists 
-          ? [name, alreadyExists.fakename, true]
-          : [name, generateToken(), false];
+        ? [name, alreadyExists.fakename, true]
+        : [name, generateToken(), false];
       });
-
+      
       let counter = 0;
-
       const upload = async buffer => {
         const [name, fakename, changed] = names[counter];
-
         try {
           const size = Buffer.byteLength(buffer);
 
@@ -60,7 +51,7 @@ export class Channel extends EventEmitter {
               await this.application.db.delete('StorageInfo', `token = '${token}'`);
               await this.application.storage.delete(dirPath, names.map(name => name[1]));
               await this.application.storage.deleteFolder(dirPath);
-            }, TOKEN_LIFETIME);
+            }, this.application.storage.tokenLifeTime);
             this.removeListener('bufferUpload', upload)
           };
           counter++;
@@ -77,8 +68,9 @@ export class Channel extends EventEmitter {
       const token = args.token || this.user.token;
       const { fileList } = args;
 
-      await this.tokenCheck(token, true);
-      this.namesCheck(fileList);
+      this.application.validator.token(token);
+      await this.application.validator.tokenExistance(token);
+      this.application.validator.names(fileList);
 
       const dirPath = path.join(this.application.storage.storagePath, token);
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -91,7 +83,8 @@ export class Channel extends EventEmitter {
     availableFiles: async args => {
       const token = args.token || this.user.token;
 
-      await this.tokenCheck(token, true);
+      this.application.validator.token(token);
+      await this.application.validator.tokenExistance(token);
 
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
 
@@ -102,10 +95,7 @@ export class Channel extends EventEmitter {
     newFolder: async ({ name }) => {
       const { token } = this.user;
 
-      await this.tokenCheck(token, true);
-
-      if (!validate.name(name)) 
-      throw CustomError.InvalidName;
+      this.application.validator.name(name);
 
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
@@ -120,10 +110,7 @@ export class Channel extends EventEmitter {
     rename: async ({ name, newName }) => {
       const { token } = this.user;
 
-      await this.tokenCheck(token, true);
-
-      if (!validate.name(newName)) 
-        throw CustomError.InvalidName;
+      this.application.validator.name(name);
 
       if (name[name.length - 1] === '/') {
         const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
@@ -147,8 +134,7 @@ export class Channel extends EventEmitter {
     delete: async ({ fileList }) => {
       const { token } = this.user;
 
-      await this.tokenCheck(token, true);
-      this.namesCheck(fileList);
+      this.application.validator.names(fileList);
 
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
       const existingNames = fileInfo.map(item => item.name); 
@@ -171,23 +157,19 @@ export class Channel extends EventEmitter {
 
     },
     restoreSession: async ({ token }) => { 
-      await this.tokenCheck(token, false);
+      await this.application.validator.token(token);
 
       const session = await this.session.restoreSession(token);
-
-      if (!session) throw CustomError.SessionNotRestored;
-
       const user = await this.session.getUser('id', `${session.userid}`);
-
       this.user = user;
       this.index = this.application.saveConnection(user.login, this.connection);
       return session.token;
     },
     createLink: async ({ name }) => {
-      if (!validate.name(name)) 
-        throw CustomError.InvalidName;
+      this.application.validator.name(name);
 
-      await this.tokenCheck(this.user.token, true);
+      await this.application.validator.token(this.user.token);
+      await this.application.validator.tokenExistance(this.user.token)
 
       return await this.application.createLink(
         name, 
@@ -197,16 +179,12 @@ export class Channel extends EventEmitter {
     authUser: async args => { 
       const { login, password } = args.user;
 
-      if (!validate.login(login)) 
-        throw CustomError.IncorrectLoginPassword;
-
-      if (!validate.password(password)) 
-        throw CustomError.IncorrectLoginPassword;
+      this.application.validator.login(login);
+      this.application.validator.password(password);
 
       const user = await this.session.getUser('login', login);
 
-      if (user.password !== password) 
-        throw CustomError.IncorrectLoginPassword;
+      this.application.validator.passwordMatch(user.password, password);
 
       const token =  generateToken()
       await this.session.createSession({ userId: user.id, token, ip: this.ip });
@@ -222,24 +200,6 @@ export class Channel extends EventEmitter {
     super();
     this.session = new Session(this.application.db);
     this.application.logger.log('Connected ', ip);
-  }
-
-  async tokenCheck (token, checkExistanse) {
-    if (!validate.token(token)) 
-      throw CustomError.InvalidToken;
-      
-    if (checkExistanse) {
-      const storages = await this.application.db.select('StorageInfo', ['*'], `token = '${token}'`);
-      if (storages.length === 0) throw CustomError.NoSuchToken;
-    }
-  }
-  
-  namesCheck (fileList) {
-    if (fileList.length === 0) CustomError.EmptyFileList;
-    for (const name of fileList) 
-      if (!validate.name(name)) 
-        throw CustomError.InvalidName;
-    
   }
 
   sendAllDevices(data) {

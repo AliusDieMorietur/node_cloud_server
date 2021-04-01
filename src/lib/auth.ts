@@ -1,5 +1,6 @@
 import Database from './db';
 import * as crypto from 'crypto';
+import { CustomError } from './utils';
 
 const BYTE = 256;
 const TOKEN_LENGTH = 32;
@@ -41,9 +42,7 @@ export class Session {
 
   async getUser(field: string, data: string): Promise<any> {
     const res = await this.db.select('SystemUser', ['*'], `${field} = '${data}'`);
-    const userExists = !!res[0];
-    console.log('userExists: ', userExists);
-    if (!userExists) throw new Error(`User with ${field} <${data}> doesn't exist`);
+    if (!res[0]) throw CustomError.NoSuchUser;
     return res[0];
   }
 
@@ -56,7 +55,8 @@ export class Session {
   }
 
   async restoreSession(token: string): Promise<SessionColumn> {
-    const res = await this.db.select('Session', ['*'], `token = '${token}'`)
-    return res[0] ? res[0] : null;
+    const res = await this.db.select('Session', ['*'], `token = '${token}'`);
+    if (!res[0]) throw CustomError.SessionNotRestored;
+    return res[0];
   }
 }

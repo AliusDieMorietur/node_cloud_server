@@ -1,13 +1,3 @@
-// export const zip = (arr1, arr2) => {
-//   const [longest, shortest] = arr1.length < arr2.length
-//   ? [arr2, arr1]
-//   : [arr1, arr2];
-  
-//   return longest.map((item, index) => [
-//     item, 
-//     shortest[index] ? shortest[index] : null  
-//   ]);
-// }
 
 export const zip = (arr1, arr2) => 
   (arr1.length < arr2.length ? arr2 : arr1)
@@ -15,6 +5,20 @@ export const zip = (arr1, arr2) =>
       arr1[index] !== undefined ? arr1[index] : null, 
       arr2[index] !== undefined ? arr2[index] : null  
     ]);
+
+export class CustomError extends Error {
+  static InvalidName = new CustomError(501, 'Invallid name');
+  static IncorrectLoginPassword = new CustomError(502, 'Username and/or password is incorrect');
+  static InvalidToken = new CustomError(503, 'Invalid token');
+  static NoSuchToken = new CustomError(504, 'No such token');
+  static SessionNotRestored = new CustomError(505, 'Session was not restored');
+  static EmptyFileList = new CustomError(506, 'File list is empty');
+  static NoSuchUser = new CustomError(507, 'User doesn`t exist');
+
+  constructor(readonly code, readonly message) {
+    super();       
+  }
+}
 
 const CYRILLIC = 'АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя';
 const ALPHA_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -41,35 +45,56 @@ const LOGIN_PASSWORD_MAX_LENGTH = 16;
 const NAME_MIN_LENGTH = 1;
 const NAME_MAX_LENGTH = 1024;
 
-export const validate = {
-  login: str => 
-    checkSymbols(str, ALPHA_DIGIT + SPECIAL_SYMBOLS_A) &&
-    str.length <= LOGIN_PASSWORD_MAX_LENGTH &&
-    str.length >= LOGIN_PASSWORD_MIN_LENGTH,
-  password: str =>     
-    checkSymbols(str, ALPHA_DIGIT) &&
-    str.length <= LOGIN_PASSWORD_MAX_LENGTH &&
-    str.length >= LOGIN_PASSWORD_MIN_LENGTH,
-  token: str =>     
-    checkSymbols(str, ALPHA_DIGIT) &&
-    str.length === TOKEN_LENGTH,
-  name: str => 
-    checkSymbols(str, ALL_SYMBOLS) &&
-    str[0] !== '/' &&
-    !str.includes('//') &&
-    str.length <= NAME_MAX_LENGTH &&
-    str.length >= NAME_MIN_LENGTH,
-};
+export class Validator {
+  constructor(private db) {}
 
-export class CustomError extends Error {
-  static InvalidName = new CustomError(501, "Invallid name");
-  static IncorrectLoginPassword = new CustomError(502, "Username and/or password is incorrect");
-  static InvalidToken = new CustomError(503, "Invalid token");
-  static NoSuchToken = new CustomError(504, "No such token");
-  static SessionNotRestored = new CustomError(505, "Session was not restored");
-  static EmptyFileList = new CustomError(506, "File list is empty");
+  login(str) {
+    if (!(
+      checkSymbols(str, ALPHA_DIGIT + SPECIAL_SYMBOLS_A) &&
+      str.length <= LOGIN_PASSWORD_MAX_LENGTH &&
+      str.length >= LOGIN_PASSWORD_MIN_LENGTH
+    )) throw CustomError.IncorrectLoginPassword;
+  } 
 
-  constructor(readonly code, readonly message) {
-    super();       
+  password(str) {
+    if (!(
+      checkSymbols(str, ALPHA_DIGIT) &&
+      str.length <= LOGIN_PASSWORD_MAX_LENGTH &&
+      str.length >= LOGIN_PASSWORD_MIN_LENGTH
+    )) throw CustomError.IncorrectLoginPassword;
   }
-}
+
+  passwordMatch(expectedPassword, password) {
+    if (expectedPassword !== password) 
+      throw CustomError.IncorrectLoginPassword;
+  }
+
+  name(str) {
+    if (!(
+      checkSymbols(str, ALL_SYMBOLS) &&
+      str[0] !== '/' &&
+      !str.includes('//') &&
+      str.length <= NAME_MAX_LENGTH &&
+      str.length >= NAME_MIN_LENGTH
+    )) throw CustomError.InvalidName;
+  }
+
+  token (str) {
+    if (!(
+      checkSymbols(str, ALPHA_DIGIT) &&
+      str.length === TOKEN_LENGTH
+    )) throw CustomError.InvalidToken;
+  }
+
+  async tokenExistance(token) {
+    const storages = await this.db.select('StorageInfo', ['*'], `token = '${token}'`);
+    if (storages.length === 0) throw CustomError.NoSuchToken;
+  }
+  
+  names (fileList) {
+    if (fileList.length === 0) CustomError.EmptyFileList;
+
+    for (const name of fileList) 
+      this.name(name);
+  }
+} 

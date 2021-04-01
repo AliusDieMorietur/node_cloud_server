@@ -34,7 +34,7 @@ const comparator = (a, b) => {
 
 export class Storage {
 
-  constructor(public storagePath: string) {}
+  constructor(public storagePath: string, public tokenLifeTime: number) {}
 
   recalculate(currentFolder: Structure): number {
     if (currentFolder.childs) 

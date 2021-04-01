@@ -6,7 +6,9 @@ import { Storage } from './storage';
 import { serverConfig } from '../config/server';
 import { dbConfig } from '../config/db';
 import { generateToken } from './auth';
-
+import { Validator } from './utils';
+ 
+const TOKEN_LIFETIME: number = serverConfig.tokenLifeTime;
 const STORAGE_PATH: string = path.join(process.cwd(), serverConfig.storagePath);
 const STATIC_PATH = path.join(process.cwd(), './static');
 
@@ -22,8 +24,9 @@ export class App {
   private links = new Map<string, string>();
   private connections = new Map<string, any>();
   private logger = new Logger();
-  private storage = new Storage(STORAGE_PATH);
+  private storage = new Storage(STORAGE_PATH, TOKEN_LIFETIME);
   private db = new Database(dbConfig);
+  private validator = new Validator(this.db);
 
   saveConnection(login: string, connection): number {
     const connections = this.connections.has(login)
