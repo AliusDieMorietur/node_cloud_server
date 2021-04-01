@@ -2,9 +2,12 @@ import { promises as fsp, Dirent } from 'fs';
 import * as path from 'path';
 import { Logger } from './logger';
 import Database from './db';
+import { Storage } from './storage';
+import { serverConfig } from '../config/server';
 import { dbConfig } from '../config/db';
 import { generateToken } from './auth';
 
+const STORAGE_PATH: string = path.join(process.cwd(), serverConfig.storagePath);
 const STATIC_PATH = path.join(process.cwd(), './static');
 
 const toUnix = (filePath: string): string => 
@@ -18,8 +21,9 @@ export class App {
   private static = new Map<string, Buffer>();
   private links = new Map<string, string>();
   private connections = new Map<string, any>();
-  logger = new Logger();
-  db: Database;
+  private logger = new Logger();
+  private storage = new Storage(STORAGE_PATH);
+  private db = new Database(dbConfig);
 
   saveConnection(login: string, connection): number {
     const connections = this.connections.has(login)
@@ -92,10 +96,36 @@ export class App {
     }
   }
 
+  async clearExpired() {
+    let tokenCounter = 0;
+    let fileCounter = 0;
+    try {
+      const storageInfo = await this.db.select('StorageInfo', ['*']);
+      
+      for (const item of storageInfo) {
+        const expire = Number(item.expire);
+        if (expire !== 0 && Date.now() > expire) {
+          const { token } = item;
+          const fileInfo = await this.db.select('FileInfo', ['*'], `token = '${token}'`);
+          const fakeNames = fileInfo.map(item => item.fakename);
+          const dirPath = path.join(this.storage.storagePath, token);
+
+          await this.db.delete('StorageInfo', `token = '${token}'`);
+          await this.storage.delete(dirPath, fakeNames);
+          await this.storage.deleteFolder(dirPath);
+          fileCounter += fakeNames.length;
+          tokenCounter++;
+        }
+      }
+
+      this.logger.log(`Files deleted: ${fileCounter} Tokens expired: ${tokenCounter}`);
+    } catch (err) {
+      this.logger.error(err);
+    }
+  }
+
   async start() {
     try {
-      this.db = new Database(dbConfig);
-      this.logger.success('Db connected');
       await this.loadLinks();
       this.logger.success('Links loaded');
       await this.loadDirectory(STATIC_PATH, this.static);
