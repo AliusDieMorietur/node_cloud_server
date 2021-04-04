@@ -17,7 +17,12 @@ export class Server {
       const channel = new Channel(connection, req.socket.remoteAddress, application);
       connection.on('close', async () => channel.deleteConnection());
       connection.on('message', async data => {
-        channel.message(data);
+        try {
+          if (typeof data === 'string') channel.message(data);
+          else channel.buffer(data); 
+        } catch (error) {
+          this.application.logger.error(error);
+        }
       })
     });
 

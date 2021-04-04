@@ -29,38 +29,41 @@ export class Channel extends EventEmitter {
         : [name, generateToken(), false];
       });
       
-      let counter = 0;
-      const upload = async buffer => {
-        const [name, fakename, changed] = names[counter];
+      const gen = (async function* () {
         try {
-          const size = Buffer.byteLength(buffer);
+          const nextBuffer = buffer => gen.next(buffer);
 
-          if (changed)
-            await this.application.db
-              .update('FileInfo', `size = '${size}'`, `name = '${name}' AND token = '${token}'`);
-          else
-            await this.application.db
-              .insert('FileInfo', { token, name, fakename, size });
+          this.on('bufferUpload', nextBuffer);
+  
+          for (const [name, fakename, changed] of names) {
+            const buffer = yield;
+            const size = Buffer.byteLength(buffer);
+            if (changed)
+              await this.application.db
+                .update('FileInfo', `size = '${size}'`, `name = '${name}' AND token = '${token}'`);
+            else
+              await this.application.db
+                .insert('FileInfo', { token, name, fakename, size });
+  
+            this.application.storage.upload(dirPath, fakename, buffer);
+  
+          }
 
-          this.application.storage.upload(dirPath, fakename, buffer);
+          if (storage === 'pmt') this.sendStructure();
 
-          const last = counter === names.length - 1;
-          if (last) {
-            if (storage === 'pmt') this.sendStructure();
-            else setTimeout(async () => {
-              await this.application.db.delete('StorageInfo', `token = '${token}'`);
-              await this.application.storage.delete(dirPath, names.map(name => name[1]));
-              await this.application.storage.deleteFolder(dirPath);
-            }, this.application.storage.tokenLifeTime);
-            this.removeListener('bufferUpload', upload)
-          };
-          counter++;
+          else setTimeout(async () => {
+            await this.application.db.delete('StorageInfo', `token = '${token}'`);
+            await this.application.storage.delete(dirPath, names.map(name => name[1]));
+            await this.application.storage.deleteFolder(dirPath);
+          }, this.application.storage.tokenLifeTime);
+
+          this.removeListener('bufferUpload', nextBuffer)
         } catch (error) {
           this.application.logger.error(error);
         }
-      }
+      }).bind(this)();
 
-      this.on('bufferUpload', upload);
+      gen.next();
 
       if (storage === 'tmp') return token;
     },
@@ -227,32 +230,28 @@ export class Channel extends EventEmitter {
   }
 
   async message(data) {
-    try {
-      if (typeof data === 'string') {
-        const packet = JSON.parse(data);
-        const { callId, msg, args } = packet;
-        if (this.commands[msg]) {
-          try {
-            const result = await this.commands[msg](args);
-            this.send(JSON.stringify({ callId, result }));
-            const liveReload = ['newFolder', 'rename', 'delete'];
-            if (liveReload.includes(msg)) 
-              this.sendStructure();
-          } catch (error) {
-            this.application.logger.error(error);
-            this.send(JSON.stringify({ 
-              callId, 
-              error: { message: error.message, code: error.code } 
-            }));
-          }
-        }
-      } else {
-        console.log(data);
-        this.emit('bufferUpload', data);
+    const packet = JSON.parse(data);
+    const { callId, msg, args } = packet;
+    if (this.commands[msg]) {
+      try {
+        const result = await this.commands[msg](args);
+        this.send(JSON.stringify({ callId, result }));
+        const liveReload = ['newFolder', 'rename', 'delete'];
+        if (liveReload.includes(msg)) 
+          this.sendStructure();
+      } catch (error) {
+        this.application.logger.error(error);
+        this.send(JSON.stringify({ 
+          callId, 
+          error: { message: error.message, code: error.code } 
+        }));
       }
-    } catch (err) {
-      this.application.logger.error(err);
     }
+  }
+
+  async buffer(data) {
+    console.log(data);
+    this.emit('bufferUpload', data);
   }
 
   send(data) {
