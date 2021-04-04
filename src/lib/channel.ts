@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { generateToken, Session } from './auth';
 import * as EventEmitter from 'events';
+import { CustomError } from './utils';
 
 export class Channel extends EventEmitter {
   private index = -1;
@@ -12,29 +13,29 @@ export class Channel extends EventEmitter {
 
       const token = storage === 'tmp' ? generateToken() : this.user.token;
       const dirPath = path.join(this.application.storage.storagePath, token);
-      
+
       if (storage === 'tmp') {
         await this.application.db.insert('StorageInfo', {
           token,
           expire: Date.now() + this.application.storage.tokenLifeTime
         });
         await this.application.storage.createFolder(dirPath);
-      } 
-      
+      }
+
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
       const names = fileList.map(name => {
         const alreadyExists = fileInfo.find(item => item.name === name);
-        return alreadyExists 
+        return alreadyExists
         ? [name, alreadyExists.fakename, true]
         : [name, generateToken(), false];
       });
-      
+
       const gen = (async function* () {
         try {
           const nextBuffer = buffer => gen.next(buffer);
 
           this.on('bufferUpload', nextBuffer);
-  
+
           for (const [name, fakename, changed] of names) {
             const buffer = yield;
             const size = Buffer.byteLength(buffer);
@@ -44,9 +45,8 @@ export class Channel extends EventEmitter {
             else
               await this.application.db
                 .insert('FileInfo', { token, name, fakename, size });
-  
+
             this.application.storage.upload(dirPath, fakename, buffer);
-  
           }
 
           if (storage === 'pmt') this.sendStructure();
@@ -77,7 +77,7 @@ export class Channel extends EventEmitter {
 
       const dirPath = path.join(this.application.storage.storagePath, token);
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
+      const existingNames = fileInfo.map(item => item.name);
       const fakeNames = fileList
         .map(item => fileInfo[existingNames.indexOf(item)].fakename);
 
@@ -101,12 +101,12 @@ export class Channel extends EventEmitter {
       this.application.validator.name(name);
 
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
-      if (!existingNames.includes(name)) 
-        await this.application.db.insert('FileInfo', { 
-          token, 
-          name, 
-          fakeName: 'folder', 
+      const existingNames = fileInfo.map(item => item.name);
+      if (!existingNames.includes(name))
+        await this.application.db.insert('FileInfo', {
+          token,
+          name,
+          fakeName: 'folder',
           size: 0
         });
     },
@@ -124,7 +124,7 @@ export class Channel extends EventEmitter {
               ? item.name.substring(item.name.length - 1, 0).split('/')
               : item.name.split('/');
 
-            dirs[dirs.indexOf(name.substring(name.length - 1, 0))] = 
+            dirs[dirs.indexOf(name.substring(name.length - 1, 0))] =
               newName.substring(newName.length - 1, 0);
 
             const newItemName = dirs.join('/');
@@ -140,16 +140,16 @@ export class Channel extends EventEmitter {
       this.application.validator.names(fileList);
 
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
-      const existingNames = fileInfo.map(item => item.name); 
+      const existingNames = fileInfo.map(item => item.name);
 
       for (const item of fileList) {
         const { id } = fileInfo[existingNames.indexOf(item)];
         const links = await this.application.db.select('Link', ['*'], `FileId = '${id}'`);
 
-        for (const item of links) 
+        for (const item of links)
           this.application.deleteLink(item.token);
         await this.application.db.delete('FileInfo', `name = '${item}'`);
-        
+
         if (item[item.length - 1] !== '/') {
           const dirPath = path.join(this.application.storage.storagePath, token);
           const { fakename } = fileInfo[existingNames.indexOf(item)];
@@ -159,7 +159,7 @@ export class Channel extends EventEmitter {
       }
 
     },
-    restoreSession: async ({ token }) => { 
+    restoreSession: async ({ token }) => {
       await this.application.validator.token(token);
 
       const session = await this.session.restoreSession(token);
@@ -175,11 +175,11 @@ export class Channel extends EventEmitter {
       await this.application.validator.tokenExistance(this.user.token)
 
       return await this.application.createLink(
-        name, 
+        name,
         this.user.token
       );
     },
-    authUser: async args => { 
+    authUser: async args => {
       const { login, password } = args.user;
 
       this.application.validator.login(login);
@@ -214,7 +214,7 @@ export class Channel extends EventEmitter {
   }
 
   deleteConnection() {
-    const authed = 
+    const authed =
       this.index !== -1 &&
       this.user
     if (authed) {
@@ -228,24 +228,28 @@ export class Channel extends EventEmitter {
     const structure = this.application.storage.buildStructure(fileInfo);
     this.sendAllDevices(JSON.stringify({ structure }));
   }
+  
+  async message({ callId, msg, args }) {
+    try {
+      if (!callId || !msg || !args) throw CustomError.WrongMessageStructure;
 
-  async message(data) {
-    const packet = JSON.parse(data);
-    const { callId, msg, args } = packet;
-    if (this.commands[msg]) {
-      try {
+      if (this.commands[msg]) {
         const result = await this.commands[msg](args);
+
         this.send(JSON.stringify({ callId, result }));
+
         const liveReload = ['newFolder', 'rename', 'delete'];
-        if (liveReload.includes(msg)) 
+
+        if (liveReload.includes(msg))
           this.sendStructure();
-      } catch (error) {
-        this.application.logger.error(error);
-        this.send(JSON.stringify({ 
-          callId, 
-          error: { message: error.message, code: error.code } 
-        }));
-      }
+
+      } else throw CustomError.NoSuchCommand(msg);
+    } catch (error) {
+      this.application.logger.error(error);
+      this.send(JSON.stringify({
+        callId,
+        error: { message: error.message, code: error.code }
+      }));
     }
   }
 

@@ -48,13 +48,13 @@ class Tester {
     await Promise.all(tests);
     this.analysis();
   }
-
+  
   async test(testName, testable) {
-    const { 
+    const {
       context,
 			assertions,
       specialRules
-    } = testable;   
+    } = testable;
 
     const createContext = (context, args, expectedResult) => ({
       result: null,
@@ -66,29 +66,29 @@ class Tester {
       ...context
     })
 
-    for (const { args, expectedResult } of assertions) { 
+    for (const { args, assertion, expectedResult } of assertions) {
       const newContext = createContext(context, args, expectedResult);
       const { fnContext } = newContext;
       Object.assign(global, newContext);
-      try {         
+      try {
         const script = new vm.Script(`fn.bind(fnContext)(...args);`);
         const start = new Date().getTime();
         const result = await script.runInThisContext();
         const end = new Date().getTime();
 
-        if (specialRules) 
-          specialRules(context, fnContext, result, args); 
+        // if (specialRules)
+          assertion(context, fnContext, result, args);
 
         if (
-          expectedResult !== undefined && 
-          expectedResult !== null 
+          expectedResult !== undefined &&
+          expectedResult !== null
         ) assert.deepStrictEqual(result, expectedResult);
 
         this.passedTestscounter++;
         const line = `✓ Test passed on: ` +
                       TEXTCOLORS['ext'] +
-                      testName + 
-                      TEXTCOLORS['info'] + 
+                      testName +
+                      TEXTCOLORS['info'] +
                       ` [${end - start} ms]`;
         this.logger.success(line);
       } catch (error) {
@@ -96,8 +96,8 @@ class Tester {
         const line = `✗ Test failed on: ` +
                       TEXTCOLORS['ext'] +
                     `${testName}\n` +
-                      TEXTCOLORS['error'] + 
-                      `\n${error}\n` + 
+                      TEXTCOLORS['error'] +
+                      `\n${error}\n` +
                     `\nWith args: ${util.inspect(args, { depth: null })}\n` +
                     `${error.stack}`;
         this.logger.error(line);
@@ -105,13 +105,13 @@ class Tester {
     }
   }
 
-  analysis() { 
+  analysis() {
     this.logger.log(
-      `\n` + 
-      `  Tests passed: ${this.passedTestscounter}\n` + 
+      `\n` +
+      `  Tests passed: ${this.passedTestscounter}\n` +
       `  Tests failed: ${this.failedTestscounter}\n` +
       `  Tests total: ${this.failedTestscounter + this.passedTestscounter}\n`
-    ) 
+    )
   }
 }
 

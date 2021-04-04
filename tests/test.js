@@ -3,6 +3,7 @@ const tester = require('./tester');
 const { zip, Validator } = require('../target/lib/utils');
 const { Storage } = require('../target/lib/storage');
 const { Channel } = require('../target/lib/channel');
+const path = require("path");
 
 tester.start(test => [
 
@@ -74,8 +75,8 @@ tester.start(test => [
           {
             name: 'New Folder',
             childs: [
-              { name: 'sons2.docx', childs: null, capacity: 382829 },       
-              { name: 'sons2.pptx', childs: null, capacity: 11141537 }      
+              { name: 'sons2.docx', childs: null, capacity: 382829 },
+              { name: 'sons2.pptx', childs: null, capacity: 11141537 }
             ],
             capacity: 11524366
           },
@@ -106,7 +107,7 @@ tester.start(test => [
           {
             name: 'New Folder',
             childs: [
-              { name: 'sons2.pptx', childs: null, capacity: 11141537 }      
+              { name: 'sons2.pptx', childs: null, capacity: 11141537 }
             ],
             capacity: 11141537
           }
@@ -153,8 +154,8 @@ tester.start(test => [
             {
               name: 'New Folder',
               childs: [
-                { name: 'sons2.docx', childs: null, capacity: 382829 },       
-                { name: 'sons2.pptx', childs: null, capacity: 11141537 }      
+                { name: 'sons2.docx', childs: null, capacity: 382829 },
+                { name: 'sons2.pptx', childs: null, capacity: 11141537 }
               ],
               capacity: 11524366
             },
@@ -164,8 +165,8 @@ tester.start(test => [
           'New Folder/'
         ],
         expectedResult: [
-          { name: 'sons2.docx', childs: null, capacity: 382829 },       
-          { name: 'sons2.pptx', childs: null, capacity: 11141537 }      
+          { name: 'sons2.docx', childs: null, capacity: 382829 },
+          { name: 'sons2.pptx', childs: null, capacity: 11141537 }
         ]
       }
     ]
@@ -177,85 +178,122 @@ tester.start(test => [
     context: {
       fnContext: {},
       fn: async messages => {
-        for (const message of messages) 
-          await channel.message(message);
-
+        for (const message of messages)
+          { message instanceof Buffer ? await channel.buffer(message) : await channel.message(message) }
       },
       channel: new Channel(
-        { sent: [], send: msg => { channel.connection.sent = [ ...channel.connection.sent, msg] } },
-        '127.0.0.1', 
+        { sent: [], send(msg) { this.sent = [...this.sent, msg] } },
+        '127.0.0.1',
         {
           validator: new Validator(),
           storage: {
-            storagePath: './testPath',
+            storagePath: './',
             tokenLifeTime: 1000,
             files: {},
-            recalculate: currentFolder => { }, 
-            findPlace: (departureFolder, currentPath) => { }, 
-            buildStructure: rows => { }, 
-            upload: async (dirPath, filename, buffer) => { 
-              channel.application.storage.files[dirPath + '\\' + filename] = buffer
-            }, 
-            createFolder: async () => {}, 
-            download: async (dirPath, fileNames, connection) => { },        
-            deleteFolder: async dirPath => { },
-            delete: async (dirPath, fileNames) => {}
-          },
-          db: { 
-            tables: {},
-            insert: async (table, data) => { 
-              channel.application.db.tables[table] = 
-                channel.application.db.tables[table] 
-                  ? [...channel.application.db.tables[table], data] 
-                  : [data] 
+            recalculate: currentFolder => { },
+            findPlace: (dirPath, currentPath) => { },
+            buildStructure: rows => { },
+            upload(dirPath, filename, buffer) {
+              const folder = dirPath.split(path.sep).reduce((acc, x) => acc[x], this.files);
+              folder[filename] = buffer;
             },
-            delete: async (table, where) => {}, 
-            select: async (table, select, where) => { 
-              console.log(channel.application.db.tables);
-              return channel.application.db.tables[table] 
-                ? channel.application.db.tables[table] 
-                  .filter(item => select[0] === '*' ? true : false) 
+            createFolder(dirPath) {
+              dirPath.split(path.sep).reduce((acc, x) => {
+                if (!acc[x]) acc[x] = {};
+                return acc[x];
+              }, this.files);
+            },
+            download: async (dirPath, fileNames, connection) => { },
+            deleteFolder: async dirPath => { },
+            delete: async (dirPath, fileNames) => { }
+          },
+          db: {
+            tables: {},
+            insert: async (table, data) => {
+              channel.application.db.tables[table] =
+                channel.application.db.tables[table]
+                  ? [...channel.application.db.tables[table], data]
+                  : [data]
+            },
+            delete: async (table, where) => { },
+            select: async (table, select, where) => {
+              return channel.application.db.tables[table]
+                ? channel.application.db.tables[table]
+                  // .filter(item => select[0] === '*' ? true : false)
                   .filter(item => {
                     const [field, value] = where.split(" = ");
-                    
+
                     return item[field] === value;
                   })
                 : [];
-            }, 
-            update: async () => {} 
-          }, 
-          logger: { 
-            log: () => {},
-            error: (...args) => console.log(args), 
-            success: () => {}, 
-          }  
+            },
+            update: async () => { }
+          },
+          logger: {
+            log: (...args) => console.log("log: ", ...args),
+            error: (...args) => console.log("err: ", ...args),
+            success: (...args) => console.log("success: ", ...args),
+          }
         }
       ),
-
     },
-
     assertions: [
       {
-        args: [[
-            JSON.stringify({
-              callid: 0,
-              msg: 'upload',
-              args: {
-                fileList: [
-                  "2"
-                ], 
-                storage: 'tmp' 
+        args: [[{
+          callId: 0,
+          msg: 'upload',
+          args: {
+            fileList: [
+              "2"
+            ],
+            storage: 'tmp'
+          }
+        },
+        Buffer.from("1"),
+        ]],
+        assertion: (context, fnConext, result, args) => {
+          const {
+            channel: {
+              connection: { sent },
+              application: {
+                storage: { files },
+                db: {
+                  tables: {
+                    StorageInfo,
+                    FileInfo
+                  }
+                }
               }
-            }),
-            Buffer.from("1"),
-          ]
-        ],
-      }
-    ],
-    specialRules: (context, fnConext, result, args) => {
-      console.log(context.channel.application.storage);
-    }
-  }),
-  
-]);
+            }
+          } = context;
+          let response = JSON.parse(sent[0]);
+          const [[ request, buffer ]] = args;
+          const { callId, args: { fileList } } = request;
 
+          const tmpStorage = files[response.result];
+          const { fakename, name } = FileInfo[0];
+          const savedBuffer = tmpStorage[fakename];
+
+          // todo move some assertions specific for message() to separate test
+
+          if (response.callId !== callId)
+            throw new Error(`callIds are not equal in response and request: ${response.callId} !== ${callId}`);
+          if (response.result !== StorageInfo[0].token)
+            throw new Error(
+              `tokens are not equal in response and database table StorageInfo: ${response.result} !== ${StorageInfo[0].token}`
+            );
+          if (FileInfo[0].token !== response.result)
+            throw new Error(
+              `tokens are not equal in response and database table FileInfo: ${response.result} !== ${FileInfo[0].token}`
+            );
+          if (!files[response.result])
+            throw new Error("token does not exist in file system");
+          if (name !== fileList[0])
+            throw new Error(`Filename in database is not the same as in request: ${fileList[0]} !== ${name}`);
+          if (savedBuffer !== buffer)
+            throw new Error("Saved buffer is different from what's in request");
+        }
+      }
+    ]
+  }),
+]);

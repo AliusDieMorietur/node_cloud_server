@@ -18,8 +18,8 @@ export class Server {
       connection.on('close', async () => channel.deleteConnection());
       connection.on('message', async data => {
         try {
-          if (typeof data === 'string') channel.message(data);
-          else channel.buffer(data); 
+          if (typeof data === 'string') channel.message(JSON.parse(data));
+          else channel.buffer(data);
         } catch (error) {
           this.application.logger.error(error);
         }
