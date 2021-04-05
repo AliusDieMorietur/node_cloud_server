@@ -7,15 +7,15 @@ export const zip = (arr1, arr2) =>
     ]);
 
 export class CustomError extends Error {
-  static InvalidName = new CustomError(501, 'Invallid name');
-  static IncorrectLoginPassword = new CustomError(502, 'Username and/or password is incorrect');
-  static InvalidToken = new CustomError(503, 'Invalid token');
-  static NoSuchToken = new CustomError(504, 'No such token');
-  static SessionNotRestored = new CustomError(505, 'Session was not restored');
-  static EmptyFileList = new CustomError(506, 'File list is empty');
-  static NoSuchUser = new CustomError(507, 'User doesn`t exist');
+  static InvalidName = () => new CustomError(501, 'Invallid name');
+  static IncorrectLoginPassword = () => new CustomError(502, 'Username and/or password is incorrect');
+  static InvalidToken = () => new CustomError(503, 'Invalid token');
+  static NoSuchToken = () => new CustomError(504, 'No such token');
+  static SessionNotRestored = () => new CustomError(505, 'Session was not restored');
+  static EmptyFileList = () => new CustomError(506, 'File list is empty');
+  static NoSuchUser = () => new CustomError(507, 'User doesn`t exist');
   static NoSuchCommand = (command) => new CustomError(508, 'No such command as ' + command);
-  static WrongMessageStructure = new CustomError(509, 'Wrong Message structure, expecting { callId, msg, args }');
+  static WrongMessageStructure = () => new CustomError(509, 'Wrong Message structure, expecting { callId, msg, args }');
 
   constructor(readonly code, readonly message) {
     super();
@@ -51,50 +51,47 @@ export class Validator {
   constructor(private db) {}
 
   login(str) {
-    if (!(
-      checkSymbols(str, ALPHA_DIGIT + SPECIAL_SYMBOLS_A) &&
-      str.length <= LOGIN_PASSWORD_MAX_LENGTH &&
-      str.length >= LOGIN_PASSWORD_MIN_LENGTH
-    )) throw CustomError.IncorrectLoginPassword;
+    let condition = checkSymbols(str, ALPHA_DIGIT + SPECIAL_SYMBOLS_A);
+    condition = condition && str.length <= LOGIN_PASSWORD_MAX_LENGTH;
+    condition = condition && str.length >= LOGIN_PASSWORD_MIN_LENGTH;
+    
+    if (!condition) throw CustomError.IncorrectLoginPassword();
   }
 
   password(str) {
-    if (!(
-      checkSymbols(str, ALPHA_DIGIT) &&
-      str.length <= LOGIN_PASSWORD_MAX_LENGTH &&
-      str.length >= LOGIN_PASSWORD_MIN_LENGTH
-    )) throw CustomError.IncorrectLoginPassword;
+    let condition = checkSymbols(str, ALPHA_DIGIT);
+    condition = condition && str.length <= LOGIN_PASSWORD_MAX_LENGTH;
+    condition = condition && str.length >= LOGIN_PASSWORD_MIN_LENGTH;
+
+    if (!condition) throw CustomError.IncorrectLoginPassword();
   }
 
   passwordMatch(expectedPassword, password) {
     if (expectedPassword !== password)
-      throw CustomError.IncorrectLoginPassword;
+      throw CustomError.IncorrectLoginPassword();
   }
 
   name(str) {
-    if (!(
-      checkSymbols(str, ALL_SYMBOLS) &&
-      str[0] !== '/' &&
-      !str.includes('//') &&
-      str.length <= NAME_MAX_LENGTH &&
-      str.length >= NAME_MIN_LENGTH
-    )) throw CustomError.InvalidName;
+    let condition = checkSymbols(str, ALL_SYMBOLS);
+    condition = condition && str[0] !== '/';
+    condition = condition && !str.includes('//');
+    condition = condition && str.length <= NAME_MAX_LENGTH;
+    condition = condition && str.length >= NAME_MIN_LENGTH;
+
+    if (!condition) throw CustomError.InvalidName();
   }
 
-  token (str) {
-    if (!(
-      checkSymbols(str, ALPHA_DIGIT) &&
-      str.length === TOKEN_LENGTH
-    )) throw CustomError.InvalidToken;
+  token(str) {
+    if (!(checkSymbols(str, ALPHA_DIGIT) && str.length === TOKEN_LENGTH)) throw CustomError.InvalidToken();
   }
 
   async tokenExistance(token) {
     const storages = await this.db.select('StorageInfo', ['*'], `token = '${token}'`);
-    if (storages.length === 0) throw CustomError.NoSuchToken;
+    if (storages.length === 0) throw CustomError.NoSuchToken();
   }
 
   names (fileList) {
-    if (fileList.length === 0) CustomError.EmptyFileList;
+    if (fileList.length === 0) CustomError.EmptyFileList();
 
     for (const name of fileList)
       this.name(name);
