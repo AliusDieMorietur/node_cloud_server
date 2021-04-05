@@ -228,10 +228,12 @@ export class Channel extends EventEmitter {
     const structure = this.application.storage.buildStructure(fileInfo);
     this.sendAllDevices(JSON.stringify({ structure }));
   }
-  
-  async message({ callId, msg, args }) {
+
+  async message(data) {
+    const { callId, msg, args } = JSON.parse(data);
     try {
-      if (!callId || !msg || !args) throw CustomError.WrongMessageStructure;
+      if (callId === undefined || msg === undefined || args === undefined)
+        throw CustomError.WrongMessageStructure();
 
       if (this.commands[msg]) {
         const result = await this.commands[msg](args);
@@ -246,10 +248,7 @@ export class Channel extends EventEmitter {
       } else throw CustomError.NoSuchCommand(msg);
     } catch (error) {
       this.application.logger.error(error);
-      this.send(JSON.stringify({
-        callId,
-        error: { message: error.message, code: error.code }
-      }));
+      this.send(JSON.stringify({ callId, error }));
     }
   }
 
