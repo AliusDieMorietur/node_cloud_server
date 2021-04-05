@@ -4,6 +4,69 @@ const { zip, Validator } = require('../target/lib/utils');
 const { Storage } = require('../target/lib/storage');
 const { Channel } = require('../target/lib/channel');
 const path = require("path");
+const assert = require("assert");
+
+const getChannelMock = () => new Channel(
+  { sent: [], send(msg) { this.sent = [...this.sent, msg] } },
+  '127.0.0.1',
+  {
+    validator: new Validator(),
+    storage: {
+      storagePath: './',
+      tokenLifeTime: 1000,
+      files: {},
+      recalculate: currentFolder => { },
+      findPlace: (dirPath, currentPath) => { },
+      buildStructure: rows => { },
+      upload(dirPath, filename, buffer) {
+        const folder = dirPath.split(path.sep).reduce((acc, x) => acc[x], this.files);
+        folder[filename] = buffer;
+      },
+      createFolder(dirPath) {
+        dirPath.split(path.sep).reduce((acc, x) => {
+          if (!acc[x]) acc[x] = {};
+          return acc[x];
+        }, this.files);
+      },
+      download: async (dirPath, fileNames, connection) => { },
+      deleteFolder: async dirPath => { },
+      delete: async (dirPath, fileNames) => { }
+    },
+    db: {
+      tables: {},
+      insert: async (table, data) => {
+        channel.application.db.tables[table] =
+          channel.application.db.tables[table]
+            ? [...channel.application.db.tables[table], data]
+            : [data]
+      },
+      delete: async (table, where) => { },
+      select: async (table, select, where) => {
+        return channel.application.db.tables[table]
+          ? channel.application.db.tables[table]
+            // .filter(item => select[0] === '*' ? true : false)
+            .filter(item => {
+              const [field, value] = where.split(" = ");
+
+              return item[field] === value;
+            })
+          : [];
+      },
+      update: async () => { }
+    },
+    logger: {
+      log: (...args) => console.log("log: ", ...args),
+      error: (...args) => console.log("err: ", ...args),
+      success: (...args) => console.log("success: ", ...args),
+    },
+    connections: {
+      sent: [[]],
+      get(login) {
+        return [{ sent: this.sent[0], send(msg) { this.sent = [...this.sent, msg] } }];
+      }
+    }
+  }
+)
 
 tester.start(test => [
 
@@ -174,84 +237,115 @@ tester.start(test => [
 
 
 
+  // test('Channel.message', {
+  //   context: {
+  //     channel: getChannelMock(),
+  //     fn(...args) { channel.message(...args) },
+  //   },
+  //   assertions: [
+  //     {
+  //       args: [ JSON.stringify({}) ], // empty object
+  //       specialRules: (context, fnConext, result, args) => {
+  //         const {
+  //           channel: {
+  //             connection: { sent }
+  //           }
+  //         } = context;
+  //         let response = JSON.parse(sent[0]);
+
+  //         assert.deepStrictEqual(response, {
+  //           callId: args[0].callId,
+  //           error: { message: 'Wrong Message structure, expecting { callId, msg, args }', code: 509 }
+  //         });
+  //       }
+  //     },
+  //     {
+  //       args: [ JSON.stringify({ callId: 0 }) ],
+  //       specialRules: (context, fnConext, result, args) => {
+  //         const {
+  //           channel: {
+  //             connection: { sent }
+  //           }
+  //         } = context;
+  //         let response = JSON.parse(sent[0]);
+
+  //         assert.deepStrictEqual(response, {
+  //           callId: args[0].callId,
+  //           error: { message: 'Wrong Message structure, expecting { callId, msg, args }', code: 509 }
+  //         });
+  //       }
+  //     },
+  //     {
+  //       args: [
+  //         JSON.stringify({
+  //           callId: 0,
+  //           msg: 'uplod', // *typo*
+  //           args: { }
+  //         }),
+  //       ],
+  //       specialRules: (context, fnConext, result, args) => {
+  //         const {
+  //           channel: {
+  //             connection: { sent }
+  //           }
+  //         } = context;
+  //         let response = JSON.parse(sent[0]);
+
+  //         assert.deepStrictEqual(response, {
+  //           callId: args[0].callId,
+  //           error: { message: 'No such command as ' + args[0].msg, code: 508 }
+  //         });
+  //       }
+  //     },
+  //     {
+  //       args: [
+  //         JSON.stringify({
+  //           callId: 0,
+  //           msg: 'delete', // *typo*
+  //           args: { }
+  //         }),
+  //       ],
+  //       specialRules: (context, fnConext, result, args) => {
+  //         const {
+  //           channel: {
+  //             connection: { sent }
+  //           }
+  //         } = context;
+  //         let response = JSON.parse(sent[0]);
+
+  //         assert.deepStrictEqual(response, {
+  //           callId: args[0].callId,
+  //           error: { message: 'No such command as ' + args[0].msg, code: 508 }
+  //         });
+  //       }
+  //     }
+  //   ]
+  // }),
+
   test('Channel.commands.upload', {
     context: {
-      fnContext: {},
       fn: async messages => {
         for (const message of messages)
           { message instanceof Buffer ? await channel.buffer(message) : await channel.message(message) }
       },
-      channel: new Channel(
-        { sent: [], send(msg) { this.sent = [...this.sent, msg] } },
-        '127.0.0.1',
-        {
-          validator: new Validator(),
-          storage: {
-            storagePath: './',
-            tokenLifeTime: 1000,
-            files: {},
-            recalculate: currentFolder => { },
-            findPlace: (dirPath, currentPath) => { },
-            buildStructure: rows => { },
-            upload(dirPath, filename, buffer) {
-              const folder = dirPath.split(path.sep).reduce((acc, x) => acc[x], this.files);
-              folder[filename] = buffer;
-            },
-            createFolder(dirPath) {
-              dirPath.split(path.sep).reduce((acc, x) => {
-                if (!acc[x]) acc[x] = {};
-                return acc[x];
-              }, this.files);
-            },
-            download: async (dirPath, fileNames, connection) => { },
-            deleteFolder: async dirPath => { },
-            delete: async (dirPath, fileNames) => { }
-          },
-          db: {
-            tables: {},
-            insert: async (table, data) => {
-              channel.application.db.tables[table] =
-                channel.application.db.tables[table]
-                  ? [...channel.application.db.tables[table], data]
-                  : [data]
-            },
-            delete: async (table, where) => { },
-            select: async (table, select, where) => {
-              return channel.application.db.tables[table]
-                ? channel.application.db.tables[table]
-                  // .filter(item => select[0] === '*' ? true : false)
-                  .filter(item => {
-                    const [field, value] = where.split(" = ");
-
-                    return item[field] === value;
-                  })
-                : [];
-            },
-            update: async () => { }
-          },
-          logger: {
-            log: (...args) => console.log("log: ", ...args),
-            error: (...args) => console.log("err: ", ...args),
-            success: (...args) => console.log("success: ", ...args),
-          }
-        }
-      ),
+      channel: getChannelMock(),
     },
     assertions: [
       {
-        args: [[{
-          callId: 0,
-          msg: 'upload',
-          args: {
-            fileList: [
-              "2"
-            ],
-            storage: 'tmp'
-          }
-        },
-        Buffer.from("1"),
+        args: [[
+          JSON.stringify({
+            callId: 0,
+            msg: 'upload',
+            args: {
+              fileList: [
+                "2"
+              ],
+              storage: 'tmp'
+            }
+          }),
+          Buffer.from("1"),
         ]],
-        assertion: (context, fnConext, result, args) => {
+        specialRules: (context, fnConext, result, args) => {
           const {
             channel: {
               connection: { sent },
@@ -266,8 +360,9 @@ tester.start(test => [
               }
             }
           } = context;
-          let response = JSON.parse(sent[0]);
-          const [[ request, buffer ]] = args;
+          const response = JSON.parse(sent[0]);
+          let [[ request, buffer ]] = args;
+          request = JSON.parse(request);
           const { callId, args: { fileList } } = request;
 
           const tmpStorage = files[response.result];
@@ -275,6 +370,7 @@ tester.start(test => [
           const savedBuffer = tmpStorage[fakename];
 
           // todo move some assertions specific for message() to separate test
+          // replace ifs and throws with assert.deepEqual
 
           if (response.callId !== callId)
             throw new Error(`callIds are not equal in response and request: ${response.callId} !== ${callId}`);

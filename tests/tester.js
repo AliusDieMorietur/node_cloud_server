@@ -48,7 +48,7 @@ class Tester {
     await Promise.all(tests);
     this.analysis();
   }
-  
+
   async test(testName, testable) {
     const {
       context,
@@ -66,7 +66,7 @@ class Tester {
       ...context
     })
 
-    for (const { args, assertion, expectedResult } of assertions) {
+    for (const { args, specialRules, expectedResult } of assertions) {
       const newContext = createContext(context, args, expectedResult);
       const { fnContext } = newContext;
       Object.assign(global, newContext);
@@ -76,8 +76,8 @@ class Tester {
         const result = await script.runInThisContext();
         const end = new Date().getTime();
 
-        // if (specialRules)
-          assertion(context, fnContext, result, args);
+        if (specialRules)
+          specialRules(context, fnContext, result, args);
 
         if (
           expectedResult !== undefined &&
