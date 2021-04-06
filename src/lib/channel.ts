@@ -71,8 +71,10 @@ export class Channel extends EventEmitter {
       const token = args.token || this.user.token;
       const { fileList } = args;
 
-      this.application.validator.token(token);
-      await this.application.validator.tokenExistance(token);
+      if (args.token) {
+        this.application.validator.token(token);
+        await this.application.validator.tokenExistance(token);
+      }
       this.application.validator.names(fileList);
 
       const dirPath = path.join(this.application.storage.storagePath, token);
@@ -86,8 +88,10 @@ export class Channel extends EventEmitter {
     availableFiles: async args => {
       const token = args.token || this.user.token;
 
-      this.application.validator.token(token);
-      await this.application.validator.tokenExistance(token);
+      if (args.token) {
+        this.application.validator.token(token);
+        await this.application.validator.tokenExistance(token);
+      }
 
       const fileInfo = await this.application.db.select('FileInfo', ['*'], `token = '${token}'`);
 
@@ -157,7 +161,6 @@ export class Channel extends EventEmitter {
           await this.application.storage.delete(dirPath, [fakename]);
         }
       }
-
     },
     restoreSession: async ({ token }) => {
       await this.application.validator.token(token);
@@ -170,9 +173,6 @@ export class Channel extends EventEmitter {
     },
     createLink: async ({ name }) => {
       this.application.validator.name(name);
-
-      await this.application.validator.token(this.user.token);
-      await this.application.validator.tokenExistance(this.user.token)
 
       return await this.application.createLink(
         name,
@@ -233,7 +233,7 @@ export class Channel extends EventEmitter {
     const { callId, msg, args } = JSON.parse(data);
     try {
       if (callId === undefined || msg === undefined || args === undefined)
-        throw CustomError.WrongMessageStructure();
+        throw CustomError.IncorrectMessageStructure();
 
       if (this.commands[msg]) {
         const result = await this.commands[msg](args);

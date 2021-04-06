@@ -15,7 +15,7 @@ export class CustomError extends Error {
   static EmptyFileList = () => new CustomError(506, 'File list is empty');
   static NoSuchUser = () => new CustomError(507, 'User doesn`t exist');
   static NoSuchCommand = (command) => new CustomError(508, 'No such command as ' + command);
-  static WrongMessageStructure = () => new CustomError(509, 'Wrong Message structure, expecting { callId, msg, args }');
+  static IncorrectMessageStructure = () => new CustomError(509, 'Wrong Message structure, expecting { callId, msg, args }');
 
   constructor(readonly code, readonly message) {
     super();
@@ -54,7 +54,7 @@ export class Validator {
     let condition = checkSymbols(str, ALPHA_DIGIT + SPECIAL_SYMBOLS_A);
     condition = condition && str.length <= LOGIN_PASSWORD_MAX_LENGTH;
     condition = condition && str.length >= LOGIN_PASSWORD_MIN_LENGTH;
-    
+
     if (!condition) throw CustomError.IncorrectLoginPassword();
   }
 
@@ -91,7 +91,7 @@ export class Validator {
   }
 
   names (fileList) {
-    if (fileList.length === 0) CustomError.EmptyFileList();
+    if (fileList.length === 0) throw CustomError.EmptyFileList();
 
     for (const name of fileList)
       this.name(name);
