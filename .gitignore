@@ -3,6 +3,8 @@ package-lock.json
 polygon
 lib/react_cloud_client_web
 static
+logs
+storage
 tests/old_test.js
 tests/old_tester.js
 tests/log.txt
