@@ -2,10 +2,10 @@
 Your personal cloud storage.
 
 # Usage
-- `git clone --recurse-submodules https://github.com/AliusDieMorietur/node_cloud_server.git`
-- `npm run prepare_repo` 
-- `npm run add_user` (Creates user in your storage)
-- `npm start`
+- git clone --recurse-submodules https://github.com/AliusDieMorietur/node_cloud_server.git
+- npm run prepare_repo
+- npm run add_user 
+- npm start
 
 # Requirements
 - NodeJS 12^
