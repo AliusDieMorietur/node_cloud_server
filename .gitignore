@@ -1,7 +1,8 @@
-target
 node_modules
 package-lock.json
-static_save
-exp.js
-old_test.js
-old_tester.js
+polygon
+lib/react_cloud_client_web
+static
+tests/old_test.js
+tests/old_tester.js
+tests/log.txt
