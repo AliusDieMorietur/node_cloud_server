@@ -2179,3 +2179,3443 @@
  Tests passed: 10
  Tests failed: 0
  Tests total: 10
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [ [] ]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.findPlace
+[31m
+With args: [
+  [
+    {
+      name: 'New Folder',
+      childs: [
+        { name: 'sons2.docx', childs: null, capacity: 382829 },
+        { name: 'sons2.pptx', childs: null, capacity: 11141537 }
+      ],
+      capacity: 11524366
+    },
+    { name: '1.sm', childs: null, capacity: 19194 },
+    { name: '2.sm', childs: null, capacity: 4697 }
+  ],
+  'New Folder/'
+]
+
+TypeError: Cannot read property 'bind' of undefined
+✓ Test passed on: [38;2;94;136;255mtest[37m [28 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [448 ms]
+
+  Tests passed: 43
+  Tests failed: 5
+  Tests total: 48
+
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [ [] ]
+
+TypeError: Cannot read property 'bind' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.findPlace
+[31m
+With args: [
+  [
+    {
+      name: 'New Folder',
+      childs: [
+        { name: 'sons2.docx', childs: null, capacity: 382829 },
+        { name: 'sons2.pptx', childs: null, capacity: 11141537 }
+      ],
+      capacity: 11524366
+    },
+    { name: '1.sm', childs: null, capacity: 19194 },
+    { name: '2.sm', childs: null, capacity: 4697 }
+  ],
+  'New Folder/'
+]
+
+TypeError: Cannot read property 'bind' of undefined
+✓ Test passed on: [38;2;94;136;255mtest[37m [26 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [136 ms]
+
+  Tests passed: 43
+  Tests failed: 5
+  Tests total: 48
+
+✓ Test passed on: [38;2;94;136;255mtest[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [202 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.findPlace
+[31m
+With args: [
+  [
+    {
+      name: 'New Folder',
+      childs: [
+        { name: 'sons2.docx', childs: null, capacity: 382829 },
+        { name: 'sons2.pptx', childs: null, capacity: 11141537 }
+      ],
+      capacity: 11524366
+    },
+    { name: '1.sm', childs: null, capacity: 19194 },
+    { name: '2.sm', childs: null, capacity: 4697 }
+  ],
+  'New Folder/'
+]
+
+TypeError: Cannot read property 'bind' of undefined
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [480 ms]
+
+  Tests passed: 47
+  Tests failed: 1
+  Tests total: 48
+
+✓ Test passed on: [38;2;94;136;255mtest[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [384 ms]
+
+  Tests passed: 48
+  Tests failed: 0
+  Tests total: 48
+
+✓ Test passed on: [38;2;94;136;255mtest[37m [1 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [17 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+✓ Test passed on: [38;2;94;136;255mzip[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [4 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+✓ Test passed on: [38;2;94;136;255mzip[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [45 ms]
+
+  Tests passed: 45
+  Tests failed: 3
+  Tests total: 48
+
+✓ Test passed on: [38;2;94;136;255mtest[37m [3 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: this.recalculate is not a function
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [17 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: this.recalculate is not a function
+✓ Test passed on: [38;2;94;136;255mzip[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [4 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+TypeError: this.recalculate is not a function
+✓ Test passed on: [38;2;94;136;255mzip[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [40 ms]
+
+  Tests passed: 45
+  Tests failed: 3
+  Tests total: 48
+
+✓ Test passed on: [38;2;94;136;255mtest[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.login[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mzip[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.password[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.token[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mvalidate.name[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [496 ms]
+
+  Tests passed: 48
+  Tests failed: 0
+  Tests total: 48
+
+
+✗ Test failed on: [38;2;94;136;255mStorage.findPlace
+[31m
+With args: [
+  [
+    {
+      name: 'New Folder',
+      childs: [
+        { name: 'sons2.docx', childs: null, capacity: 382829 },
+        { name: 'sons2.pptx', childs: null, capacity: 11141537 }
+      ],
+      capacity: 11524366
+    },
+    { name: '1.sm', childs: null, capacity: 19194 },
+    { name: '2.sm', childs: null, capacity: 4697 }
+  ],
+  'New Folder/'
+]
+
+SyntaxError: Unexpected token '{'
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [13 ms]
+
+  Tests passed: 1
+  Tests failed: 1
+  Tests total: 2
+
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [471 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [225 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [0 ms]
+
+  Tests passed: 1
+  Tests failed: 0
+  Tests total: 1
+
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [400 ms]
+
+  Tests passed: 2
+  Tests failed: 0
+  Tests total: 2
+
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [141 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [505 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [140 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [174 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [225 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [110 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [37 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [61 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [373 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [417 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [340 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [101 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [349 ms]
+
+  Tests passed: 3
+  Tests failed: 3
+  Tests total: 6
+
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [85 ms]
+
+  Tests passed: 3
+  Tests failed: 3
+  Tests total: 6
+
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+
+TypeError: Cannot read property 'recalculate' of undefined
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [441 ms]
+
+  Tests passed: 3
+  Tests failed: 3
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [306 ms]
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+TypeError: Cannot read property 'recalculate' of undefined
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+TypeError: Cannot read property 'recalculate' of undefined
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+TypeError: Cannot read property 'recalculate' of undefined
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [510 ms]
+
+  Tests passed: 3
+  Tests failed: 3
+  Tests total: 6
+
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+TypeError: Cannot read property 'recalculate' of undefined
+
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 163,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '1.sm',
+      fakename: 'vlVvqH4AQMCiC31I2NJ7c9VE02Pj7fZa',
+      size: 19194
+    },
+    {
+      id: 164,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: '2.sm',
+      fakename: 'IP3Sfd2Kk3nAfWKnfnBfpzKP3slVBTYC',
+      size: 4697
+    },
+    {
+      id: 165,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.docx',
+      fakename: 'tMSnHsXlnZJSK1Xlf80OFkoyW0Be5HXD',
+      size: 382829
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+TypeError: Cannot read property 'recalculate' of undefined
+
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    },
+    {
+      id: 166,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/sons2.pptx',
+      fakename: '3eWVqLDnxAkMmdET9CUoUsHYjggRbJq9',
+      size: 11141537
+    }
+  ]
+]
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+
+✗ Test failed on: [38;2;94;136;255mStorage.buildStructure
+[31m
+TypeError: Cannot read property 'recalculate' of undefined
+
+With args: [
+  [
+    {
+      id: 162,
+      token: 'q1gw0osQxqdfiiOdfoYRrD5zK2gz1Oas',
+      name: 'New Folder/',
+      fakename: 'folder',
+      size: 0
+    }
+  ]
+]
+D:\Code\node_cloud_server\target\lib\storage.js:80
+            this.recalculate(item);
+                 ^
+
+TypeError: Cannot read property 'recalculate' of undefined
+    at buildStructure (D:\Code\node_cloud_server\target\lib\storage.js:80:18)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInThisContext (vm.js:131:18)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:96:34)
+    at D:\Code\node_cloud_server\tests\vmTest.js:29:3
+    at Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:65:25)
+    at Object.<anonymous> (D:\Code\node_cloud_server\tests\vmTest.js:7:8)
+    at Module._compile (internal/modules/cjs/loader.js:1200:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1220:10)
+    at Module.load (internal/modules/cjs/loader.js:1049:32)
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [494 ms]
+
+  Tests passed: 3
+  Tests failed: 3
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [184 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [446 ms]
+
+  Tests passed: 6
+  Tests failed: 0
+  Tests total: 6
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [168 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [285 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [121 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [113 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [129 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [462 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [133 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✗ Test failed on: [38;2;94;136;255mtest
+[31m
+TypeError: Cannot read property 'storage' of undefined
+
+With args: [
+  [
+    {
+      callid: 0,
+      msg: 'upload',
+      args: [ { fileList: [ '2' ], storage: 'tmp' } ]
+    },
+    <Buffer 31>
+  ]
+]
+TypeError: Cannot read property 'storage' of undefined
+    at specialRules (D:\Code\node_cloud_server\tests\vmTest.js:253:39)
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:80:11)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [229 ms]
+
+  Tests passed: 6
+  Tests failed: 1
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [183 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [165 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [230 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [73 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [187 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [135 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [212 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [37 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [375 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [385 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [329 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [145 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [479 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [340 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [391 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [146 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [453 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [324 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [118 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [378 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [366 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [398 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [235 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [440 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [456 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [81 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [305 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [295 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [72 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [466 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [472 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [46 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [383 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [366 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [190 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [466 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [372 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [285 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [59 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [345 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [405 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [306 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [368 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [102 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [248 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [21 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [443 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [398 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [21 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [27 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [20 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [214 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [19 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [305 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [19 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [281 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [292 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [411 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [324 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [21 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [478 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [248 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [23 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [57 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [23 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [200 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [501 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [19 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [499 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [24 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [264 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [165 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [119 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mtest[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [82 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [343 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [74 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [213 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [493 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [112 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [362 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [329 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [438 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [492 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [317 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [218 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [210 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [151 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [188 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [266 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [378 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [391 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [269 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [187 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [460 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [28 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [24 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [438 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [179 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [247 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [421 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [420 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [483 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [110 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [407 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [323 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [167 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [348 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [421 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [369 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [318 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [281 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [63 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+
+  Tests passed: 0
+  Tests failed: 0
+  Tests total: 0
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [195 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [12 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [411 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [227 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [233 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [16 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [60 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [22 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [232 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✗ Test failed on: [38;2;94;136;255masyncFunctionExample
+[31m
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+
+undefined !== 1
+
+
+With args: [ [ 1, 2, 3 ] ]
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+
+undefined !== 1
+
+    at Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:85:18)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Promise.all (index 0)
+    at async Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:48:5)
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+
+  Tests passed: 6
+  Tests failed: 1
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [21 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [3027 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [3028 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [3034 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [3025 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [377 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [141 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [210 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [308 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [230 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [28 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [479 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [28 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [254 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [59 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [15 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [428 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [388 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [356 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [323 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✗ Test failed on: [38;2;94;136;255mChannel.commands.upload
+[31m
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received type number (1)
+
+With args: [
+  [
+    '{"callid":0,"msg":"upload","args":{"fileList":["2"],"storage":"tmp"}}',
+    <Buffer 31>
+  ]
+]
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received type number (1)
+    at Function.from (buffer.js:331:9)
+    at Object.fn (D:\Code\node_cloud_server\tests\vmTest.js:183:38)
+    at async Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:76:24)
+    at async Promise.all (index 3)
+    at async Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:48:5)
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [501 ms]
+
+  Tests passed: 6
+  Tests failed: 1
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✗ Test failed on: [38;2;94;136;255mChannel.commands.upload
+[31m
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received type number (1)
+
+With args: [
+  [
+    '{"callid":0,"msg":"upload","args":{"fileList":["2"],"storage":"tmp"}}',
+    <Buffer 31>
+  ]
+]
+TypeError [ERR_INVALID_ARG_TYPE]: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received type number (1)
+    at Function.from (buffer.js:331:9)
+    at Object.fn (D:\Code\node_cloud_server\tests\vmTest.js:183:38)
+    at async Tester.test (D:\Code\node_cloud_server\tests\vmTester.js:76:24)
+    at async Promise.all (index 3)
+    at async Tester.start (D:\Code\node_cloud_server\tests\vmTester.js:48:5)
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [455 ms]
+
+  Tests passed: 6
+  Tests failed: 1
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [338 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [19 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [316 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [246 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [108 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [16 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [95 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [14 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [482 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [402 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [19 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [446 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [17 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [272 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [4 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [96 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [10 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [18 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [178 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [21 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [244 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [13 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [21 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [218 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [295 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [101 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [149 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [334 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [8 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [11 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [336 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [6 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [3 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [9 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [227 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [207 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.findPlace[37m [5 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [0 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [2 ms]
+✓ Test passed on: [38;2;94;136;255mStorage.buildStructure[37m [1 ms]
+✓ Test passed on: [38;2;94;136;255mChannel.commands.upload[37m [7 ms]
+✓ Test passed on: [38;2;94;136;255masyncFunctionExample[37m [471 ms]
+
+  Tests passed: 7
+  Tests failed: 0
+  Tests total: 7
+
