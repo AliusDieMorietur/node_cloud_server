@@ -9,4 +9,3 @@ and this project adheres to
 ## [Unreleased][unreleased]
 
 - The first version of the cloud_storage_server.
-

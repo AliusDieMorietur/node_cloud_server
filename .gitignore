@@ -1,6 +1,7 @@
 node_modules
 package-lock.json
 polygon
+react_cloud_client_web
 lib/react_cloud_client_web
 lib/worker_pool.js
 static
