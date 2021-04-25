@@ -8,4 +8,8 @@ and this project adheres to
 
 ## [Unreleased][unreleased]
 
+- Prototype of the cloud_storage_server.
+
+## [1.0.0][] - 2021-04-25
+
 - The first version of the cloud_storage_server.

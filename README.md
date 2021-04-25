@@ -4,7 +4,7 @@ Your personal cloud storage.
 
 # Usage
 
-- git clone --recurse-submodules https://github.com/AliusDieMorietur/node_cloud_server.git
+- git clone https://github.com/AliusDieMorietur/node_cloud_server.git
 - npm run prepare_repo
 - npm run add_user
 - npm start
