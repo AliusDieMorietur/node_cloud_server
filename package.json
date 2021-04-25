@@ -4,7 +4,9 @@
   "description": "Cloud Storage Server",
   "main": "./server/server.js",
   "scripts": {
-    "test": "node ./tests/test",
+    "test": "metatests tests/unit.js",
+    "fake": "metatests tests/fake.js",
+    "custom_test": "node ./tests/test",
     "connect_db": "psql -U postgres -d cloud_storage",
     "install_db": "psql -U postgres -af ./db/install.sql && psql -U admin -d cloud_storage -af ./db/structure.sql",
     "delete_db": "psql -U postgres -af ./db/delete.sql",
@@ -34,7 +36,8 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "metatests": "^0.7.2"
   },
   "dependencies": {
     "pg": "^8.5.0",
