@@ -7,6 +7,11 @@ lib/worker_pool.js
 static
 logs
 storage
+tests/cases
+tests/test.js
+tests/tester.js
+tests/new_test.js
+tests/new_tester.js
 tests/old_test.js
 tests/old_tester.js
 tests/log.txt
