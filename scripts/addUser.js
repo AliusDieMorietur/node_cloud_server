@@ -13,11 +13,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const ask = (str) => new Promise((resolve, reject) => {
-  rl.question(str, (input) => {
-    resolve(input);
+const ask = str =>
+  new Promise((resolve) => {
+    rl.question(str, input => {
+      resolve(input);
+    });
   });
-});
 
 (async () => {
   try {
@@ -31,7 +32,7 @@ const ask = (str) => new Promise((resolve, reject) => {
     const userToken = generateToken();
     await pool.query(
       `INSERT INTO SystemUser(Token, Login, Password) ` +
-      `VALUES ('${userToken}', '${login}', '${password}')`
+        `VALUES ('${userToken}', '${login}', '${password}')`
     );
     console.log(`User <${login}> created`);
     await pool.query(

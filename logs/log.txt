@@ -2462,3 +2462,78 @@ SyntaxError: await is only valid in async function
 2021-04-24T16:57:46 W1 SUCCESS Static loaded
 2021-04-24T16:57:46 W1 SUCCESS Api loaded
 2021-04-24T16:57:46 W1 INFO Listen on http://localhost:7000
+2021-04-25T08:58:55 W1 INFO Files deleted: 4 Tokens expired: 1
+2021-04-25T08:58:55 W1 SUCCESS Static loaded
+2021-04-25T08:58:55 W1 SUCCESS Api loaded
+2021-04-25T08:58:55 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:01:32 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:01:32 W1 SUCCESS Static loaded
+2021-04-25T09:01:32 W1 SUCCESS Api loaded
+2021-04-25T09:01:32 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:03:35 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:03:35 W1 SUCCESS Static loaded
+2021-04-25T09:03:35 W1 SUCCESS Api loaded
+2021-04-25T09:03:35 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:05:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:05:17 W1 SUCCESS Static loaded
+2021-04-25T09:05:17 W1 SUCCESS Api loaded
+2021-04-25T09:05:17 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:06:00 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:06:00 W1 SUCCESS Static loaded
+2021-04-25T09:06:00 W1 SUCCESS Api loaded
+2021-04-25T09:06:00 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:16:11 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:16:11 W1 SUCCESS Static loaded
+2021-04-25T09:16:11 W1 SUCCESS Api loaded
+2021-04-25T09:16:11 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:41:06 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T10:41:06 W1 SUCCESS Static loaded
+2021-04-25T10:41:06 W1 SUCCESS Api loaded
+2021-04-25T10:41:06 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:42:16 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T10:42:16 W1 SUCCESS Static loaded
+2021-04-25T10:42:16 W1 SUCCESS Api loaded
+2021-04-25T10:42:16 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:43:46 W1 INFO Connected  127.0.0.1
+2021-04-25T10:43:52 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T10:43:52 W1 SUCCESS Static loaded
+2021-04-25T10:43:52 W1 SUCCESS Api loaded
+2021-04-25T10:43:52 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:43:57 W1 INFO Connected  127.0.0.1
+2021-04-25T10:44:44 W1 INFO Connected  127.0.0.1
+2021-04-25T10:48:55 W1 INFO Connected  127.0.0.1
+2021-04-25T10:48:59 W1 INFO Connected  127.0.0.1
+2021-04-25T10:49:08 W1 INFO Connected  127.0.0.1
+2021-04-25T10:49:22 W1 INFO Connected  127.0.0.1
+2021-04-25T10:51:32 W1 INFO Files deleted: 0 Tokens expired: 1
+2021-04-25T10:51:32 W1 SUCCESS Static loaded
+2021-04-25T10:51:32 W1 SUCCESS Api loaded
+2021-04-25T10:51:32 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:51:35 W1 INFO Connected  127.0.0.1
+2021-04-25T10:54:58 W1 INFO Files deleted: 0 Tokens expired: 1
+2021-04-25T10:54:58 W1 SUCCESS Static loaded
+2021-04-25T10:54:58 W1 SUCCESS Api loaded
+2021-04-25T10:54:58 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:55:20 W1 INFO Connected  127.0.0.1
+2021-04-25T10:56:04 W1 INFO Connected  127.0.0.1
+2021-04-25T11:03:36 W1 INFO Files deleted: 0 Tokens expired: 2
+2021-04-25T11:03:36 W1 SUCCESS Static loaded
+2021-04-25T11:03:36 W1 SUCCESS Api loaded
+2021-04-25T11:03:36 W1 INFO Listen on http://localhost:7000
+2021-04-25T11:05:13 W1 INFO Connected  127.0.0.1
+2021-04-25T11:05:42 W1 INFO Connected  127.0.0.1
+2021-04-25T11:06:27 W1 INFO Connected  127.0.0.1
+2021-04-25T11:06:41 W1 INFO Connected  127.0.0.1
+2021-04-25T11:09:15 W1 INFO Connected  127.0.0.1
+2021-04-25T11:10:18 W1 INFO Connected  127.0.0.1
+2021-04-25T11:10:32 W1 INFO Connected  127.0.0.1
+2021-04-25T11:13:01 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T11:13:01 W1 SUCCESS Static loaded
+2021-04-25T11:13:01 W1 SUCCESS Api loaded
+2021-04-25T11:13:01 W1 INFO Listen on http://localhost:7000
+2021-04-25T11:14:18 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:01 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:25 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:52 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:56 W1 INFO Connected  127.0.0.1
+2021-04-25T11:17:33 W1 INFO Connected  127.0.0.1

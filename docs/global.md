@@ -5,7 +5,7 @@
 # Techological Stack
 
 - Server - <code>Node.js</code>
-- Web client(PWA) - <code>React</code> 
+- Web client(PWA) - <code>React</code>
 - Android Client - <code>Kotlin</code>
 - IOS Client - <code>Dart(Flutter)</code>
 - Monitoring tool - <code>Rust</code> (may change in future)
