@@ -1,0 +1,2539 @@
+2021-04-06T11:09:40 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-06T11:09:40 W1 INFO Listen on http://192.168.0.136:7000
+2021-04-06T11:09:40 W1 SUCCESS Links loaded
+2021-04-06T11:09:40 W1 SUCCESS Static loaded
+2021-04-06T11:09:48 W1 INFO Connected  192.168.0.136
+2021-04-06T18:35:20 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-06T18:35:20 W1 INFO Listen on http://192.168.0.136:7000
+2021-04-06T18:35:20 W1 SUCCESS Links loaded
+2021-04-06T18:35:20 W1 SUCCESS Static loaded
+2021-04-06T18:35:42 W1 INFO Connected  192.168.0.136
+2021-04-06T18:37:42 W1 INFO Connected  192.168.0.136
+2021-04-06T18:38:39 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-06T18:38:39 W1 INFO Listen on http://192.168.0.136:7000
+2021-04-06T18:38:39 W1 SUCCESS Links loaded
+2021-04-06T18:38:39 W1 SUCCESS Static loaded
+2021-04-06T18:38:40 W1 INFO Connected  192.168.0.136
+2021-04-06T18:39:25 W1 INFO Connected  192.168.0.138
+2021-04-07T12:35:01 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-07T12:35:15 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-07T12:35:15 W1 INFO Listen on http://192.168.0.136:7000
+2021-04-07T12:35:15 W1 SUCCESS Links loaded
+2021-04-07T12:35:16 W1 SUCCESS Static loaded
+2021-04-07T12:35:22 W1 INFO Connected  192.168.0.136
+2021-04-07T12:35:30 W1 ERROR ReferenceError: crypto is not defined
+    at generateToken (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:33:17)
+    at /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/commands.js:18:18
+    at Array.map (<anonymous>)
+    at Object.pmtUpload (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/commands.js:14:28)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:24)
+2021-04-07T12:35:59 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-07T12:35:59 W1 INFO Listen on http://192.168.0.136:7000
+2021-04-07T12:35:59 W1 SUCCESS Links loaded
+2021-04-07T12:35:59 W1 SUCCESS Static loaded
+2021-04-07T12:36:00 W1 INFO Connected  192.168.0.136
+2021-04-10T09:49:12 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-10T09:49:12 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-10T09:49:13 W1 SUCCESS Links loaded
+2021-04-10T09:49:13 W1 SUCCESS Static loaded
+2021-04-10T09:49:26 W1 INFO Connected  127.0.0.1
+2021-04-10T09:49:45 W1 INFO Connected  127.0.0.1
+2021-04-10T10:53:19 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-10T10:53:20 W1 SUCCESS Links loaded
+2021-04-10T10:53:20 W0 INFO Files deleted: 7 Tokens expired: 2
+2021-04-10T10:53:20 W1 SUCCESS Static loaded
+2021-04-10T10:53:28 W1 INFO Connected  127.0.0.1
+2021-04-10T10:56:21 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-10T10:56:22 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-10T10:56:22 W1 SUCCESS Links loaded
+2021-04-10T10:56:22 W1 SUCCESS Static loaded
+2021-04-10T10:56:24 W1 INFO Connected  127.0.0.1
+2021-04-10T10:56:24 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (D:\Code\node_cloud_server\lib\auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Object.restoreSession (D:\Code\node_cloud_server\lib\commands.js:214:21)
+    at async Channel.message (D:\Code\node_cloud_server\lib\channel.js:25:24) {
+  code: 505
+}
+2021-04-12T21:26:13 W1 INFO Listen on http://192.168.237.89:7000
+2021-04-12T21:26:14 W1 SUCCESS Links loaded
+2021-04-12T21:26:14 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-12T21:26:15 W1 SUCCESS Static loaded
+2021-04-12T21:26:19 W1 INFO Connected  192.168.237.89
+2021-04-12T21:30:47 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-12T21:30:47 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-12T21:30:47 W1 SUCCESS Links loaded
+2021-04-12T21:30:47 W1 SUCCESS Static loaded
+2021-04-12T21:34:12 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-12T21:34:12 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-12T21:34:12 W1 SUCCESS Links loaded
+2021-04-12T21:34:12 W1 SUCCESS Static loaded
+2021-04-12T21:34:48 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-12T21:34:48 W1 SUCCESS Links loaded
+2021-04-12T21:34:48 W1 SUCCESS Static loaded
+2021-04-12T21:34:48 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:05:43 W1 SUCCESS Links loaded
+2021-04-18T14:05:43 W1 ERROR ReferenceError: fsp is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:12:19)
+    at App.start (D:\Code\node_cloud_server\lib\app.js:126:30)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:05:43 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:05:43 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:06:19 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:06:19 W1 SUCCESS Links loaded
+2021-04-18T14:06:19 W1 ERROR ReferenceError: fsp is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:12:19)
+    at App.start (D:\Code\node_cloud_server\lib\app.js:126:30)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:06:19 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:06:34 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:06:34 W1 SUCCESS Links loaded
+2021-04-18T14:06:34 W1 ERROR TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+    at Object.readdir (internal/fs/promises.js:371:10)
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:15:29)
+    at App.start (D:\Code\node_cloud_server\lib\app.js:126:30)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3 {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+2021-04-18T14:06:34 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:07:09 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:07:09 W1 SUCCESS Links loaded
+2021-04-18T14:07:09 W1 ERROR ReferenceError: path is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:18:24)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:126:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:07:09 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:07:49 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:07:49 W1 SUCCESS Links loaded
+2021-04-18T14:07:49 W1 ERROR ReferenceError: dirPath is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:19:34)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:126:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:07:49 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:07:59 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:07:59 W1 SUCCESS Links loaded
+2021-04-18T14:07:59 W1 ERROR ReferenceError: path is not defined
+    at toUnix (D:\Code\node_cloud_server\lib\utils.js:46:22)
+    at Static.load (D:\Code\node_cloud_server\lib\static.js:13:25)
+    at async Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:21:12)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:126:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:07:59 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:08:09 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:08:09 W1 SUCCESS Links loaded
+2021-04-18T14:08:09 W1 ERROR ReferenceError: loadDirectory is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:20:31)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:126:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:08:09 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:08:25 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:08:25 W1 SUCCESS Links loaded
+2021-04-18T14:12:36 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:12:36 W1 SUCCESS Links loaded
+2021-04-18T14:13:36 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:13:36 W1 SUCCESS Links loaded
+2021-04-18T14:13:51 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:13:51 W1 SUCCESS Links loaded
+2021-04-18T14:14:43 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:14:44 W1 SUCCESS Links loaded
+2021-04-18T14:15:31 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:15:31 W1 SUCCESS Links loaded
+2021-04-18T14:15:44 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:15:44 W1 SUCCESS Links loaded
+2021-04-18T14:16:24 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:16:24 W1 SUCCESS Links loaded
+2021-04-18T14:16:24 W1 ERROR TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+    at Object.readdir (internal/fs/promises.js:371:10)
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:15:29)
+    at App.start (D:\Code\node_cloud_server\lib\app.js:127:30)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3 {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+2021-04-18T14:16:24 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:16:42 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:16:42 W1 SUCCESS Links loaded
+2021-04-18T14:16:42 W1 ERROR ReferenceError: path is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:18:24)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:127:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:16:42 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:16:57 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:16:57 W1 SUCCESS Links loaded
+2021-04-18T14:16:57 W1 ERROR ReferenceError: loadDirectory is not defined
+    at Static.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:20:31)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:127:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:16:57 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:17:06 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:17:06 W1 SUCCESS Links loaded
+2021-04-18T14:17:07 W1 SUCCESS Static loaded
+2021-04-18T14:17:07 W1 ERROR ReferenceError: toUnix is not defined
+    at Api.load (D:\Code\node_cloud_server\lib\api.js:33:21)
+    at async Api.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:21:12)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:129:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:17:07 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:17:44 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:17:44 W1 SUCCESS Links loaded
+2021-04-18T14:17:44 W1 SUCCESS Static loaded
+2021-04-18T14:17:45 W1 SUCCESS Api loaded
+2021-04-18T14:17:45 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:18:03 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:18:03 W1 SUCCESS Links loaded
+2021-04-18T14:18:03 W1 SUCCESS Static loaded
+2021-04-18T14:18:03 W1 SUCCESS Api loaded
+2021-04-18T14:18:03 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:18:46 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:18:46 W1 SUCCESS Links loaded
+2021-04-18T14:18:47 W1 SUCCESS Static loaded
+2021-04-18T14:18:47 W1 SUCCESS Api loaded
+2021-04-18T14:18:47 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:19:37 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:19:37 W1 SUCCESS Links loaded
+2021-04-18T14:19:38 W1 SUCCESS Static loaded
+2021-04-18T14:19:38 W1 SUCCESS Api loaded
+2021-04-18T14:19:38 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:19:54 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:19:54 W1 SUCCESS Links loaded
+2021-04-18T14:19:54 W1 SUCCESS Static loaded
+2021-04-18T14:19:54 W1 SUCCESS Api loaded
+2021-04-18T14:19:54 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:21:49 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:21:49 W1 SUCCESS Links loaded
+2021-04-18T14:21:49 W1 SUCCESS Static loaded
+2021-04-18T14:21:49 W1 SUCCESS Api loaded
+2021-04-18T14:21:49 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:22:01 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:22:02 W1 SUCCESS Links loaded
+2021-04-18T14:22:02 W1 SUCCESS Static loaded
+2021-04-18T14:22:02 W1 SUCCESS Api loaded
+2021-04-18T14:22:02 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:23:04 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:23:04 W1 SUCCESS Links loaded
+2021-04-18T14:23:04 W1 SUCCESS Static loaded
+2021-04-18T14:23:04 W1 SUCCESS Api loaded
+2021-04-18T14:23:04 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:23:20 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:23:20 W1 SUCCESS Links loaded
+2021-04-18T14:23:20 W1 SUCCESS Static loaded
+2021-04-18T14:23:20 W1 SUCCESS Api loaded
+2021-04-18T14:23:20 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:24:23 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:24:23 W1 SUCCESS Links loaded
+2021-04-18T14:24:24 W1 SUCCESS Static loaded
+2021-04-18T14:24:24 W1 SUCCESS Api loaded
+2021-04-18T14:24:24 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:25:12 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:25:12 W1 SUCCESS Links loaded
+2021-04-18T14:25:12 W1 SUCCESS Static loaded
+2021-04-18T14:25:12 W1 SUCCESS Api loaded
+2021-04-18T14:25:12 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:26:00 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:26:00 W1 SUCCESS Links loaded
+2021-04-18T14:26:00 W1 SUCCESS Static loaded
+2021-04-18T14:26:00 W1 SUCCESS Api loaded
+2021-04-18T14:26:00 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:26:26 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:26:26 W1 SUCCESS Links loaded
+2021-04-18T14:26:27 W1 SUCCESS Static loaded
+2021-04-18T14:26:27 W1 SUCCESS Api loaded
+2021-04-18T14:26:27 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:27:00 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:27:00 W1 SUCCESS Links loaded
+2021-04-18T14:27:00 W1 SUCCESS Static loaded
+2021-04-18T14:27:00 W1 SUCCESS Api loaded
+2021-04-18T14:27:00 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:27:42 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:27:42 W1 SUCCESS Links loaded
+2021-04-18T14:27:43 W1 SUCCESS Static loaded
+2021-04-18T14:27:43 W1 SUCCESS Api loaded
+2021-04-18T14:27:43 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:28:00 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:28:00 W1 SUCCESS Links loaded
+2021-04-18T14:28:00 W1 SUCCESS Static loaded
+2021-04-18T14:28:00 W1 SUCCESS Api loaded
+2021-04-18T14:28:00 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:28:10 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:28:11 W1 SUCCESS Links loaded
+2021-04-18T14:28:11 W1 SUCCESS Static loaded
+2021-04-18T14:28:11 W1 SUCCESS Api loaded
+2021-04-18T14:28:11 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:28:40 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:28:40 W1 SUCCESS Links loaded
+2021-04-18T14:28:40 W1 SUCCESS Static loaded
+2021-04-18T14:28:40 W1 SUCCESS Api loaded
+2021-04-18T14:28:40 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:28:41 W1 ERROR TypeError: this.application.getStatic is not a function
+    at Client.static (D:\Code\node_cloud_server\lib\client.js:52:37)
+    at Server.listener (D:\Code\node_cloud_server\lib\server.js:53:14)
+    at Server.emit (events.js:315:20)
+    at parserOnIncoming (_http_server.js:786:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:117:17)
+2021-04-18T14:28:41 W1 INFO Connected  127.0.0.1
+2021-04-18T14:29:28 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:29:28 W1 SUCCESS Links loaded
+2021-04-18T14:29:28 W1 SUCCESS Static loaded
+2021-04-18T14:29:28 W1 SUCCESS Api loaded
+2021-04-18T14:29:28 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:29:29 W1 INFO Connected  127.0.0.1
+2021-04-18T14:30:49 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:30:50 W1 SUCCESS Links loaded
+2021-04-18T14:30:50 W1 SUCCESS Static loaded
+2021-04-18T14:30:50 W1 SUCCESS Api loaded
+2021-04-18T14:30:50 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:30:51 W1 INFO Connected  127.0.0.1
+2021-04-18T14:30:51 W1 ERROR TypeError: this.application.api.get(...) is not a function
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:26:59)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+    at writeOrBuffer (_stream_writable.js:352:12)
+2021-04-18T14:31:22 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:31:22 W1 SUCCESS Links loaded
+2021-04-18T14:31:23 W1 SUCCESS Static loaded
+2021-04-18T14:31:23 W1 SUCCESS Api loaded
+2021-04-18T14:31:23 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:31:23 W1 INFO Connected  127.0.0.1
+2021-04-18T14:31:23 W1 ERROR TypeError: this.application.api.get(...) is not a function
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:26:53)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+    at writeOrBuffer (_stream_writable.js:352:12)
+2021-04-18T14:31:42 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:31:42 W1 SUCCESS Links loaded
+2021-04-18T14:31:42 W1 SUCCESS Static loaded
+2021-04-18T14:31:42 W1 SUCCESS Api loaded
+2021-04-18T14:31:42 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:31:43 W1 INFO Connected  127.0.0.1
+2021-04-18T14:31:43 W1 ERROR TypeError: this.application.api.get(...) is not a function
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:27:53)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+    at writeOrBuffer (_stream_writable.js:352:12)
+2021-04-18T14:32:28 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:32:51 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:32:52 W1 SUCCESS Links loaded
+2021-04-18T14:32:52 W1 SUCCESS Static loaded
+2021-04-18T14:32:52 W1 SUCCESS Api loaded
+2021-04-18T14:32:52 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:32:53 W1 INFO Connected  127.0.0.1
+2021-04-18T14:35:28 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:35:28 W1 SUCCESS Links loaded
+2021-04-18T14:35:28 W1 SUCCESS Static loaded
+2021-04-18T14:35:28 W1 ERROR TypeError [ERR_INVALID_ARG_TYPE]: The "contextifiedObject" argument must be an vm.Context. Received an instance of Object
+    at validateContext (vm.js:152:11)
+    at Script.runInContext (vm.js:135:5)
+    at Api.load (D:\Code\node_cloud_server\lib\api.js:33:29)
+    at async Api.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:26:12)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:124:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3 {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+2021-04-18T14:35:28 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:37:24 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:37:24 W1 SUCCESS Links loaded
+2021-04-18T14:37:24 W1 SUCCESS Static loaded
+2021-04-18T14:37:24 W1 SUCCESS Api loaded
+2021-04-18T14:37:24 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:37:27 W1 INFO Connected  127.0.0.1
+2021-04-18T14:37:57 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:37:57 W1 SUCCESS Links loaded
+2021-04-18T14:37:57 W1 SUCCESS Static loaded
+2021-04-18T14:37:57 W1 SUCCESS Api loaded
+2021-04-18T14:37:57 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:37:58 W1 INFO Connected  127.0.0.1
+2021-04-18T14:39:30 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:39:30 W1 SUCCESS Links loaded
+2021-04-18T14:39:30 W1 SUCCESS Static loaded
+2021-04-18T14:39:30 W1 SUCCESS Api loaded
+2021-04-18T14:39:30 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:39:33 W1 INFO Connected  127.0.0.1
+2021-04-18T14:40:07 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:40:07 W1 SUCCESS Links loaded
+2021-04-18T14:40:07 W1 SUCCESS Static loaded
+2021-04-18T14:40:07 W1 SUCCESS Api loaded
+2021-04-18T14:40:07 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:40:08 W1 INFO Connected  127.0.0.1
+2021-04-18T14:41:00 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:41:01 W1 SUCCESS Links loaded
+2021-04-18T14:41:01 W1 SUCCESS Static loaded
+2021-04-18T14:41:01 W1 SUCCESS Api loaded
+2021-04-18T14:41:01 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:41:02 W1 INFO Connected  127.0.0.1
+2021-04-18T14:41:45 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:41:45 W1 SUCCESS Links loaded
+2021-04-18T14:41:45 W1 SUCCESS Static loaded
+2021-04-18T14:41:45 W1 SUCCESS Api loaded
+2021-04-18T14:41:45 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:41:48 W1 INFO Connected  127.0.0.1
+2021-04-18T14:42:05 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:42:05 W1 SUCCESS Links loaded
+2021-04-18T14:42:06 W1 SUCCESS Static loaded
+2021-04-18T14:42:06 W1 ERROR ReferenceError: HTMLFormControlsCollection is not defined
+    at Api.load (D:\Code\node_cloud_server\lib\api.js:36:5)
+    at async Api.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:26:12)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:124:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:42:06 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:42:42 W1 SUCCESS Links loaded
+2021-04-18T14:42:42 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:42:42 W1 SUCCESS Static loaded
+2021-04-18T14:42:42 W1 SUCCESS Api loaded
+2021-04-18T14:42:42 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:43:24 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:43:24 W1 SUCCESS Links loaded
+2021-04-18T14:43:24 W1 SUCCESS Static loaded
+2021-04-18T14:43:24 W1 ERROR TypeError: Reflect.has called on non-object
+    at Object.has (<anonymous>)
+    at Api.load (D:\Code\node_cloud_server\lib\api.js:36:25)
+    at async Api.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:26:12)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:124:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-18T14:43:24 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:43:33 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:43:33 W1 SUCCESS Links loaded
+2021-04-18T14:43:33 W1 SUCCESS Static loaded
+2021-04-18T14:43:33 W1 SUCCESS Api loaded
+2021-04-18T14:43:33 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:43:45 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:43:46 W1 SUCCESS Links loaded
+2021-04-18T14:43:46 W1 SUCCESS Static loaded
+2021-04-18T14:43:46 W1 SUCCESS Api loaded
+2021-04-18T14:43:46 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:43:54 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:43:55 W1 SUCCESS Links loaded
+2021-04-18T14:43:55 W1 SUCCESS Static loaded
+2021-04-18T14:43:55 W1 SUCCESS Api loaded
+2021-04-18T14:43:55 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:44:21 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:44:22 W1 SUCCESS Links loaded
+2021-04-18T14:44:22 W1 SUCCESS Static loaded
+2021-04-18T14:44:22 W1 SUCCESS Api loaded
+2021-04-18T14:44:22 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:44:23 W1 INFO Connected  127.0.0.1
+2021-04-18T14:44:35 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:44:35 W1 SUCCESS Links loaded
+2021-04-18T14:44:35 W1 SUCCESS Static loaded
+2021-04-18T14:44:35 W1 SUCCESS Api loaded
+2021-04-18T14:44:35 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:44:36 W1 INFO Connected  127.0.0.1
+2021-04-18T14:44:52 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:44:52 W1 SUCCESS Links loaded
+2021-04-18T14:44:52 W1 SUCCESS Static loaded
+2021-04-18T14:44:52 W1 SUCCESS Api loaded
+2021-04-18T14:44:52 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:44:53 W1 INFO Connected  127.0.0.1
+2021-04-18T14:50:12 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:50:12 W1 SUCCESS Links loaded
+2021-04-18T14:50:13 W1 SUCCESS Static loaded
+2021-04-18T14:50:13 W1 SUCCESS Api loaded
+2021-04-18T14:50:13 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:50:20 W1 INFO Connected  127.0.0.1
+2021-04-18T14:50:40 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T14:50:40 W1 SUCCESS Links loaded
+2021-04-18T14:50:40 W1 SUCCESS Static loaded
+2021-04-18T14:50:40 W1 SUCCESS Api loaded
+2021-04-18T14:50:40 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T14:50:42 W1 INFO Connected  127.0.0.1
+2021-04-18T18:26:28 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T18:26:28 W1 SUCCESS Links loaded
+2021-04-18T18:26:29 W1 SUCCESS Static loaded
+2021-04-18T18:26:29 W1 SUCCESS Api loaded
+2021-04-18T18:26:29 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T18:26:44 W1 INFO Connected  127.0.0.1
+2021-04-18T18:26:55 W1 INFO Connected  127.0.0.1
+2021-04-18T18:26:59 W1 ERROR TypeError: argsCheck[key] is not a function
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:100:34)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10)
+2021-04-18T18:27:05 W1 ERROR TypeError: argsCheck[key] is not a function
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:100:34)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10)
+2021-04-18T18:27:08 W1 ERROR TypeError: argsCheck[key] is not a function
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:100:34)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10)
+2021-04-18T18:27:41 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T18:27:41 W1 SUCCESS Links loaded
+2021-04-18T18:27:41 W1 SUCCESS Static loaded
+2021-04-18T18:27:41 W1 SUCCESS Api loaded
+2021-04-18T18:27:41 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T18:27:43 W1 INFO Connected  127.0.0.1
+2021-04-18T18:27:49 W1 ERROR ServerError: Corrupted args
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:101:16)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10) {
+  code: 508
+}
+2021-04-18T19:17:10 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T19:17:10 W1 SUCCESS Links loaded
+2021-04-18T19:17:11 W1 SUCCESS Static loaded
+2021-04-18T19:17:11 W1 SUCCESS Api loaded
+2021-04-18T19:17:11 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T19:17:13 W1 INFO Connected  127.0.0.1
+2021-04-18T19:17:19 W1 ERROR ServerError: Corrupted args
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:101:16)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10) {
+  code: 508
+}
+2021-04-18T19:17:51 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T19:17:51 W1 SUCCESS Links loaded
+2021-04-18T19:17:51 W1 SUCCESS Static loaded
+2021-04-18T19:17:51 W1 SUCCESS Api loaded
+2021-04-18T19:17:51 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T19:17:57 W1 INFO Connected  127.0.0.1
+2021-04-18T19:18:01 W1 ERROR ServerError: Corrupted args
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:102:16)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10) {
+  code: 508
+}
+2021-04-18T19:21:37 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T19:21:37 W1 SUCCESS Links loaded
+2021-04-18T19:21:37 W1 SUCCESS Static loaded
+2021-04-18T19:21:37 W1 SUCCESS Api loaded
+2021-04-18T19:21:37 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T19:21:43 W1 INFO Connected  127.0.0.1
+2021-04-18T20:15:27 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:15:27 W1 SUCCESS Links loaded
+2021-04-18T20:15:28 W1 SUCCESS Static loaded
+2021-04-18T20:15:28 W1 SUCCESS Api loaded
+2021-04-18T20:15:28 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:15:31 W1 INFO Connected  127.0.0.1
+2021-04-18T20:15:31 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:106:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:16:02 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:16:02 W1 SUCCESS Links loaded
+2021-04-18T20:16:02 W1 SUCCESS Static loaded
+2021-04-18T20:16:02 W1 SUCCESS Api loaded
+2021-04-18T20:16:02 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:16:04 W1 INFO Connected  127.0.0.1
+2021-04-18T20:16:04 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:16:35 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:16:35 W1 SUCCESS Links loaded
+2021-04-18T20:16:35 W1 SUCCESS Static loaded
+2021-04-18T20:16:35 W1 SUCCESS Api loaded
+2021-04-18T20:16:35 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:16:36 W1 INFO Connected  127.0.0.1
+2021-04-18T20:16:36 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:18:20 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:18:20 W1 SUCCESS Links loaded
+2021-04-18T20:18:20 W1 SUCCESS Static loaded
+2021-04-18T20:18:20 W1 SUCCESS Api loaded
+2021-04-18T20:18:20 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:18:22 W1 INFO Connected  127.0.0.1
+2021-04-18T20:18:22 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:19:49 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:19:49 W1 SUCCESS Links loaded
+2021-04-18T20:19:49 W1 SUCCESS Static loaded
+2021-04-18T20:19:49 W1 SUCCESS Api loaded
+2021-04-18T20:19:49 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:19:50 W1 INFO Connected  127.0.0.1
+2021-04-18T20:19:50 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:24:10 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:24:10 W1 SUCCESS Links loaded
+2021-04-18T20:24:10 W1 SUCCESS Static loaded
+2021-04-18T20:24:10 W1 SUCCESS Api loaded
+2021-04-18T20:24:10 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:24:14 W1 INFO Connected  127.0.0.1
+2021-04-18T20:24:14 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:24:17 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:7:20) {
+  code: 507
+}
+2021-04-18T20:25:01 W1 INFO Connected  127.0.0.1
+2021-04-18T20:26:59 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:26:59 W1 SUCCESS Links loaded
+2021-04-18T20:26:59 W1 SUCCESS Static loaded
+2021-04-18T20:26:59 W1 SUCCESS Api loaded
+2021-04-18T20:26:59 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:27:00 W1 INFO Connected  127.0.0.1
+2021-04-18T20:27:00 W1 INFO Connected  127.0.0.1
+2021-04-18T20:27:04 W1 INFO Connected  127.0.0.1
+2021-04-18T20:27:20 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:27:20 W1 SUCCESS Links loaded
+2021-04-18T20:27:20 W1 SUCCESS Static loaded
+2021-04-18T20:27:20 W1 SUCCESS Api loaded
+2021-04-18T20:27:20 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:27:21 W1 INFO Connected  127.0.0.1
+2021-04-18T20:27:27 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:7:20) {
+  code: 507
+}
+2021-04-18T20:28:14 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:28:14 W1 SUCCESS Links loaded
+2021-04-18T20:28:14 W1 SUCCESS Static loaded
+2021-04-18T20:28:14 W1 SUCCESS Api loaded
+2021-04-18T20:28:14 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:28:16 W1 INFO Connected  127.0.0.1
+2021-04-18T20:28:16 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:28:18 W1 INFO Connected  127.0.0.1
+2021-04-18T20:28:26 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:7:20) {
+  code: 507
+}
+2021-04-18T20:29:23 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:29:23 W1 SUCCESS Links loaded
+2021-04-18T20:29:23 W1 SUCCESS Static loaded
+2021-04-18T20:29:23 W1 SUCCESS Api loaded
+2021-04-18T20:29:23 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:29:25 W1 INFO Connected  127.0.0.1
+2021-04-18T20:29:25 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:97:48)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:29:29 W1 INFO Connected  127.0.0.1
+2021-04-18T20:29:33 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:7:20)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:24) {
+  code: 507
+}
+2021-04-18T20:29:33 W1 ERROR TypeError: Cannot destructure property 'token' of 'channel.user' as it is null.
+    at method (evalmachine.<anonymous>:5:13)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:30)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10)
+2021-04-18T20:30:38 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:30:38 W1 SUCCESS Links loaded
+2021-04-18T20:30:38 W1 SUCCESS Static loaded
+2021-04-18T20:30:38 W1 SUCCESS Api loaded
+2021-04-18T20:30:38 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:30:40 W1 INFO Connected  127.0.0.1
+2021-04-18T20:30:43 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:7:20)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:24) {
+  code: 507
+}
+2021-04-18T20:30:43 W1 ERROR TypeError: Cannot destructure property 'token' of 'channel.user' as it is null.
+    at method (evalmachine.<anonymous>:5:13)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:30)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10)
+2021-04-18T20:32:20 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:32:20 W1 SUCCESS Links loaded
+2021-04-18T20:32:20 W1 SUCCESS Static loaded
+2021-04-18T20:32:20 W1 SUCCESS Api loaded
+2021-04-18T20:32:20 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:32:21 W1 INFO Connected  127.0.0.1
+2021-04-18T20:32:21 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:32:28 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:7:20)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:24) {
+  code: 507
+}
+2021-04-18T20:32:28 W1 ERROR TypeError: Cannot destructure property 'token' of 'channel.user' as it is null.
+    at method (evalmachine.<anonymous>:6:13)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:30)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10)
+2021-04-18T20:33:22 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:33:22 W1 SUCCESS Links loaded
+2021-04-18T20:33:22 W1 SUCCESS Static loaded
+2021-04-18T20:33:22 W1 SUCCESS Api loaded
+2021-04-18T20:33:22 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:33:24 W1 INFO Connected  127.0.0.1
+2021-04-18T20:33:24 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:33:28 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:6:18)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:24) {
+  code: 507
+}
+2021-04-18T20:34:16 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:6:18)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:27:24) {
+  code: 507
+}
+2021-04-18T20:35:19 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:35:19 W1 SUCCESS Links loaded
+2021-04-18T20:35:19 W1 SUCCESS Static loaded
+2021-04-18T20:35:19 W1 SUCCESS Api loaded
+2021-04-18T20:35:19 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:35:20 W1 INFO Connected  127.0.0.1
+2021-04-18T20:35:20 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:35:25 W1 ERROR ServerError: User doesn`t exist
+    at Session.getUser (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:28:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:6:18)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:28:24) {
+  code: 507
+}
+2021-04-18T20:37:41 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:37:41 W1 SUCCESS Links loaded
+2021-04-18T20:37:41 W1 SUCCESS Static loaded
+2021-04-18T20:37:41 W1 ERROR evalmachine.<anonymous>:7
+    const user = await channel.session.getUser('login', login);
+          ^^^^
+
+SyntaxError: Identifier 'user' has already been declared
+    at new Script (vm.js:101:7)
+    at Api.load (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/api.js:34:20)
+    at async Api.loadDirectory (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/loader.js:26:12)
+    at async App.start (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/app.js:124:7)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/worker.js:9:3
+2021-04-18T20:37:41 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:38:35 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:38:35 W1 SUCCESS Links loaded
+2021-04-18T20:38:35 W1 SUCCESS Static loaded
+2021-04-18T20:38:35 W1 SUCCESS Api loaded
+2021-04-18T20:38:35 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:38:36 W1 INFO Connected  127.0.0.1
+2021-04-18T20:38:36 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:38:40 W1 ERROR ReferenceError: utils is not defined
+    at method (evalmachine.<anonymous>:9:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:28:24)
+2021-04-18T20:39:43 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:39:43 W1 SUCCESS Links loaded
+2021-04-18T20:39:43 W1 SUCCESS Static loaded
+2021-04-18T20:39:43 W1 SUCCESS Api loaded
+2021-04-18T20:39:43 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:39:45 W1 INFO Connected  127.0.0.1
+2021-04-18T20:39:45 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:39:55 W1 ERROR ReferenceError: utils is not defined
+    at method (evalmachine.<anonymous>:9:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:28:24)
+2021-04-18T20:39:56 W1 ERROR ReferenceError: utils is not defined
+    at method (evalmachine.<anonymous>:9:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:28:24)
+2021-04-18T20:40:04 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:40:04 W1 SUCCESS Links loaded
+2021-04-18T20:40:04 W1 SUCCESS Static loaded
+2021-04-18T20:40:04 W1 SUCCESS Api loaded
+2021-04-18T20:40:04 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:40:05 W1 INFO Connected  127.0.0.1
+2021-04-18T20:40:05 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:40:08 W1 ERROR ReferenceError: utils is not defined
+    at method (evalmachine.<anonymous>:9:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:28:24)
+2021-04-18T20:40:59 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T20:40:59 W1 SUCCESS Links loaded
+2021-04-18T20:40:59 W1 SUCCESS Static loaded
+2021-04-18T20:40:59 W1 SUCCESS Api loaded
+2021-04-18T20:40:59 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T20:41:01 W1 INFO Connected  127.0.0.1
+2021-04-18T20:41:01 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:98:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:25:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-18T20:41:06 W1 INFO Connected  127.0.0.1
+2021-04-18T22:12:24 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-18T22:12:27 W1 SUCCESS Links loaded
+2021-04-18T22:12:28 W1 SUCCESS Static loaded
+2021-04-18T22:12:28 W1 SUCCESS Api loaded
+2021-04-18T22:12:28 W1 INFO Listen on http://127.0.0.1:7000
+2021-04-18T22:13:36 W1 INFO Connected  127.0.0.1
+2021-04-19T08:40:42 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-19T08:40:42 W1 SUCCESS Links loaded
+2021-04-19T08:40:43 W1 SUCCESS Static loaded
+2021-04-19T08:40:43 W1 SUCCESS Api loaded
+2021-04-19T08:44:13 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-19T08:44:13 W1 SUCCESS Links loaded
+2021-04-19T08:44:13 W1 SUCCESS Static loaded
+2021-04-19T08:44:13 W1 SUCCESS Api loaded
+2021-04-19T08:44:35 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-19T08:44:35 W1 SUCCESS Links loaded
+2021-04-19T08:44:35 W1 SUCCESS Static loaded
+2021-04-19T08:44:35 W1 SUCCESS Api loaded
+2021-04-19T08:44:35 W1 INFO Listen on http://127.0.0.1:8000
+2021-04-19T08:44:37 W1 INFO Connected  127.0.0.1
+2021-04-19T08:48:25 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-19T08:48:25 W1 SUCCESS Links loaded
+2021-04-19T08:48:25 W1 SUCCESS Static loaded
+2021-04-19T08:48:25 W1 SUCCESS Api loaded
+2021-04-19T08:56:20 W0 ERROR error: role "admin" does not exist
+    at Parser.parseErrorMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:278:15)
+    at Parser.handlePacket (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/index.js:10:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    at readableAddChunk (internal/streams/readable.js:284:9)
+    at Socket.Readable.push (internal/streams/readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 97,
+  severity: 'FATAL',
+  code: '28000',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'miscinit.c',
+  line: '675',
+  routine: 'InitializeSessionUserId'
+}
+2021-04-19T08:56:20 W1 ERROR error: role "admin" does not exist
+    at Parser.parseErrorMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:278:15)
+    at Parser.handlePacket (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/index.js:10:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    at readableAddChunk (internal/streams/readable.js:284:9)
+    at Socket.Readable.push (internal/streams/readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 97,
+  severity: 'FATAL',
+  code: '28000',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'miscinit.c',
+  line: '675',
+  routine: 'InitializeSessionUserId'
+}
+2021-04-19T08:56:20 W1 INFO Listen on http://127.0.0.1:8000
+2021-04-19T09:24:58 W1 SUCCESS Links loaded
+2021-04-19T09:24:58 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-19T09:24:59 W1 SUCCESS Static loaded
+2021-04-19T09:24:59 W1 SUCCESS Api loaded
+2021-04-19T09:24:59 W1 INFO Listen on http://127.0.0.1:8000
+2021-04-20T08:24:38 W0 ERROR Error: getaddrinfo ENOTFOUND db
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'db'
+}
+2021-04-20T08:24:39 W1 ERROR Error: getaddrinfo ENOTFOUND db
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'db'
+}
+2021-04-20T08:24:39 W1 INFO Listen on http://localhost:8000
+2021-04-20T08:24:49 W1 SUCCESS Links loaded
+2021-04-20T08:24:49 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T08:24:50 W1 SUCCESS Static loaded
+2021-04-20T08:24:50 W1 SUCCESS Api loaded
+2021-04-20T08:24:50 W1 INFO Listen on http://localhost:8000
+2021-04-20T08:25:00 W1 INFO Connected  127.0.0.1
+2021-04-20T09:04:59 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T09:04:59 W1 SUCCESS Links loaded
+2021-04-20T09:04:59 W1 SUCCESS Static loaded
+2021-04-20T09:04:59 W1 SUCCESS Api loaded
+2021-04-20T09:04:59 W1 INFO Listen on http://0.0.0.0:7000
+2021-04-20T09:05:23 W1 INFO Connected  127.0.0.1
+2021-04-20T09:05:23 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (D:\Code\node_cloud_server\lib\auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async Channel.message (D:\Code\node_cloud_server\lib\channel.js:27:24) {
+  code: 505
+}
+2021-04-20T09:05:44 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T09:05:44 W1 SUCCESS Links loaded
+2021-04-20T09:05:44 W1 SUCCESS Static loaded
+2021-04-20T09:05:44 W1 SUCCESS Api loaded
+2021-04-20T09:05:44 W1 INFO Listen on http://localhost:7000
+2021-04-20T09:05:46 W1 INFO Connected  127.0.0.1
+2021-04-20T09:05:46 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (D:\Code\node_cloud_server\lib\auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async Channel.message (D:\Code\node_cloud_server\lib\channel.js:27:24) {
+  code: 505
+}
+2021-04-20T09:05:53 W1 INFO Connected  127.0.0.1
+2021-04-20T18:39:58 W1 INFO Connected  127.0.0.1
+2021-04-20T18:40:09 W1 ERROR ReferenceError: path is not defined
+    at method (evalmachine.<anonymous>:6:21)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:27:30)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:28:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+2021-04-20T18:41:34 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T18:41:34 W1 SUCCESS Links loaded
+2021-04-20T18:41:34 W1 SUCCESS Static loaded
+2021-04-20T18:41:34 W1 SUCCESS Api loaded
+2021-04-20T18:41:34 W1 INFO Listen on http://localhost:7000
+2021-04-20T18:41:37 W1 INFO Connected  127.0.0.1
+2021-04-20T18:41:57 W1 ERROR ReferenceError: generateToken is not defined
+    at evalmachine.<anonymous>:16:12
+    at Array.map (<anonymous>)
+    at method (evalmachine.<anonymous>:12:28)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Channel.message (D:\Code\node_cloud_server\lib\channel.js:27:24)
+2021-04-20T18:42:23 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T18:42:23 W1 SUCCESS Links loaded
+2021-04-20T18:42:23 W1 SUCCESS Static loaded
+2021-04-20T18:42:23 W1 SUCCESS Api loaded
+2021-04-20T18:42:23 W1 INFO Listen on http://localhost:7000
+2021-04-20T18:42:25 W1 INFO Connected  127.0.0.1
+2021-04-20T18:42:56 W1 INFO Connected  127.0.0.1
+2021-04-20T18:44:15 W0 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T18:44:15 W1 SUCCESS Links loaded
+2021-04-20T18:44:15 W1 SUCCESS Static loaded
+2021-04-20T18:44:15 W1 SUCCESS Api loaded
+2021-04-20T18:44:15 W1 INFO Listen on http://localhost:7000
+2021-04-20T18:44:17 W1 INFO Connected  127.0.0.1
+2021-04-20T19:52:54 W1 SUCCESS Static loaded
+2021-04-20T19:52:54 W1 SUCCESS Api loaded
+2021-04-20T19:52:54 W1 INFO Listen on http://localhost:7000
+2021-04-20T19:53:15 W1 ERROR TypeError: Cannot read property 'error' of undefined
+    at Storage.clearExpired (D:\Code\node_cloud_server\lib\storage.js:157:19)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:57:27)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-20T19:53:15 W1 INFO Listen on http://localhost:7000
+2021-04-20T19:54:29 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T19:54:29 W1 SUCCESS Static loaded
+2021-04-20T19:54:29 W1 SUCCESS Api loaded
+2021-04-20T19:54:29 W1 INFO Listen on http://localhost:7000
+2021-04-20T21:29:25 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-20T21:29:25 W1 SUCCESS Static loaded
+2021-04-20T21:29:25 W1 SUCCESS Api loaded
+2021-04-20T21:29:25 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:29:09 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:29:10 W1 SUCCESS Static loaded
+2021-04-21T21:29:10 W1 SUCCESS Api loaded
+2021-04-21T21:29:10 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:29:30 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:29:30 W1 SUCCESS Static loaded
+2021-04-21T21:29:30 W1 SUCCESS Api loaded
+2021-04-21T21:29:30 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:29:37 W1 INFO Connected  127.0.0.1
+2021-04-21T21:30:18 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:30:18 W1 SUCCESS Static loaded
+2021-04-21T21:30:18 W1 SUCCESS Api loaded
+2021-04-21T21:30:18 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:30:25 W1 INFO Connected  127.0.0.1
+2021-04-21T21:30:25 W1 ERROR TypeError: Cannot read property 'get' of undefined
+    at Channels.setGroup (D:\Code\node_cloud_server\lib\channels.js:23:34)
+    at method (evalmachine.<anonymous>:8:26)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Channel.message (D:\Code\node_cloud_server\lib\channel.js:31:24)
+2021-04-21T21:31:04 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:31:04 W1 SUCCESS Static loaded
+2021-04-21T21:31:04 W1 SUCCESS Api loaded
+2021-04-21T21:31:04 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:31:12 W1 INFO Connected  127.0.0.1
+2021-04-21T21:38:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:38:18 W1 SUCCESS Static loaded
+2021-04-21T21:38:18 W1 SUCCESS Api loaded
+2021-04-21T21:38:18 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:38:22 W1 INFO Connected  127.0.0.1
+2021-04-21T21:40:15 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:40:15 W1 SUCCESS Static loaded
+2021-04-21T21:40:15 W1 SUCCESS Api loaded
+2021-04-21T21:40:15 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:40:21 W1 INFO Connected  127.0.0.1
+2021-04-21T21:40:24 W1 INFO Connected  127.0.0.1
+2021-04-21T21:40:29 W1 INFO Connected  127.0.0.1
+2021-04-21T21:40:37 W1 INFO Connected  127.0.0.1
+2021-04-21T21:40:54 W1 ERROR ServerError: Invallid name
+    at Object.name (D:\Code\node_cloud_server\lib\utils.js:87:48)
+    at Object.fileList (D:\Code\node_cloud_server\lib\utils.js:95:51)
+    at validateArgs (D:\Code\node_cloud_server\lib\utils.js:105:39)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:28:9)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17) {
+  code: 501
+}
+2021-04-21T21:41:17 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:50:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:43:20 W1 INFO Connected  127.0.0.1
+2021-04-21T21:43:25 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:50:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:44:27 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:44:27 W1 SUCCESS Static loaded
+2021-04-21T21:44:27 W1 SUCCESS Api loaded
+2021-04-21T21:44:27 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:44:30 W1 INFO Connected  127.0.0.1
+2021-04-21T21:44:37 W1 ERROR ServerError: Invallid name
+    at Object.name (D:\Code\node_cloud_server\lib\utils.js:87:48)
+    at Object.fileList (D:\Code\node_cloud_server\lib\utils.js:95:51)
+    at validateArgs (D:\Code\node_cloud_server\lib\utils.js:105:39)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:28:9)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17) {
+  code: 501
+}
+2021-04-21T21:44:42 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:51:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:47:11 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:47:11 W1 SUCCESS Static loaded
+2021-04-21T21:47:11 W1 SUCCESS Api loaded
+2021-04-21T21:47:11 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:47:13 W1 INFO Connected  127.0.0.1
+2021-04-21T21:47:17 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:51:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:48:09 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:48:09 W1 SUCCESS Static loaded
+2021-04-21T21:48:09 W1 SUCCESS Api loaded
+2021-04-21T21:48:09 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:48:12 W1 INFO Connected  127.0.0.1
+2021-04-21T21:48:20 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:52:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:48:39 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:48:39 W1 SUCCESS Static loaded
+2021-04-21T21:48:39 W1 SUCCESS Api loaded
+2021-04-21T21:48:39 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:48:41 W1 INFO Connected  127.0.0.1
+2021-04-21T21:48:43 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:52:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:49:32 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:49:32 W1 SUCCESS Static loaded
+2021-04-21T21:49:32 W1 SUCCESS Api loaded
+2021-04-21T21:49:32 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:49:37 W1 INFO Connected  127.0.0.1
+2021-04-21T21:49:42 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:52:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:50:26 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:50:26 W1 SUCCESS Static loaded
+2021-04-21T21:50:26 W1 SUCCESS Api loaded
+2021-04-21T21:50:26 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:50:28 W1 INFO Connected  127.0.0.1
+2021-04-21T21:50:30 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:52:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:51:18 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:51:18 W1 SUCCESS Static loaded
+2021-04-21T21:51:18 W1 SUCCESS Api loaded
+2021-04-21T21:51:18 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:51:20 W1 INFO Connected  127.0.0.1
+2021-04-21T21:51:24 W1 ERROR TypeError: Cannot read property 'send' of undefined
+    at Channels.sendGroup (D:\Code\node_cloud_server\lib\channels.js:52:15)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:40:37)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2021-04-21T21:52:07 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:52:07 W1 SUCCESS Static loaded
+2021-04-21T21:52:07 W1 SUCCESS Api loaded
+2021-04-21T21:52:07 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:52:09 W1 INFO Connected  127.0.0.1
+2021-04-21T21:53:18 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:53:18 W1 SUCCESS Static loaded
+2021-04-21T21:53:19 W1 SUCCESS Api loaded
+2021-04-21T21:53:19 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:53:21 W1 INFO Connected  127.0.0.1
+2021-04-21T21:53:29 W1 INFO Connected  127.0.0.1
+2021-04-21T21:53:31 W1 INFO Connected  127.0.0.1
+2021-04-21T21:53:42 W1 INFO Connected  127.0.0.1
+2021-04-21T21:54:27 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:54:27 W1 SUCCESS Static loaded
+2021-04-21T21:54:27 W1 SUCCESS Api loaded
+2021-04-21T21:54:27 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:54:34 W1 INFO Connected  127.0.0.1
+2021-04-21T21:54:59 W1 INFO Connected  127.0.0.1
+2021-04-21T21:55:15 W1 INFO Connected  127.0.0.1
+2021-04-21T21:55:33 W1 INFO Connected  127.0.0.1
+2021-04-21T21:57:39 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T21:57:39 W1 SUCCESS Static loaded
+2021-04-21T21:57:40 W1 SUCCESS Api loaded
+2021-04-21T21:57:40 W1 INFO Listen on http://localhost:7000
+2021-04-21T21:57:42 W1 INFO Connected  127.0.0.1
+2021-04-21T21:57:49 W1 ERROR ServerError: Invallid name
+    at Object.name (D:\Code\node_cloud_server\lib\utils.js:87:48)
+    at Object.fileList (D:\Code\node_cloud_server\lib\utils.js:95:51)
+    at validateArgs (D:\Code\node_cloud_server\lib\utils.js:105:39)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:28:9)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17) {
+  code: 501
+}
+2021-04-21T22:02:51 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-21T22:02:51 W1 SUCCESS Static loaded
+2021-04-21T22:02:51 W1 SUCCESS Api loaded
+2021-04-21T22:02:51 W1 INFO Listen on http://localhost:7000
+2021-04-21T22:02:54 W1 INFO Connected  127.0.0.1
+2021-04-21T22:03:26 W1 INFO Connected  127.0.0.1
+2021-04-22T10:13:08 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:13:08 W1 SUCCESS Static loaded
+2021-04-22T10:13:09 W1 SUCCESS Api loaded
+2021-04-22T10:13:09 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:13:12 W1 INFO Connected  127.0.0.1
+2021-04-22T10:29:22 W1 INFO Connected  127.0.0.1
+2021-04-22T10:29:22 W1 INFO Connected  127.0.0.1
+2021-04-22T10:52:28 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:52:28 W1 SUCCESS Static loaded
+2021-04-22T10:52:28 W1 SUCCESS Api loaded
+2021-04-22T10:52:28 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:52:37 W1 INFO Connected  127.0.0.1
+2021-04-22T10:53:00 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:53:00 W1 SUCCESS Static loaded
+2021-04-22T10:53:00 W1 SUCCESS Api loaded
+2021-04-22T10:53:00 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:53:02 W1 INFO Connected  127.0.0.1
+2021-04-22T10:53:21 W1 ERROR TypeError: channel is not async iterable
+    at method (evalmachine.<anonymous>:19:32)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Channel.message (D:\Code\node_cloud_server\lib\channel.js:46:24)
+2021-04-22T10:53:44 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:53:44 W1 SUCCESS Static loaded
+2021-04-22T10:53:44 W1 SUCCESS Api loaded
+2021-04-22T10:53:44 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:53:46 W1 INFO Connected  127.0.0.1
+2021-04-22T10:54:19 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:54:19 W1 SUCCESS Static loaded
+2021-04-22T10:54:19 W1 SUCCESS Api loaded
+2021-04-22T10:54:19 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:54:22 W1 INFO Connected  127.0.0.1
+2021-04-22T10:54:46 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:54:46 W1 SUCCESS Static loaded
+2021-04-22T10:54:46 W1 SUCCESS Api loaded
+2021-04-22T10:54:46 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:54:48 W1 INFO Connected  127.0.0.1
+2021-04-22T10:55:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:55:17 W1 SUCCESS Static loaded
+2021-04-22T10:55:17 W1 SUCCESS Api loaded
+2021-04-22T10:55:17 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:55:19 W1 INFO Connected  127.0.0.1
+2021-04-22T10:56:23 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:56:23 W1 SUCCESS Static loaded
+2021-04-22T10:56:23 W1 SUCCESS Api loaded
+2021-04-22T10:56:23 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:56:27 W1 INFO Connected  127.0.0.1
+2021-04-22T10:57:13 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:57:13 W1 SUCCESS Static loaded
+2021-04-22T10:57:13 W1 SUCCESS Api loaded
+2021-04-22T10:57:13 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:57:15 W1 INFO Connected  127.0.0.1
+2021-04-22T10:57:21 W1 INFO Connected  127.0.0.1
+2021-04-22T10:57:40 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T10:57:40 W1 SUCCESS Static loaded
+2021-04-22T10:57:40 W1 SUCCESS Api loaded
+2021-04-22T10:57:40 W1 INFO Listen on http://localhost:7000
+2021-04-22T10:57:41 W1 INFO Connected  127.0.0.1
+2021-04-22T10:57:49 W1 INFO Connected  127.0.0.1
+2021-04-22T11:30:41 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:30:41 W1 SUCCESS Static loaded
+2021-04-22T11:30:41 W1 SUCCESS Api loaded
+2021-04-22T11:30:41 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:30:44 W1 INFO Connected  127.0.0.1
+2021-04-22T11:30:56 W1 INFO Connected  127.0.0.1
+2021-04-22T11:31:28 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:31:28 W1 SUCCESS Static loaded
+2021-04-22T11:31:28 W1 SUCCESS Api loaded
+2021-04-22T11:31:28 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:31:30 W1 INFO Connected  127.0.0.1
+2021-04-22T11:32:19 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:32:19 W1 SUCCESS Static loaded
+2021-04-22T11:32:19 W1 SUCCESS Api loaded
+2021-04-22T11:32:19 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:32:21 W1 INFO Connected  127.0.0.1
+2021-04-22T11:32:57 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:32:57 W1 SUCCESS Static loaded
+2021-04-22T11:32:57 W1 SUCCESS Api loaded
+2021-04-22T11:32:57 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:32:59 W1 INFO Connected  127.0.0.1
+2021-04-22T11:33:51 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:33:51 W1 SUCCESS Static loaded
+2021-04-22T11:33:51 W1 SUCCESS Api loaded
+2021-04-22T11:33:51 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:33:53 W1 INFO Connected  127.0.0.1
+2021-04-22T11:35:13 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:35:13 W1 SUCCESS Static loaded
+2021-04-22T11:35:13 W1 SUCCESS Api loaded
+2021-04-22T11:35:13 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:35:15 W1 INFO Connected  127.0.0.1
+2021-04-22T11:53:51 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:53:51 W1 SUCCESS Static loaded
+2021-04-22T11:53:51 W1 SUCCESS Api loaded
+2021-04-22T11:53:51 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:53:53 W1 INFO Connected  127.0.0.1
+2021-04-22T11:53:59 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T11:53:59 W1 SUCCESS Static loaded
+2021-04-22T11:53:59 W1 SUCCESS Api loaded
+2021-04-22T11:53:59 W1 INFO Listen on http://localhost:7000
+2021-04-22T11:54:01 W1 INFO Connected  127.0.0.1
+2021-04-22T12:05:24 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T12:05:25 W1 SUCCESS Static loaded
+2021-04-22T12:05:25 W1 SUCCESS Api loaded
+2021-04-22T12:05:25 W1 INFO Listen on http://localhost:7000
+2021-04-22T12:05:27 W1 INFO Connected  127.0.0.1
+2021-04-22T12:05:57 W1 INFO Connected  127.0.0.1
+2021-04-22T13:11:04 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T13:11:04 W1 SUCCESS Static loaded
+2021-04-22T13:11:04 W1 SUCCESS Api loaded
+2021-04-22T13:11:04 W1 INFO Listen on http://localhost:7000
+2021-04-22T13:11:08 W1 INFO Connected  127.0.0.1
+2021-04-22T13:11:23 W1 INFO Connected  127.0.0.1
+2021-04-22T13:12:36 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T13:12:36 W1 SUCCESS Static loaded
+2021-04-22T13:12:36 W1 SUCCESS Api loaded
+2021-04-22T13:12:36 W1 INFO Listen on http://localhost:7000
+2021-04-22T13:12:38 W1 INFO Connected  127.0.0.1
+2021-04-22T13:12:52 W1 INFO Connected  127.0.0.1
+2021-04-22T13:13:06 W1 INFO Connected  127.0.0.1
+2021-04-22T13:13:19 W1 INFO Connected  127.0.0.1
+2021-04-22T14:01:43 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T14:01:43 W1 SUCCESS Static loaded
+2021-04-22T14:01:43 W1 SUCCESS Api loaded
+2021-04-22T14:01:43 W1 INFO Listen on http://localhost:7000
+2021-04-22T14:01:46 W1 INFO Connected  127.0.0.1
+2021-04-22T15:27:27 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-22T15:27:27 W1 SUCCESS Static loaded
+2021-04-22T15:27:27 W1 SUCCESS Api loaded
+2021-04-22T15:27:27 W1 INFO Listen on http://localhost:7000
+2021-04-22T15:27:31 W1 INFO Connected  127.0.0.1
+2021-04-23T08:41:50 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-23T08:41:51 W1 SUCCESS Static loaded
+2021-04-23T08:41:51 W1 SUCCESS Api loaded
+2021-04-23T08:41:51 W1 INFO Listen on http://localhost:7000
+2021-04-23T08:42:00 W1 INFO Connected  127.0.0.1
+2021-04-23T08:42:27 W1 ERROR ServerError: Invallid name
+    at Object.name (D:\Code\node_cloud_server\lib\utils.js:87:48)
+    at Object.fileList (D:\Code\node_cloud_server\lib\utils.js:95:51)
+    at validateArgs (D:\Code\node_cloud_server\lib\utils.js:105:39)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:38:9)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17) {
+  code: 501
+}
+2021-04-23T08:42:35 W1 ERROR ReferenceError: generateToken is not defined
+    at method (evalmachine.<anonymous>:5:19)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:41:30)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+2021-04-23T08:43:28 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-23T08:43:28 W1 SUCCESS Static loaded
+2021-04-23T08:43:28 W1 SUCCESS Api loaded
+2021-04-23T08:43:28 W1 INFO Listen on http://localhost:7000
+2021-04-23T08:43:31 W1 INFO Connected  127.0.0.1
+2021-04-23T08:43:42 W1 ERROR TypeError: method is not a function
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:41:30)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+    at writeOrBuffer (_stream_writable.js:352:12)
+2021-04-23T08:44:33 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-23T08:44:33 W1 SUCCESS Static loaded
+2021-04-23T08:44:33 W1 SUCCESS Api loaded
+2021-04-23T08:44:33 W1 INFO Listen on http://localhost:7000
+2021-04-23T08:44:35 W1 INFO Connected  127.0.0.1
+2021-04-23T08:44:43 W1 ERROR TypeError: method is not a function
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:42:30)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+    at writeOrBuffer (_stream_writable.js:352:12)
+2021-04-23T08:45:28 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-23T08:45:28 W1 SUCCESS Static loaded
+2021-04-23T08:45:28 W1 SUCCESS Api loaded
+2021-04-23T08:45:28 W1 INFO Listen on http://localhost:7000
+2021-04-23T08:45:30 W1 INFO Connected  127.0.0.1
+2021-04-23T08:45:32 W1 ERROR ServerError: Invalid token
+    at Object.token (D:\Code\node_cloud_server\lib\utils.js:98:48)
+    at validateArgs (D:\Code\node_cloud_server\lib\utils.js:105:39)
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:38:9)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22) {
+  code: 503
+}
+2021-04-23T08:45:40 W1 ERROR TypeError: method is not a function
+    at Channel.message (D:\Code\node_cloud_server\lib\channel.js:43:30)
+    at WebSocket.<anonymous> (D:\Code\node_cloud_server\lib\server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (D:\Code\node_cloud_server\node_modules\ws\lib\websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:437:14)
+    at Receiver.getData (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:367:17)
+    at Receiver.startLoop (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:143:22)
+    at Receiver._write (D:\Code\node_cloud_server\node_modules\ws\lib\receiver.js:78:10)
+    at writeOrBuffer (_stream_writable.js:352:12)
+2021-04-23T08:46:00 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-23T08:46:00 W1 SUCCESS Static loaded
+2021-04-23T08:46:00 W1 SUCCESS Api loaded
+2021-04-23T08:46:00 W1 INFO Listen on http://localhost:7000
+2021-04-23T08:46:02 W1 INFO Connected  127.0.0.1
+2021-04-23T21:26:17 W1 INFO Files deleted: 6 Tokens expired: 3
+2021-04-23T21:26:18 W1 SUCCESS Static loaded
+2021-04-23T21:26:18 W1 ERROR evalmachine.<anonymous>:22
+          await application.db.update(
+          ^^^^^
+
+SyntaxError: await is only valid in async function
+    at new Script (vm.js:99:7)
+    at Api.load (D:\Code\node_cloud_server\lib\api.js:38:20)
+    at async Api.loadDirectory (D:\Code\node_cloud_server\lib\loader.js:26:12)
+    at async App.start (D:\Code\node_cloud_server\lib\app.js:33:7)
+    at async D:\Code\node_cloud_server\lib\worker.js:9:3
+2021-04-23T21:26:18 W1 INFO Listen on http://localhost:7000
+2021-04-23T21:27:07 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-23T21:27:08 W1 SUCCESS Static loaded
+2021-04-23T21:27:08 W1 SUCCESS Api loaded
+2021-04-23T21:27:08 W1 INFO Listen on http://localhost:7000
+2021-04-23T21:27:11 W1 INFO Connected  127.0.0.1
+2021-04-23T21:27:15 W1 INFO Connected  127.0.0.1
+2021-04-24T08:57:49 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T08:57:50 W1 SUCCESS Static loaded
+2021-04-24T08:57:50 W1 SUCCESS Api loaded
+2021-04-24T08:57:50 W1 INFO Listen on http://localhost:7000
+2021-04-24T08:57:52 W1 INFO Connected  127.0.0.1
+2021-04-24T08:57:55 W1 INFO Connected  127.0.0.1
+2021-04-24T08:58:11 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T08:58:12 W1 SUCCESS Static loaded
+2021-04-24T08:58:12 W1 SUCCESS Api loaded
+2021-04-24T08:58:12 W1 INFO Listen on http://localhost:7000
+2021-04-24T08:58:13 W1 INFO Connected  127.0.0.1
+2021-04-24T09:35:30 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T09:35:30 W1 SUCCESS Static loaded
+2021-04-24T09:35:30 W1 SUCCESS Api loaded
+2021-04-24T09:35:30 W1 INFO Listen on http://localhost:7000
+2021-04-24T09:35:33 W1 INFO Connected  127.0.0.1
+2021-04-24T09:35:46 W1 INFO Connected  127.0.0.1
+2021-04-24T09:53:01 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T09:53:01 W1 SUCCESS Static loaded
+2021-04-24T09:53:01 W1 SUCCESS Api loaded
+2021-04-24T09:53:01 W1 INFO Listen on http://localhost:7000
+2021-04-24T09:53:04 W1 INFO Connected  127.0.0.1
+2021-04-24T09:53:04 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 505
+}
+2021-04-24T09:53:33 W1 ERROR ServerError: Invallid name
+    at Object.name (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:86:48)
+    at Object.fileList (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:94:51)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:104:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17) {
+  code: 501
+}
+2021-04-24T09:56:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T09:56:17 W1 SUCCESS Static loaded
+2021-04-24T09:56:17 W1 SUCCESS Api loaded
+2021-04-24T09:56:17 W1 INFO Listen on http://localhost:7000
+2021-04-24T09:56:19 W1 INFO Connected  127.0.0.1
+2021-04-24T09:56:37 W1 ERROR ServerError: Invallid name
+    at Object.name (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:87:48)
+    at Object.fileList (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:95:51)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17) {
+  code: 501
+}
+2021-04-24T09:58:29 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T09:58:29 W1 SUCCESS Static loaded
+2021-04-24T09:58:29 W1 SUCCESS Api loaded
+2021-04-24T09:58:29 W1 INFO Listen on http://localhost:7000
+2021-04-24T09:58:30 W1 INFO Connected  127.0.0.1
+2021-04-24T09:58:44 W1 ERROR ServerError: Invallid name
+    at Object.name (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:87:48)
+    at Object.fileList (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:95:51)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:105:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17) {
+  code: 501
+}
+2021-04-24T09:59:08 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T09:59:08 W1 SUCCESS Static loaded
+2021-04-24T09:59:08 W1 SUCCESS Api loaded
+2021-04-24T09:59:08 W1 INFO Listen on http://localhost:7000
+2021-04-24T09:59:10 W1 INFO Connected  127.0.0.1
+2021-04-24T10:00:42 W1 ERROR ServerError: Corrupted args
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:106:16)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10) {
+  code: 508
+}
+2021-04-24T10:02:23 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:02:23 W1 SUCCESS Static loaded
+2021-04-24T10:02:23 W1 SUCCESS Api loaded
+2021-04-24T10:02:23 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:02:25 W1 INFO Connected  127.0.0.1
+2021-04-24T10:05:40 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:05:40 W1 SUCCESS Static loaded
+2021-04-24T10:05:40 W1 SUCCESS Api loaded
+2021-04-24T10:05:40 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:05:41 W1 INFO Connected  127.0.0.1
+2021-04-24T10:05:53 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:05:53 W1 SUCCESS Static loaded
+2021-04-24T10:05:53 W1 SUCCESS Api loaded
+2021-04-24T10:05:53 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:05:54 W1 INFO Connected  127.0.0.1
+2021-04-24T10:07:29 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:07:29 W1 SUCCESS Static loaded
+2021-04-24T10:07:29 W1 SUCCESS Api loaded
+2021-04-24T10:07:29 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:07:30 W1 INFO Connected  127.0.0.1
+2021-04-24T10:10:07 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:10:07 W1 SUCCESS Static loaded
+2021-04-24T10:10:07 W1 SUCCESS Api loaded
+2021-04-24T10:10:07 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:10:09 W1 INFO Connected  127.0.0.1
+2021-04-24T10:10:13 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:8:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:10:36 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:10:36 W1 SUCCESS Static loaded
+2021-04-24T10:10:36 W1 SUCCESS Api loaded
+2021-04-24T10:10:36 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:10:37 W1 INFO Connected  127.0.0.1
+2021-04-24T10:10:53 W1 INFO Connected  127.0.0.1
+2021-04-24T10:11:28 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:12:10 W1 INFO Connected  127.0.0.1
+2021-04-24T10:12:47 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:12:47 W1 SUCCESS Static loaded
+2021-04-24T10:12:47 W1 SUCCESS Api loaded
+2021-04-24T10:12:47 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:12:48 W1 INFO Connected  127.0.0.1
+2021-04-24T10:12:57 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:13:18 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:20:43 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:20:43 W1 SUCCESS Static loaded
+2021-04-24T10:20:43 W1 SUCCESS Api loaded
+2021-04-24T10:20:43 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:20:45 W1 INFO Connected  127.0.0.1
+2021-04-24T10:21:25 W1 ERROR ServerError: Invallid name
+    at Object.name (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:87:48)
+    at Object.fileList (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:96:51)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:106:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17) {
+  code: 501
+}
+2021-04-24T10:21:37 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:28:05 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:28:06 W1 SUCCESS Static loaded
+2021-04-24T10:28:06 W1 SUCCESS Api loaded
+2021-04-24T10:28:06 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:28:09 W1 INFO Connected  127.0.0.1
+2021-04-24T10:28:21 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:29:05 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:29:05 W1 SUCCESS Static loaded
+2021-04-24T10:29:06 W1 SUCCESS Api loaded
+2021-04-24T10:29:06 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:29:07 W1 INFO Connected  127.0.0.1
+2021-04-24T10:29:16 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:24) {
+  code: 510
+}
+2021-04-24T10:34:26 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:34:26 W1 SUCCESS Static loaded
+2021-04-24T10:34:26 W1 SUCCESS Api loaded
+2021-04-24T10:34:26 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:34:29 W1 INFO Connected  127.0.0.1
+2021-04-24T10:35:59 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:35:59 W1 SUCCESS Static loaded
+2021-04-24T10:35:59 W1 SUCCESS Api loaded
+2021-04-24T10:35:59 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:36:00 W1 INFO Connected  127.0.0.1
+2021-04-24T10:36:33 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:36:33 W1 SUCCESS Static loaded
+2021-04-24T10:36:33 W1 SUCCESS Api loaded
+2021-04-24T10:36:33 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:36:34 W1 INFO Connected  127.0.0.1
+2021-04-24T10:37:08 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:37:08 W1 SUCCESS Static loaded
+2021-04-24T10:37:08 W1 SUCCESS Api loaded
+2021-04-24T10:37:08 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:37:09 W1 INFO Connected  127.0.0.1
+2021-04-24T10:39:18 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:39:19 W1 SUCCESS Static loaded
+2021-04-24T10:39:19 W1 SUCCESS Api loaded
+2021-04-24T10:39:19 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:39:21 W1 INFO Connected  127.0.0.1
+2021-04-24T10:39:46 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T10:39:46 W1 SUCCESS Static loaded
+2021-04-24T10:39:46 W1 SUCCESS Api loaded
+2021-04-24T10:39:46 W1 INFO Listen on http://localhost:7000
+2021-04-24T10:39:47 W1 INFO Connected  127.0.0.1
+2021-04-24T12:11:11 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T12:11:11 W1 SUCCESS Static loaded
+2021-04-24T12:11:11 W1 SUCCESS Api loaded
+2021-04-24T12:11:11 W1 INFO Listen on http://localhost:7000
+2021-04-24T12:11:14 W1 INFO Connected  127.0.0.1
+2021-04-24T12:12:40 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T12:12:40 W1 SUCCESS Static loaded
+2021-04-24T12:12:40 W1 SUCCESS Api loaded
+2021-04-24T12:12:40 W1 INFO Listen on http://localhost:7000
+2021-04-24T12:12:41 W1 INFO Connected  127.0.0.1
+2021-04-24T12:12:46 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:9:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:24) {
+  code: 510
+}
+2021-04-24T12:18:57 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T12:18:57 W1 SUCCESS Static loaded
+2021-04-24T12:18:57 W1 SUCCESS Api loaded
+2021-04-24T12:18:57 W1 INFO Listen on http://localhost:7000
+2021-04-24T12:19:00 W1 INFO Connected  127.0.0.1
+2021-04-24T12:19:20 W1 ERROR ServerError: File load timeout
+    at method (evalmachine.<anonymous>:7:41)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:30)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22)
+    at Receiver._write (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:78:10) {
+  code: 511
+}
+2021-04-24T12:20:05 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T12:20:05 W1 SUCCESS Static loaded
+2021-04-24T12:20:05 W1 SUCCESS Api loaded
+2021-04-24T12:20:05 W1 INFO Listen on http://localhost:7000
+2021-04-24T12:20:06 W1 INFO Connected  127.0.0.1
+2021-04-24T12:20:35 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T12:20:36 W1 SUCCESS Static loaded
+2021-04-24T12:20:36 W1 SUCCESS Api loaded
+2021-04-24T12:20:36 W1 INFO Listen on http://localhost:7000
+2021-04-24T12:20:37 W1 INFO Connected  127.0.0.1
+2021-04-24T12:20:38 W1 ERROR [Error: ENOENT: no such file or directory, unlink '/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/storage/DnMbinOwpranpHhXxG8Y1Jz3t0WSf9qr/bDp6O0HNICFoK5q0UmYQydfRjI4YaDcu'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: '/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/storage/DnMbinOwpranpHhXxG8Y1Jz3t0WSf9qr/bDp6O0HNICFoK5q0UmYQydfRjI4YaDcu'
+}
+2021-04-24T12:20:42 W1 INFO Connected  127.0.0.1
+2021-04-24T12:20:50 W1 INFO Connected  127.0.0.1
+2021-04-24T12:20:56 W1 INFO false
+2021-04-24T13:34:23 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:34:23 W1 SUCCESS Static loaded
+2021-04-24T13:34:23 W1 SUCCESS Api loaded
+2021-04-24T13:34:23 W1 INFO Listen on http://localhost:7000
+2021-04-24T13:34:26 W1 INFO Connected  127.0.0.1
+2021-04-24T13:34:28 W1 ERROR [Error: ENOENT: no such file or directory, unlink '/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/storage/DnMbinOwpranpHhXxG8Y1Jz3t0WSf9qr/ISBnWwphv7onGk9VqJUUX6KQ6EpfeWd5'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: '/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/storage/DnMbinOwpranpHhXxG8Y1Jz3t0WSf9qr/ISBnWwphv7onGk9VqJUUX6KQ6EpfeWd5'
+}
+2021-04-24T13:35:24 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:35:24 W1 SUCCESS Static loaded
+2021-04-24T13:35:24 W1 SUCCESS Api loaded
+2021-04-24T13:35:24 W1 INFO Listen on http://localhost:7000
+2021-04-24T13:35:25 W1 INFO Connected  127.0.0.1
+2021-04-24T13:35:35 W1 ERROR ServerError: Files lost
+    at method (evalmachine.<anonymous>:8:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:46:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:45:9) {
+  code: 510
+}
+2021-04-24T13:36:14 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:36:14 W1 SUCCESS Static loaded
+2021-04-24T13:36:14 W1 SUCCESS Api loaded
+2021-04-24T13:36:14 W1 INFO Listen on http://localhost:7000
+2021-04-24T13:36:15 W1 INFO Connected  127.0.0.1
+2021-04-24T13:40:11 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:40:11 W1 SUCCESS Static loaded
+2021-04-24T13:40:11 W1 SUCCESS Api loaded
+2021-04-24T13:40:11 W1 INFO Listen on http://localhost:7000
+2021-04-24T13:40:13 W1 INFO Connected  127.0.0.1
+2021-04-24T13:40:17 W1 INFO Connected  127.0.0.1
+2021-04-24T13:42:57 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:42:57 W1 SUCCESS Static loaded
+2021-04-24T13:42:57 W1 SUCCESS Api loaded
+2021-04-24T13:42:57 W1 INFO Listen on http://localhost:7000
+2021-04-24T13:43:02 W1 INFO Connected  127.0.0.1
+2021-04-24T13:43:49 W1 INFO Connected  127.0.0.1
+2021-04-24T13:59:35 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:59:35 W1 SUCCESS Static loaded
+2021-04-24T13:59:35 W1 SUCCESS Api loaded
+2021-04-24T13:59:36 W2 SUCCESS Static loaded
+2021-04-24T13:59:36 W2 SUCCESS Api loaded
+2021-04-24T13:59:36 W3 SUCCESS Static loaded
+2021-04-24T13:59:36 W3 SUCCESS Api loaded
+2021-04-24T13:59:36 W4 SUCCESS Static loaded
+2021-04-24T13:59:36 W4 SUCCESS Api loaded
+2021-04-24T13:59:36 W5 SUCCESS Static loaded
+2021-04-24T13:59:36 W5 SUCCESS Api loaded
+2021-04-24T13:59:36 W6 SUCCESS Static loaded
+2021-04-24T13:59:36 W6 SUCCESS Api loaded
+2021-04-24T13:59:37 W7 SUCCESS Static loaded
+2021-04-24T13:59:37 W7 SUCCESS Api loaded
+2021-04-24T13:59:37 W8 SUCCESS Static loaded
+2021-04-24T13:59:37 W8 SUCCESS Api loaded
+2021-04-24T13:59:37 W9 SUCCESS Static loaded
+2021-04-24T13:59:37 W9 SUCCESS Api loaded
+2021-04-24T13:59:37 W10 SUCCESS Static loaded
+2021-04-24T13:59:37 W10 SUCCESS Api loaded
+2021-04-24T13:59:38 W11 SUCCESS Static loaded
+2021-04-24T13:59:38 W11 SUCCESS Api loaded
+2021-04-24T13:59:38 W12 SUCCESS Static loaded
+2021-04-24T13:59:38 W12 SUCCESS Api loaded
+2021-04-24T13:59:38 W13 SUCCESS Static loaded
+2021-04-24T13:59:38 W13 SUCCESS Api loaded
+2021-04-24T13:59:38 W14 SUCCESS Static loaded
+2021-04-24T13:59:38 W14 SUCCESS Api loaded
+2021-04-24T13:59:39 W15 SUCCESS Static loaded
+2021-04-24T13:59:39 W15 SUCCESS Api loaded
+2021-04-24T13:59:39 W16 SUCCESS Static loaded
+2021-04-24T13:59:39 W16 SUCCESS Api loaded
+2021-04-24T13:59:39 W17 SUCCESS Static loaded
+2021-04-24T13:59:39 W17 SUCCESS Api loaded
+2021-04-24T13:59:39 W18 SUCCESS Static loaded
+2021-04-24T13:59:39 W18 SUCCESS Api loaded
+2021-04-24T13:59:39 W19 SUCCESS Static loaded
+2021-04-24T13:59:39 W19 SUCCESS Api loaded
+2021-04-24T13:59:40 W20 SUCCESS Static loaded
+2021-04-24T13:59:40 W20 SUCCESS Api loaded
+2021-04-24T13:59:40 W21 SUCCESS Static loaded
+2021-04-24T13:59:40 W21 SUCCESS Api loaded
+2021-04-24T13:59:40 W22 SUCCESS Static loaded
+2021-04-24T13:59:40 W22 SUCCESS Api loaded
+2021-04-24T13:59:40 W23 SUCCESS Static loaded
+2021-04-24T13:59:40 W23 SUCCESS Api loaded
+2021-04-24T13:59:41 W24 SUCCESS Static loaded
+2021-04-24T13:59:41 W24 SUCCESS Api loaded
+2021-04-24T13:59:41 W25 SUCCESS Static loaded
+2021-04-24T13:59:41 W25 SUCCESS Api loaded
+2021-04-24T13:59:41 W26 SUCCESS Static loaded
+2021-04-24T13:59:41 W26 SUCCESS Api loaded
+2021-04-24T13:59:41 W27 SUCCESS Static loaded
+2021-04-24T13:59:41 W27 SUCCESS Api loaded
+2021-04-24T13:59:41 W28 SUCCESS Static loaded
+2021-04-24T13:59:41 W28 SUCCESS Api loaded
+2021-04-24T13:59:42 W29 SUCCESS Static loaded
+2021-04-24T13:59:42 W29 SUCCESS Api loaded
+2021-04-24T13:59:42 W30 SUCCESS Static loaded
+2021-04-24T13:59:42 W30 SUCCESS Api loaded
+2021-04-24T13:59:42 W31 SUCCESS Static loaded
+2021-04-24T13:59:42 W31 SUCCESS Api loaded
+2021-04-24T13:59:42 W32 SUCCESS Static loaded
+2021-04-24T13:59:42 W32 SUCCESS Api loaded
+2021-04-24T13:59:43 W33 SUCCESS Static loaded
+2021-04-24T13:59:43 W33 SUCCESS Api loaded
+2021-04-24T13:59:47 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T13:59:47 W1 SUCCESS Static loaded
+2021-04-24T13:59:48 W1 SUCCESS Api loaded
+2021-04-24T13:59:48 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:00:30 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:00:31 W1 SUCCESS Static loaded
+2021-04-24T14:00:31 W1 SUCCESS Api loaded
+2021-04-24T14:00:48 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:00:48 W1 SUCCESS Static loaded
+2021-04-24T14:00:48 W1 SUCCESS Api loaded
+2021-04-24T14:08:51 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:09:03 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:09:03 W1 SUCCESS Static loaded
+2021-04-24T14:09:03 W1 SUCCESS Api loaded
+2021-04-24T14:09:03 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:09:06 W1 INFO Connected  127.0.0.1
+2021-04-24T14:13:43 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:14:18 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:14:18 W1 ERROR [Error: ENOENT: no such file or directory, scandir '/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/react_cloud_client_web/build'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/react_cloud_client_web/build'
+}
+2021-04-24T14:14:41 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:14:41 W1 SUCCESS Static loaded
+2021-04-24T14:14:41 W1 SUCCESS Api loaded
+2021-04-24T14:14:41 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:14:43 W1 INFO Connected  127.0.0.1
+2021-04-24T14:37:06 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:37:06 W1 SUCCESS Static loaded
+2021-04-24T14:37:06 W1 SUCCESS Api loaded
+2021-04-24T14:37:06 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:37:59 W1 INFO Connected  127.0.0.1
+2021-04-24T14:41:58 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:41:58 W1 SUCCESS Static loaded
+2021-04-24T14:41:58 W1 SUCCESS Api loaded
+2021-04-24T14:41:58 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:42:16 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:42:16 W1 SUCCESS Static loaded
+2021-04-24T14:42:16 W1 SUCCESS Api loaded
+2021-04-24T14:42:16 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:42:54 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:42:54 W1 SUCCESS Static loaded
+2021-04-24T14:42:54 W1 SUCCESS Api loaded
+2021-04-24T14:42:54 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:43:07 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:43:07 W1 SUCCESS Static loaded
+2021-04-24T14:43:07 W1 SUCCESS Api loaded
+2021-04-24T14:43:07 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:43:19 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:43:19 W1 SUCCESS Static loaded
+2021-04-24T14:43:19 W1 SUCCESS Api loaded
+2021-04-24T14:43:19 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:43:25 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:43:25 W1 SUCCESS Static loaded
+2021-04-24T14:43:25 W1 SUCCESS Api loaded
+2021-04-24T14:43:25 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:43:43 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:43:43 W1 SUCCESS Static loaded
+2021-04-24T14:43:43 W1 SUCCESS Api loaded
+2021-04-24T14:43:43 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:43:55 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:43:55 W1 SUCCESS Static loaded
+2021-04-24T14:43:55 W1 SUCCESS Api loaded
+2021-04-24T14:43:55 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:44:26 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:44:26 W1 SUCCESS Static loaded
+2021-04-24T14:44:26 W1 SUCCESS Api loaded
+2021-04-24T14:44:26 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:49:39 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T14:49:39 W1 SUCCESS Static loaded
+2021-04-24T14:49:39 W1 SUCCESS Api loaded
+2021-04-24T14:49:39 W1 INFO Listen on http://localhost:7000
+2021-04-24T14:49:41 W1 INFO Connected  127.0.0.1
+2021-04-24T16:02:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:02:17 W1 SUCCESS Static loaded
+2021-04-24T16:02:17 W1 SUCCESS Api loaded
+2021-04-24T16:02:17 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:02:30 W1 INFO Connected  127.0.0.1
+2021-04-24T16:03:16 W1 ERROR ReferenceError: generateToken is not defined
+    at Storage.createLink (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/storage.js:118:19)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:4:40)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9)
+2021-04-24T16:04:18 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:04:18 W1 SUCCESS Static loaded
+2021-04-24T16:04:19 W1 SUCCESS Api loaded
+2021-04-24T16:04:19 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:04:21 W1 INFO Connected  127.0.0.1
+2021-04-24T16:04:25 W1 ERROR TypeError: generateToken is not a function
+    at Storage.createLink (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/storage.js:119:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:4:40)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9)
+2021-04-24T16:05:04 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:05:04 W1 SUCCESS Static loaded
+2021-04-24T16:05:04 W1 SUCCESS Api loaded
+2021-04-24T16:05:04 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:05:06 W1 INFO Connected  127.0.0.1
+2021-04-24T16:05:08 W1 ERROR TypeError: generateToken is not a function
+    at Storage.createLink (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/storage.js:119:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:4:40)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9)
+2021-04-24T16:06:16 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:06:16 W1 SUCCESS Static loaded
+2021-04-24T16:06:16 W1 SUCCESS Api loaded
+2021-04-24T16:06:16 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:06:17 W1 INFO Connected  127.0.0.1
+2021-04-24T16:06:19 W1 ERROR TypeError: generateToken is not a function
+    at Storage.createLink (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/storage.js:120:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:4:40)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9)
+2021-04-24T16:06:34 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:06:34 W1 SUCCESS Static loaded
+2021-04-24T16:06:34 W1 SUCCESS Api loaded
+2021-04-24T16:06:34 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:06:35 W1 INFO Connected  127.0.0.1
+2021-04-24T16:07:00 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:07:00 W1 SUCCESS Static loaded
+2021-04-24T16:07:00 W1 SUCCESS Api loaded
+2021-04-24T16:07:00 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:07:12 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:07:12 W1 SUCCESS Static loaded
+2021-04-24T16:07:12 W1 SUCCESS Api loaded
+2021-04-24T16:07:12 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:07:43 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:07:43 W1 SUCCESS Static loaded
+2021-04-24T16:07:43 W1 SUCCESS Api loaded
+2021-04-24T16:07:43 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:07:49 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:07:49 W1 SUCCESS Static loaded
+2021-04-24T16:07:49 W1 SUCCESS Api loaded
+2021-04-24T16:07:49 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:07:58 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:07:58 W1 SUCCESS Static loaded
+2021-04-24T16:07:58 W1 SUCCESS Api loaded
+2021-04-24T16:07:58 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:09:28 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:09:28 W1 SUCCESS Static loaded
+2021-04-24T16:09:28 W1 SUCCESS Api loaded
+2021-04-24T16:09:28 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:09:31 W1 INFO Connected  127.0.0.1
+2021-04-24T16:09:36 W1 ERROR TypeError: application.deleteLink is not a function
+    at method (evalmachine.<anonymous>:19:45)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9)
+2021-04-24T16:11:07 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:11:07 W1 SUCCESS Static loaded
+2021-04-24T16:11:07 W1 SUCCESS Api loaded
+2021-04-24T16:11:07 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:11:08 W1 INFO Connected  127.0.0.1
+2021-04-24T16:11:14 W1 INFO Connected  127.0.0.1
+2021-04-24T16:12:19 W1 ERROR error: INSERT или UPDATE в таблице "storageinfo" нарушает ограничение внешнего ключа "fkstorageinfotoken"
+    at Parser.parseErrorMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:278:15)
+    at Parser.handlePacket (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/pg-protocol/dist/index.js:10:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    at readableAddChunk (internal/streams/readable.js:284:9)
+    at Socket.Readable.push (internal/streams/readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 366,
+  severity: 'ОШИБКА',
+  code: '23503',
+  detail: 'Ключ (token)=(ofNz24t1juoOuPQT38Ds707uYNgFETbW) отсутствует в таблице "systemuser".',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'storageinfo',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'fkstorageinfotoken',
+  file: 'ri_triggers.c',
+  line: '2465',
+  routine: 'ri_ReportViolation'
+}
+2021-04-24T16:20:51 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:20:51 W1 SUCCESS Static loaded
+2021-04-24T16:20:51 W1 SUCCESS Api loaded
+2021-04-24T16:20:51 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:20:56 W1 INFO Connected  127.0.0.1
+2021-04-24T16:20:56 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:21:18 W1 INFO Connected  127.0.0.1
+2021-04-24T16:21:18 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:21:18 W1 INFO Connected  127.0.0.1
+2021-04-24T16:21:18 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:21:30 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:21:30 W1 SUCCESS Static loaded
+2021-04-24T16:21:30 W1 SUCCESS Api loaded
+2021-04-24T16:21:30 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:21:31 W1 INFO Connected  127.0.0.1
+2021-04-24T16:21:31 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:21:44 W1 INFO Connected  127.0.0.1
+2021-04-24T16:21:51 W1 INFO Connected  127.0.0.1
+2021-04-24T16:21:51 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:120:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:126:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-24T16:22:00 W1 INFO Connected  127.0.0.1
+2021-04-24T16:22:04 W1 INFO Connected  127.0.0.1
+2021-04-24T16:22:11 W1 INFO Connected  127.0.0.1
+2021-04-24T16:22:11 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:120:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:126:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:39:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:32:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-24T16:22:24 W1 INFO Connected  127.0.0.1
+2021-04-24T16:22:24 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:24:20 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:24:21 W1 SUCCESS Static loaded
+2021-04-24T16:24:21 W1 SUCCESS Api loaded
+2021-04-24T16:24:21 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:24:22 W1 INFO Connected  127.0.0.1
+2021-04-24T16:24:22 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:24:55 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:24:56 W1 SUCCESS Static loaded
+2021-04-24T16:24:56 W1 SUCCESS Api loaded
+2021-04-24T16:24:56 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:24:56 W1 INFO Connected  127.0.0.1
+2021-04-24T16:24:57 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:25:48 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:25:48 W1 SUCCESS Static loaded
+2021-04-24T16:25:48 W1 SUCCESS Api loaded
+2021-04-24T16:25:48 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:25:49 W1 INFO Connected  127.0.0.1
+2021-04-24T16:25:49 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:44:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:22:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:9) {
+  code: 505
+}
+2021-04-24T16:26:50 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:26:50 W1 SUCCESS Static loaded
+2021-04-24T16:26:50 W1 SUCCESS Api loaded
+2021-04-24T16:26:50 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:26:51 W1 INFO Connected  127.0.0.1
+2021-04-24T16:26:51 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:44:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:23:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:9) {
+  code: 505
+}
+2021-04-24T16:27:07 W1 INFO Connected  127.0.0.1
+2021-04-24T16:27:07 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:120:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:126:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:40:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:33:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-24T16:27:13 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:27:13 W1 SUCCESS Static loaded
+2021-04-24T16:27:13 W1 SUCCESS Api loaded
+2021-04-24T16:27:13 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:27:15 W1 INFO Connected  127.0.0.1
+2021-04-24T16:27:15 W1 ERROR ServerError: Invalid token
+    at Object.token (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:120:44)
+    at validateArgs (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/utils.js:126:39)
+    at Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:40:9)
+    at WebSocket.<anonymous> (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/server.js:33:49)
+    at WebSocket.emit (events.js:315:20)
+    at Receiver.receiverOnMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/websocket.js:825:20)
+    at Receiver.emit (events.js:315:20)
+    at Receiver.dataMessage (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:437:14)
+    at Receiver.getData (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:367:17)
+    at Receiver.startLoop (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/node_modules/ws/lib/receiver.js:143:22) {
+  code: 503
+}
+2021-04-24T16:27:29 W1 INFO Connected  127.0.0.1
+2021-04-24T16:27:29 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:44:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:23:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:9) {
+  code: 505
+}
+2021-04-24T16:27:34 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:27:34 W1 SUCCESS Static loaded
+2021-04-24T16:27:34 W1 SUCCESS Api loaded
+2021-04-24T16:27:34 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:27:35 W1 INFO Connected  127.0.0.1
+2021-04-24T16:27:35 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:44:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:23:5)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:14:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:9) {
+  code: 505
+}
+2021-04-24T16:28:40 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:28:40 W1 SUCCESS Static loaded
+2021-04-24T16:28:40 W1 SUCCESS Api loaded
+2021-04-24T16:28:40 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:28:41 W1 INFO Connected  127.0.0.1
+2021-04-24T16:29:51 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:29:51 W1 SUCCESS Static loaded
+2021-04-24T16:29:51 W1 SUCCESS Api loaded
+2021-04-24T16:29:51 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:29:52 W1 INFO Connected  127.0.0.1
+2021-04-24T16:30:20 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:30:20 W1 SUCCESS Static loaded
+2021-04-24T16:30:20 W1 SUCCESS Api loaded
+2021-04-24T16:30:20 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:30:21 W1 INFO Connected  127.0.0.1
+2021-04-24T16:30:21 W1 ERROR ServerError: Session was not restored
+    at Session.restoreSession (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/auth.js:42:24)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async method (evalmachine.<anonymous>:5:21)
+    at async /run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:43:26
+    at async AsyncQueue.next (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:24:7)
+    at async AsyncQueue.add (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/queue.js:15:7)
+    at async Channel.message (/run/media/lia/12D0DD29D0DD1437/Code/node_cloud_server/lib/channel.js:42:9) {
+  code: 505
+}
+2021-04-24T16:51:10 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:51:10 W1 SUCCESS Static loaded
+2021-04-24T16:51:10 W1 SUCCESS Api loaded
+2021-04-24T16:51:10 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:51:11 W1 INFO Connected  127.0.0.1
+2021-04-24T16:52:53 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:52:53 W1 SUCCESS Static loaded
+2021-04-24T16:52:53 W1 SUCCESS Api loaded
+2021-04-24T16:52:53 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:53:24 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:53:24 W1 SUCCESS Static loaded
+2021-04-24T16:53:24 W1 SUCCESS Api loaded
+2021-04-24T16:53:24 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:53:27 W1 INFO Connected  127.0.0.1
+2021-04-24T16:54:25 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:54:25 W1 SUCCESS Static loaded
+2021-04-24T16:54:25 W1 SUCCESS Api loaded
+2021-04-24T16:54:25 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:54:27 W1 INFO Connected  127.0.0.1
+2021-04-24T16:56:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-24T16:56:17 W1 SUCCESS Static loaded
+2021-04-24T16:56:17 W1 SUCCESS Api loaded
+2021-04-24T16:56:17 W1 INFO Listen on http://localhost:7000
+2021-04-24T16:56:19 W1 INFO Connected  127.0.0.1
+2021-04-24T16:57:46 W1 INFO Files deleted: 17 Tokens expired: 1
+2021-04-24T16:57:46 W1 SUCCESS Static loaded
+2021-04-24T16:57:46 W1 SUCCESS Api loaded
+2021-04-24T16:57:46 W1 INFO Listen on http://localhost:7000
+2021-04-25T08:58:55 W1 INFO Files deleted: 4 Tokens expired: 1
+2021-04-25T08:58:55 W1 SUCCESS Static loaded
+2021-04-25T08:58:55 W1 SUCCESS Api loaded
+2021-04-25T08:58:55 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:01:32 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:01:32 W1 SUCCESS Static loaded
+2021-04-25T09:01:32 W1 SUCCESS Api loaded
+2021-04-25T09:01:32 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:03:35 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:03:35 W1 SUCCESS Static loaded
+2021-04-25T09:03:35 W1 SUCCESS Api loaded
+2021-04-25T09:03:35 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:05:17 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:05:17 W1 SUCCESS Static loaded
+2021-04-25T09:05:17 W1 SUCCESS Api loaded
+2021-04-25T09:05:17 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:06:00 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:06:00 W1 SUCCESS Static loaded
+2021-04-25T09:06:00 W1 SUCCESS Api loaded
+2021-04-25T09:06:00 W1 INFO Listen on http://localhost:7000
+2021-04-25T09:16:11 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T09:16:11 W1 SUCCESS Static loaded
+2021-04-25T09:16:11 W1 SUCCESS Api loaded
+2021-04-25T09:16:11 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:41:06 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T10:41:06 W1 SUCCESS Static loaded
+2021-04-25T10:41:06 W1 SUCCESS Api loaded
+2021-04-25T10:41:06 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:42:16 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T10:42:16 W1 SUCCESS Static loaded
+2021-04-25T10:42:16 W1 SUCCESS Api loaded
+2021-04-25T10:42:16 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:43:46 W1 INFO Connected  127.0.0.1
+2021-04-25T10:43:52 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T10:43:52 W1 SUCCESS Static loaded
+2021-04-25T10:43:52 W1 SUCCESS Api loaded
+2021-04-25T10:43:52 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:43:57 W1 INFO Connected  127.0.0.1
+2021-04-25T10:44:44 W1 INFO Connected  127.0.0.1
+2021-04-25T10:48:55 W1 INFO Connected  127.0.0.1
+2021-04-25T10:48:59 W1 INFO Connected  127.0.0.1
+2021-04-25T10:49:08 W1 INFO Connected  127.0.0.1
+2021-04-25T10:49:22 W1 INFO Connected  127.0.0.1
+2021-04-25T10:51:32 W1 INFO Files deleted: 0 Tokens expired: 1
+2021-04-25T10:51:32 W1 SUCCESS Static loaded
+2021-04-25T10:51:32 W1 SUCCESS Api loaded
+2021-04-25T10:51:32 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:51:35 W1 INFO Connected  127.0.0.1
+2021-04-25T10:54:58 W1 INFO Files deleted: 0 Tokens expired: 1
+2021-04-25T10:54:58 W1 SUCCESS Static loaded
+2021-04-25T10:54:58 W1 SUCCESS Api loaded
+2021-04-25T10:54:58 W1 INFO Listen on http://localhost:7000
+2021-04-25T10:55:20 W1 INFO Connected  127.0.0.1
+2021-04-25T10:56:04 W1 INFO Connected  127.0.0.1
+2021-04-25T11:03:36 W1 INFO Files deleted: 0 Tokens expired: 2
+2021-04-25T11:03:36 W1 SUCCESS Static loaded
+2021-04-25T11:03:36 W1 SUCCESS Api loaded
+2021-04-25T11:03:36 W1 INFO Listen on http://localhost:7000
+2021-04-25T11:05:13 W1 INFO Connected  127.0.0.1
+2021-04-25T11:05:42 W1 INFO Connected  127.0.0.1
+2021-04-25T11:06:27 W1 INFO Connected  127.0.0.1
+2021-04-25T11:06:41 W1 INFO Connected  127.0.0.1
+2021-04-25T11:09:15 W1 INFO Connected  127.0.0.1
+2021-04-25T11:10:18 W1 INFO Connected  127.0.0.1
+2021-04-25T11:10:32 W1 INFO Connected  127.0.0.1
+2021-04-25T11:13:01 W1 INFO Files deleted: 0 Tokens expired: 0
+2021-04-25T11:13:01 W1 SUCCESS Static loaded
+2021-04-25T11:13:01 W1 SUCCESS Api loaded
+2021-04-25T11:13:01 W1 INFO Listen on http://localhost:7000
+2021-04-25T11:14:18 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:01 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:25 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:52 W1 INFO Connected  127.0.0.1
+2021-04-25T11:15:56 W1 INFO Connected  127.0.0.1
+2021-04-25T11:17:33 W1 INFO Connected  127.0.0.1

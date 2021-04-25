@@ -1,15 +1,20 @@
-# Node Cloud Storage
-Node.js implementation
+# Cloud Storage Server
 
-# Cloning this repo
-When cloning this repo dont forget to use 
-`git clone --recurse-submodules https://github.com/AliusDieMorietur/node_cloud_server.git` 
-if you want to clone the whole project.
+Your personal cloud storage.
+
+# Usage
+
+- git clone https://github.com/AliusDieMorietur/node_cloud_server.git
+- npm run prepare_repo
+- npm run add_user
+- npm start
 
 # Requirements
-* NodeJS 12^
-* PostgreSQL 11^
+
+- NodeJS 12^
+- PostgreSQL 11^
 
 # Dependencies
-* pg: ^8.5.0
-* ws: ^7.4.0
+
+- pg: ^8.5.0
+- ws: ^7.4.0
