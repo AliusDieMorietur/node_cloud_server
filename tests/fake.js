@@ -31,6 +31,12 @@ metatests.test('Temporary upload/download/available', async (test) => {
     test.strictSame(error.message, 'No such token');
   }
 
+  const sessionToken = await transport.socketCall('authUser', { user: { login: 'admin', password: 'admin'} });
+  test.strictSame(sessionToken.length, 32);
+
+  const logOut = await transport.socketCall('logOut', {});
+  test.strictSame(logOut, 'ok');
+
   transport.close();
   test.end();
 });
