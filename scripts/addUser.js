@@ -30,11 +30,16 @@ const ask = str =>
       throw new Error('Too short password or login');
     }
     const userToken = generateToken();
-    await pool.query(
-      `INSERT INTO SystemUser(Token, Login, Password) ` +
-        `VALUES ('${userToken}', '${login}', '${password}')`
-    );
-    console.log(`User <${login}> created`);
+    try {
+      await pool.query(
+        `INSERT INTO SystemUser(Token, Login, Password) ` +
+          `VALUES ('${userToken}', '${login}', '${password}')`
+      );
+      console.log(`User <${login}> created`);
+    } catch (e) {
+      console.log(`User <${login}> alreagy exists`);
+      return;
+    }
     await pool.query(
       `INSERT INTO  StorageInfo(Token, Expire) VALUES ('${userToken}', 0)`
     );
