@@ -3,11 +3,12 @@ version: '3.9'
 services:
   server:
     build: .
+    image: gidra5/node_cloud_server_server:latest
     ports:
       - '7000:7000'
   db:
-    build: ./db/
-    image: 'postgres'
+    build: ./db/docker
+    image: gidra5/node_cloud_server_db:latest
     environment:
       POSTGRES_PASSWORD: 'postgres'
       POSTGRES_USER: 'postgres'
